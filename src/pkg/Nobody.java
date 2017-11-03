@@ -2,8 +2,31 @@ package pkg;
 
 class Nobody implements Account {
 
-	public Nobody() {
+	private static int PERM_LEVEL = 0;
+  private String userName;
+  private String passHash;
 
-	}
+  public Nobody() {
 
+  }
+
+  @Override
+  public int getPermLevel() {
+    return this.PERM_LEVEL;
+  }
+
+  @Override
+  public String getUserName() {
+    return this.userName;
+  }
+
+  @Override
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
+
+  @Override
+  public boolean checkHash() {
+    return false;
+  }
 }
