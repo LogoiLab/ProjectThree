@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9276d1e9-f886-4778-a7f6-cab4bf9fb3aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/Account.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/Admin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/BikePart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/Bundle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/BundleFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/BundleList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/Controller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/DatabaseHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/Invoice.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/InvoiceFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/Item.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/ItemList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/LoginHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/MainWarehouse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/Nobody.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/Van.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/Warehouse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/WarehouseFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pkg/WarehouseList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/spec/latex/WRITINGTHREE.aux" afterPath="$PROJECT_DIR$/doc/spec/latex/WRITINGTHREE.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ProjectThree.iml" afterPath="$PROJECT_DIR$/.idea/ProjectThree.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/spec/latex/WRITINGTHREE.tex" afterPath="$PROJECT_DIR$/doc/spec/latex/WRITINGTHREE.tex" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,16 +15,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ItemList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pkg/ItemList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LoginHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pkg/LoginHandler.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -128,11 +95,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WarehouseList.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WarehouseList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pkg/WarehouseList.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WRITINGTHREE.tex" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/doc/spec/latex/WRITINGTHREE.tex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="30" column="81" lean-forward="false" selection-start-line="30" selection-start-column="81" selection-end-line="30" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -180,6 +157,7 @@
         <option value="$PROJECT_DIR$/src/pkg/WarehouseFactory.java" />
         <option value="$PROJECT_DIR$/src/pkg/BundleFactory.java" />
         <option value="$PROJECT_DIR$/src/pkg/InvoiceFactory.java" />
+        <option value="$PROJECT_DIR$/doc/spec/latex/WRITINGTHREE.tex" />
       </list>
     </option>
   </component>
@@ -219,13 +197,20 @@
             <path>
               <item name="ProjectThree" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectThree" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjectThree" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjectThree" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjectThree" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjectThree" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+              <item name="latex" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -349,12 +334,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1509673593061</updated>
-      <workItem from="1509673597291" duration="653000" />
+      <workItem from="1509673597291" duration="957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="653000" />
+    <option name="totallyTimeSpent" value="957000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="28" width="1370" height="714" extended-state="6" />
@@ -588,6 +573,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/spec/latex/WRITINGTHREE.tex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="30" column="81" lean-forward="false" selection-start-line="30" selection-start-column="81" selection-end-line="30" selection-end-column="81" />
           <folding />
         </state>
       </provider>
