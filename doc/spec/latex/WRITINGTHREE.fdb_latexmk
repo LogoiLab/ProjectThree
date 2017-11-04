@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1509837064 "WRITINGTHREE.tex" "WRITINGTHREE.pdf" "WRITINGTHREE" 1509837065
+["pdflatex"] 1509837198 "WRITINGTHREE.tex" "WRITINGTHREE.pdf" "WRITINGTHREE" 1509837199
   "../diagrams/image_versions/overview.png" 1509663395 30609 a1b862cd579b8ec4ef247c4b1b72b513 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1501615455 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1501615461 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -68,11 +68,15 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1501615481 32585 d82bbcf7626b7842c87671687479e852 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1507663646 2245573 414eb95906094eded09bf351791420cb ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1504647477 7735971 8a544188db65e03f35f10ec82dba044a ""
-  "WRITINGTHREE.aux" 1509837064 4482 e9db573ecd2bb155476d841be2067a1f ""
-  "WRITINGTHREE.tex" 1509837060 12197 466bd2cb25f119e907cf1a1094e6e71e ""
-  "WRITINGTHREE.toc" 1509837064 1146 530ba8963f21c8cdbad9635e82148453 ""
+  "WRITINGTHREE.aux" 1509837198 4480 4b23c70222fc05d4231e49bddb023439 ""
+  "WRITINGTHREE.lof" 1509837198 87 0f5fe4084d75e9c96a52a43f6ddb943a ""
+  "WRITINGTHREE.lot" 1509837198 86 b7d98f02b096e6610cf35e1627639da9 ""
+  "WRITINGTHREE.tex" 1509837192 12226 f35770f501f656bf2d728cc2b6f84de0 ""
+  "WRITINGTHREE.toc" 1509837198 1146 530ba8963f21c8cdbad9635e82148453 ""
   (generated)
+  "WRITINGTHREE.aux"
   "WRITINGTHREE.pdf"
   "WRITINGTHREE.toc"
+  "WRITINGTHREE.lot"
+  "WRITINGTHREE.lof"
   "WRITINGTHREE.log"
-  "WRITINGTHREE.aux"

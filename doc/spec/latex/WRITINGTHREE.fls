@@ -121,6 +121,12 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT ../diagrams/image_versions/overview.png
 INPUT ../diagrams/image_versions/overview.png
 INPUT ../diagrams/image_versions/overview.png
+INPUT WRITINGTHREE.lof
+INPUT WRITINGTHREE.lof
+OUTPUT WRITINGTHREE.lof
+INPUT WRITINGTHREE.lot
+INPUT WRITINGTHREE.lot
+OUTPUT WRITINGTHREE.lot
 INPUT WRITINGTHREE.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
