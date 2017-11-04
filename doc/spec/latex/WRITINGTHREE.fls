@@ -111,7 +111,6 @@ INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT WRITINGTHREE.toc
-INPUT WRITINGTHREE.toc
 OUTPUT WRITINGTHREE.toc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
@@ -122,9 +121,7 @@ INPUT ../diagrams/image_versions/overview.png
 INPUT ../diagrams/image_versions/overview.png
 INPUT ../diagrams/image_versions/overview.png
 INPUT WRITINGTHREE.lof
-INPUT WRITINGTHREE.lof
 OUTPUT WRITINGTHREE.lof
-INPUT WRITINGTHREE.lot
 INPUT WRITINGTHREE.lot
 OUTPUT WRITINGTHREE.lot
 INPUT WRITINGTHREE.aux
