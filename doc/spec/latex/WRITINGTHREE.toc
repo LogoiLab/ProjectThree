@@ -10,5 +10,7 @@
 \contentsline {subsubsection}{Office Manager}{4}{section*.3}
 \contentsline {subsubsection}{Warehouse Manager}{4}{section*.4}
 \contentsline {subsubsection}{Employee}{4}{section*.5}
-\contentsline {section}{\numberline {3}System Specification}{5}{section.0.3}
-\contentsline {section}{\numberline {4}Assumptions}{5}{section.0.4}
+\contentsline {subsubsection}{Commands}{5}{section*.6}
+\contentsline {section}{\numberline {3}System Specification}{6}{section.0.3}
+\contentsline {section}{\numberline {4}Assumptions}{6}{section.0.4}
+\contentsline {section}{\numberline {5}Diagrams}{6}{section.0.5}
