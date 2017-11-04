@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}Document Purpose}{2}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}System Scope}{2}{subsection.0.1.2}
+\contentsline {subsection}{\numberline {1.3}Overview}{3}{subsection.0.1.3}
+\contentsline {section}{\numberline {2}Overall Description}{3}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}Client characteristics}{3}{subsection.0.2.1}
+\contentsline {subsection}{\numberline {2.2}User characteristics}{3}{subsection.0.2.2}
+\contentsline {subsection}{\numberline {2.3}Product functions}{3}{subsection.0.2.3}
+\contentsline {subsubsection}{System Admin}{3}{section*.2}
+\contentsline {subsubsection}{Office Manager}{4}{section*.3}
+\contentsline {subsubsection}{Warehouse Manager}{4}{section*.4}
+\contentsline {subsubsection}{Employee}{4}{section*.5}
+\contentsline {section}{\numberline {3}System Specification}{5}{section.0.3}
+\contentsline {section}{\numberline {4}Assumptions}{5}{section.0.4}
