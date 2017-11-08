@@ -45,11 +45,12 @@ Each section in this document is divided into numbered and labeled sections in o
 \section{Overall Description}
 
 \subsection{Client Characteristics}
-Who is your client? Why is this system important to him/her/them? This is fictional and can be made-up.\par
+
+A distributorship needs a way of thracking and maintaining inventory and sales information. This application attempts to provide all functionality needed to properly maintain the client's past, current, and future inventory and sales.\par
 
 \subsection{User Characteristics}
 
-Who are the intended users of the system? Describe them. What characteristics of your users make them unique?  How do users interact with your system?\par
+The intended users of this application are distributership type businesses with small to medium inventories. The application will be used to makes sales of parts and items to other companies and individuals. It is assumed that users have a basic knowledge of how payment transactions work as this application will not handle actual payments or methods of payments.\par
 
 \subsection{Product Functions}
 
@@ -100,15 +101,15 @@ Employees will load sales vans and add their sales to an invoice.\par
   \item [\textit{Add Sales Van}] Generates a new sales van that can be used for sales by employees.
   \item [\textit{Move Part}] Used by employees to load a sales van for a sale. This removes the appropriate quantity of each specified part from the warehouse and adds it to the inventory of the sales van to be sold.
   \item [\textit{Display Part}] Can be used by WM, OM, and employees. Allows the user to display.
-  \item [\textit{Sort Parts (Name)}]
-  \item [\textit{Sort Parts (Number)}]
-  \item [\textit{Sell Parts}]
-  \item [\textit{Order Parts}]
-  \item [\textit{Update Inventory}]
-  \item [\textit{Set Commission}]
+  \item [\textit{Sort Parts (Name)}] Sorts the parts in the desired location in alphabetical order.
+  \item [\textit{Sort Parts (Number)}] Sorts the parts in the desired location by the part numbers.
+  \item [\textit{Sell Parts}] Used by employees. Removes a part from a sales van and adds that part to the invoice for that sale (part name, part number, price sold for).
+  \item [\textit{Order Parts}] Used by the OM. Adds a specified part to the warehouse they manage.
+  \item [\textit{Update Inventory}] Used by WM. Reads a file containing the origin and destination for a list of parts (this list can be one part long, or many parts long), removes those parts (by the correct quantity) and adds them to the destination warehouse .
+  \item [\textit{Set Commission}] Used by OM. Will create a reference to individual parts that, when sold, will increase the pay for the employee that makes the sale, but does not increase the cost of the part. Will be set as a percentage.
 \end{description}
 
-\begin{table}
+\begin{table}[htb]
   \begin{center}
       \begin{tabular}{ | l | p{8cm} |}
       \hline
@@ -139,11 +140,70 @@ List any assumptions that you have made about the system. You should have a brie
     \caption{Class hierarchy.}
 \end{sidewaysfigure}
 
-%\begin{sidewaysfigure}[ht]
-%  \centering
-%    \includegraphics[scale=0.24,keepaspectratio]{sasequence.png}
-%  \caption{Sequence to conduct a sale.}
-%\end{sidewaysfigure}
+\clearpage
+
+\subsection{Use Cases}
+
+\begin{enumerate}
+  \item \begin{description}
+          \item [Case Name] System Administrator Login
+          \item [Case Description] Ensure you are able to login properly to the System Administrator with Username: admin Password: minda and that the GUI switches to the correct panel.
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] Create Accounts
+          \item [Case Description] Once logged into System Administrator create an account for each type of user(office manager, warehouse manager, sales associate, system administrator)  each user needs a username, password, phone number, and email.
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] Create Sales Associate Account
+          \item [Case Description] During the create account process for a sales associate be sure to “link” each sales associate to a sales van.
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] Editing Accounts
+          \item [Case Description] While logged into the System Administrator select to delete an existing account that was made, ensure that functionality works. Then on a different account reset the password to test that functionality.
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] Log In
+          \item [Case Description] Ensure you are able to login properly to Office Manager, Warehouse Manager, and Sales Associate with the correct username and password. Ensure that the GUI switches to the correct panel based on what account you logged in as.
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] Examine Part Office Manager (Warehouse Manager has same capability)
+          \item [Case Description] Once logged into Office Manager select to examine part; try each choice( part name, part number, or by “>,=,<”). Ensure that the correct parts are visible in the output after each choice.
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] Order Parts Office Manager
+          \item [Case Description] Once logged into Office Manager set the minimum quantity for each part and ensure that once the supply is less than the minimum that a pop up notification becomes visible telling you to order the low quantity parts.
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] Query Inventory Office Manager
+          \item [Case Description] Once logged into Office Manager and after being notified by the low quantity pop up. Select query inventory, and ensure a list of all parts that are less than and close(what classifies as close?) to their minimum quantities are shown in the output. Use this list to input what and quantity of each part you need to order.
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] Sales Commission Office Manager
+          \item [Case Description] Once logged into Office Manager select sales commission, select a sales associate and start and end date to pull sales invoices from between those dates. Click on calculate and this will generate a paycheck for this employee between those dates which is 15\% of the total sales of that period for that associate.
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] Update Inventory Warehouse Manager
+          \item [Case Description] Once logged into Warehouse Manager input the inventory file you want to read and ensure that the inventory for the main warehouse is updated; the new parts are added, existing parts attributes are updated, and that “ALL” warehouses with their corresponding parts price attributes are also updated. (Project 2)
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] Delivery Files Sales Associate
+          \item [Case Description] Once logged into Sales Associate input the delivery file name you want to read and ensure that the correct parts are moved from and to the correct warehouses and the quantities (decremented/incremented) were updated correctly per warehouse.
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] Sales Invoice Sales Associate
+          \item [Case Description] Once logged into Sales Associate select sales invoice and fill in the required information; shop to receive parts name, parts to be sold, and quantity sold of each part. Click create and ensure a sales invoice is created with the shop names and date sold at the top, followed by a list of the parts sold (part name, part number, sale price or list price, quantity) and at the bottom the total cost of all the parts. (These are used by Office Manager to calculate paychecks per sales associate).
+        \end{description}
+  \item \begin{description}
+          \item [Case Name] GUI aesthetic check
+          \item [Case Description] Check each tab within the GUI and ensure there is no typos or confusing placement of items within each tab.
+        \end{description}
+\end{enumerate}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{../diagrams/image_versions/use_cases.jpg}
+  \caption{General use case diagram.}
+\end{figure}
 
 %\begin{figure}[h]
 %  \centering

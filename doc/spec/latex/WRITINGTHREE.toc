@@ -14,3 +14,4 @@
 \contentsline {section}{\numberline {3}System Specification}{6}{section.0.3}
 \contentsline {section}{\numberline {4}Assumptions}{6}{section.0.4}
 \contentsline {section}{\numberline {5}Diagrams}{6}{section.0.5}
+\contentsline {subsection}{\numberline {5.1}Use Cases}{8}{subsection.0.5.1}
