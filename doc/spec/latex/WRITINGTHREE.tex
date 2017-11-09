@@ -126,11 +126,23 @@ Employees will load sales vans and add their sales to an invoice.\par
 
 \section{System Specification}
 
-Explain your system design. What data will be stored in each class?  What operations will each class include?  What type of relationships will exist between classes in your system? How will the various classes interact? In addition to your text explanations, include a class diagram for your system.\par
+\begin{enumerate}
+  \item \textbf{Factories} Each factory class is a singleton, allowing only one instance at a given time. This ensures that no data is overwritten from a previous command, and instead a new one is made and then stored separately.
+    \begin{description}
+      \item [InvoiceFactory] Stores and creates all invoices.
+      \item [BundleFactory] Stores and creates bundles created when items are made a part of commission.
+      \item [WarehouseFactory] Stores and creates all warehouses, including the main warehouse.
+    \end{description}
+  \item \textbf{Warehouse} Each warehouse will store a single item list.
+  \item \textbf{ItemList} Stores a list of the parts inside a warehouse.
+  \item \textit{Account} Abstract class that will store the usernames, passwords, names and email addresses associated with existing login accounts.
+  \item \textbf{OutputBuffer} Stores and formats the program’s output before it is presented to the user.
+  \item \textbf{Invoice} Stores bundles and item lists created in their respective classes.
+\end{enumerate}
 
 \section{Assumptions}
 
-List any assumptions that you have made about the system. You should have a brief introduction statement/paragraph in this section. The actual assumptions should be communicated as a bulleted list.\par
+This program is not user-error proof, but is made to be user friendly. Therefore, there are many assumptions that were kept in mind during development. Anyone that is going to use this program, obviously, must have the knowledge of how to operate a computer; turn it on, move the mouse, click the correct icon, etc., but no user needs to know any coding languages or syntax to use this system. The Graphical User Interphase (GUI) should be contain ample information on how to operate and interact with the computer in order to use this program effectively. The computers that this system will run on is assumed to be in an office, warehouse or mobile sales van environment, and therefore are also assumed to be saving data and transactions on a shared network that all computer running this system can access. Additionally, the machines this system runs on must have a Java Runtime Environment (JRE) installed on them, otherwise the program will not run. Each computer must have sufficient storage space on them to save files (likely no greater than 1-2GB at most) onto a hard drive or solid-state drive, in addition to the shared network. This allows for file backups to be made, and the integrity of every action made with the program be maintained. Each computer must have a processor in them that is capable of running the program, but that is not likely to be a problem as it is made to be lightweight. The operating system installed on the computer does not matter as long as Java is installed.\par
 
 \section{Diagrams}
 
