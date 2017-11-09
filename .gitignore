@@ -36,6 +36,7 @@ hs_err_pid*
 
 #Temporary Files
 *.dia~
+*~lock*
 doc/spec/latex/WRITINGTHREE.pdf
 
 # General
