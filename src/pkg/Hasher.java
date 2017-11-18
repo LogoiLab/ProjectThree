@@ -7,7 +7,9 @@ import javax.crypto.spec.PBEKeySpec;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
-public static class Hasher {
+import org.apache.commons.lang3.RandomUtils;
+
+public class Hasher {
   public static byte[] hashPassword(final char[] password, final byte[] salt, final int iterations, final int keyLength) {
 
     try {
@@ -22,6 +24,6 @@ public static class Hasher {
     }
   }
   public static byte[] generateSalt(){
-    RandomUtils.nextBytes(20);
+    return RandomUtils.nextBytes(20);
   }
 }
