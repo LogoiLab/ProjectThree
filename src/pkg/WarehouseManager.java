@@ -4,7 +4,8 @@ class WarehouseManager implements Account {
 
   private static int PERM_LEVEL = 2;
   private String userName;
-  private String passHash;
+  private static byte[] passHash;
+  private static byte[] passSalt;
 
   public WarehouseManager() {
 

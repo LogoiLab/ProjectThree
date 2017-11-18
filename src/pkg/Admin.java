@@ -3,8 +3,9 @@ package pkg;
 class Admin implements Account {
 
 	private static int PERM_LEVEL = 4;
-	private String userName;
-	private String passHash;
+	private static String userName;
+	private static byte[] passHash;
+  private static byte[] passSalt;
 
 	public Admin() {
 

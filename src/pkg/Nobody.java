@@ -4,7 +4,8 @@ class Nobody implements Account {
 
 	private static int PERM_LEVEL = 0;
   private String userName;
-  private String passHash;
+  private static byte[] passHash;
+  private static byte[] passSalt;
 
   public Nobody() {
 

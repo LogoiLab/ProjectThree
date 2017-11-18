@@ -4,7 +4,8 @@ class OfficeManager implements Account {
 
   private static int PERM_LEVEL = 3;
   private String userName;
-  private String passHash;
+  private static byte[] passHash;
+  private static byte[] passSalt;
 
   public OfficeManager() {
 
