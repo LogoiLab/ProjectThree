@@ -7,12 +7,47 @@ import java.util.HashMap;
 
 class ItemList {
     private ArrayList<Item> currentList;
+
+    public ArrayList<Item> getCurrentList() {
+        return currentList;
+    }
+
+    public void setCurrentList(ArrayList<Item> currentList) {
+        this.currentList = currentList;
+    }
+
+    public ArrayList<Item> getList() {
+        return list;
+    }
+
+    public void setList(ArrayList<Item> list) {
+        this.list = list;
+    }
+
+    public HashMap<String, Item> getByName() {
+        return byName;
+    }
+
+    public void setByName(HashMap<String, Item> byName) {
+        this.byName = byName;
+    }
+
+    public HashMap<Long, Item> getByNumber() {
+        return byNumber;
+    }
+
+    public void setByNumber(HashMap<Long, Item> byNumber) {
+        this.byNumber = byNumber;
+    }
+
     private ArrayList<Item> list;
     private HashMap<String, Item> byName = new HashMap<>();
     private HashMap<Long, Item> byNumber = new HashMap<>();
 
     public ItemList(ArrayList<Item> list) {
         this.list=list;
+        createHashByName();
+        createHashByNumber();
     }
 
     private void createHashByName(){
