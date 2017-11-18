@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/pkg/ItemList.java" line="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9276d1e9-f886-4778-a7f6-cab4bf9fb3aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pkg/Item.java" afterPath="$PROJECT_DIR$/src/pkg/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pkg/ItemList.java" afterPath="$PROJECT_DIR$/src/pkg/ItemList.java" />
-    </list>
+    <list default="true" id="9276d1e9-f886-4778-a7f6-cab4bf9fb3aa" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,8 +47,8 @@
       <file leaf-file-name="ItemList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pkg/ItemList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="33" lean-forward="false" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+            <state relative-caret-position="374">
+              <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#383#384#0" expanded="true" />
@@ -595,8 +592,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pkg/ItemList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="33" lean-forward="false" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        <state relative-caret-position="374">
+          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#383#384#0" expanded="true" />
