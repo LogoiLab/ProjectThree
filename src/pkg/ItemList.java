@@ -37,4 +37,7 @@ class ItemList {
         currentList.equals(list);
     }
 
+    public ArrayList<Item> getItemList() {
+        return currentList;
+    }
 }
