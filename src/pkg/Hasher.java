@@ -1,6 +1,5 @@
 package pkg;
 
-
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
@@ -23,6 +22,7 @@ public class Hasher {
       throw new RuntimeException(e);
     }
   }
+  
   public static byte[] generateSalt(){
     return RandomUtils.nextBytes(20);
   }
