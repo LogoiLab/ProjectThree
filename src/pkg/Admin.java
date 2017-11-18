@@ -1,33 +1,12 @@
 package pkg;
 
-class Admin implements Account {
+class Admin extends Account {
 
 	private static int PERM_LEVEL = 4;
-	private static String userName;
-	private static byte[] passHash;
-  private static byte[] passSalt;
+
 
 	public Admin() {
 
 	}
 
-	@Override
-	public int getPermLevel() {
-		return this.PERM_LEVEL;
-	}
-
-  @Override
-  public String getUserName() {
-    return this.userName;
-  }
-
-  @Override
-  public void setUserName(String userName) {
-    this.userName = userName;
-  }
-
-  @Override
-  public boolean checkHash() {
-    return false;
-  }
 }
