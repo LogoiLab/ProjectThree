@@ -2,7 +2,7 @@ package pkg;
 
 class Admin implements Account {
 
-	private static int PERM_LEVEL = 2;
+	private static int PERM_LEVEL = 4;
 	private String userName;
 	private String passHash;
 

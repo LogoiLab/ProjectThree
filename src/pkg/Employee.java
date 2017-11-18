@@ -1,19 +1,19 @@
 package pkg;
 
-class OfficeManager implements Account {
+class Employee implements Account {
 
-  private static int PERM_LEVEL = 3;
-  private String userName;
-  private String passHash;
+	private static int PERM_LEVEL = 1;
+	private String userName;
+	private String passHash;
 
-  public OfficeManager() {
+	public Employee() {
 
-  }
+	}
 
-  @Override
-  public int getPermLevel() {
-    return this.PERM_LEVEL;
-  }
+	@Override
+	public int getPermLevel() {
+		return this.PERM_LEVEL;
+	}
 
   @Override
   public String getUserName() {
@@ -29,5 +29,4 @@ class OfficeManager implements Account {
   public boolean checkHash() {
     return false;
   }
-
 }

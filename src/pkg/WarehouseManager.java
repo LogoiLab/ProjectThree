@@ -2,7 +2,7 @@ package pkg;
 
 class WarehouseManager implements Account {
 
-  private static int PERM_LEVEL = 1;
+  private static int PERM_LEVEL = 2;
   private String userName;
   private String passHash;
 
