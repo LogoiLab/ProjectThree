@@ -1,7 +1,7 @@
 package pkg;
 
 class BikePart extends Item {
-	private String partName;
+    private String partName;
 
     public String getPartName() {
         return partName;
@@ -52,18 +52,18 @@ class BikePart extends Item {
     }
 
     private long partNumber;
-	private Double listPrice;
-	private Double salePrice;
-	private boolean onSale;
-	private int quantity;
+    private Double listPrice;
+    private Double salePrice;
+    private boolean onSale;
+    private int quantity;
 
-    public BikePart( String name, long num, Double list, Double sale, boolean onSale, int quant) {
-        this.partName=name;
-        this.partNumber=num;
-        this.listPrice=list;
-        this.salePrice=sale;
-        this.onSale=onSale;
-        this.quantity=quant;
+    public BikePart(String name, long num, Double list, Double sale, boolean onSale, int quant) {
+        this.partName = name;
+        this.partNumber = num;
+        this.listPrice = list;
+        this.salePrice = sale;
+        this.onSale = onSale;
+        this.quantity = quant;
     }
 
 }
