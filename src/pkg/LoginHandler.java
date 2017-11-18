@@ -1,9 +1,12 @@
 package pkg;
 
-class LoginHandler extends DatabaseHandler {
+public class LoginHandler{
+	private static final LoginHandler instance = new LoginHandler();
 
-	public LoginHandler() {
+	//private constructor to avoid client applications to use constructor
+	private LoginHandler(){}
 
+	public static LoginHandler getInstance(){
+		return instance;
 	}
-
 }

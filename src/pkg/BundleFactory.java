@@ -1,9 +1,12 @@
 package pkg;
 
-class BundleFactory extends DatabaseHandler {
+public class BundleFactory{
+	private static final BundleFactory instance = new BundleFactory();
 
-	public BundleFactory() {
+	//private constructor to avoid client applications to use constructor
+	private BundleFactory(){}
 
+	public static BundleFactory getInstance(){
+		return instance;
 	}
-
 }
