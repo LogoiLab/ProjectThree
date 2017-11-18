@@ -38,6 +38,7 @@ hs_err_pid*
 *.dia~
 *~lock*
 doc/spec/latex/WRITINGTHREE.pdf
+.idea/workspace.xml
 
 # General
 .DS_Store

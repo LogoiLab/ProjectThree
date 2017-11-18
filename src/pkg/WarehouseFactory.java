@@ -1,9 +1,12 @@
 package pkg;
 
-class WarehouseFactory extends DatabaseHandler {
+public class WarehouseFactory{
+  private static final WarehouseFactory instance = new WarehouseFactory();
 
-	public WarehouseFactory() {
+  //private constructor to avoid client applications to use constructor
+  private WarehouseFactory(){}
 
-	}
-
+  public static WarehouseFactory getInstance(){
+    return instance;
+  }
 }
