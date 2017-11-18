@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9276d1e9-f886-4778-a7f6-cab4bf9fb3aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pkg/BikePart.java" afterPath="$PROJECT_DIR$/src/pkg/BikePart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pkg/Item.java" afterPath="$PROJECT_DIR$/src/pkg/Item.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -100,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BikePart.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BikePart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pkg/BikePart.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1054">
@@ -130,6 +130,25 @@
                 <element signature="e#910#911#0" expanded="true" />
                 <element signature="e#955#956#0" expanded="true" />
                 <element signature="e#995#996#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Item.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pkg/Item.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+              <folding>
+                <element signature="e#110#111#0" expanded="true" />
+                <element signature="e#132#133#0" expanded="true" />
+                <element signature="e#177#178#0" expanded="true" />
+                <element signature="e#208#209#0" expanded="true" />
+                <element signature="e#240#241#0" expanded="true" />
+                <element signature="e#264#265#0" expanded="true" />
+                <element signature="e#311#312#0" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/pkg/BundleList.java" />
         <option value="$PROJECT_DIR$/src/pkg/Controller.java" />
         <option value="$PROJECT_DIR$/src/pkg/Invoice.java" />
-        <option value="$PROJECT_DIR$/src/pkg/Item.java" />
         <option value="$PROJECT_DIR$/src/pkg/ItemList.java" />
         <option value="$PROJECT_DIR$/src/pkg/Main.java" />
         <option value="$PROJECT_DIR$/src/pkg/MainWarehouse.java" />
@@ -188,6 +206,7 @@
         <option value="$PROJECT_DIR$/src/pkg/Nobody.java" />
         <option value="$PROJECT_DIR$/src/pkg/User.java" />
         <option value="$PROJECT_DIR$/src/pkg/BikePart.java" />
+        <option value="$PROJECT_DIR$/src/pkg/Item.java" />
       </list>
     </option>
   </component>
@@ -538,13 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pkg/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pkg/InvoiceFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -706,6 +718,23 @@
             <element signature="e#910#911#0" expanded="true" />
             <element signature="e#955#956#0" expanded="true" />
             <element signature="e#995#996#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pkg/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding>
+            <element signature="e#110#111#0" expanded="true" />
+            <element signature="e#132#133#0" expanded="true" />
+            <element signature="e#177#178#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#264#265#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
           </folding>
         </state>
       </provider>
