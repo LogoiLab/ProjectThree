@@ -1,12 +1,12 @@
 package pkg;
 
-class User implements Account {
+class WarehouseManager implements Account {
 
   private static int PERM_LEVEL = 1;
   private String userName;
   private String passHash;
 
-  public User() {
+  public WarehouseManager() {
 
   }
 
