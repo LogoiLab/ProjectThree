@@ -2,6 +2,9 @@ package pkg;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.FXCollections.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -12,184 +15,194 @@ import javafx.scene.control.TreeView;
 
 public class Controller {
 
-	@FXML
-	private ResourceBundle resources;
 
-	@FXML
-	private URL location;
+    @FXML
+    private ResourceBundle resources;
 
-	@FXML
-	private ChoiceBox<?> addDeleteChoiceBox;
+    @FXML
+    private URL location;
 
-	@FXML
-	private ChoiceBox<?> typeChoiceBox;
+    @FXML
+    private ChoiceBox<String> addDeleteChoiceBox;
 
-	@FXML
-	private Button accountsSubmitButton;
+    @FXML
+    private ChoiceBox<String> typeChoiceBox;
 
-	@FXML
-	private TreeView<?> accountListingTreeView;
+    @FXML
+    private Button accountsSubmitButton;
 
-	@FXML
-	private TextField usernameTextField;
+    @FXML
+    private TreeView<?> accountListingTreeView;
 
-	@FXML
-	private TextField bundlePartNameField;
+    @FXML
+    private TextField usernameTextField;
 
-	@FXML
-	private TextField bundlePartNumberField;
+    @FXML
+    private TextField bundlePartNameField;
 
-	@FXML
-	private TextField bundleCommissionField;
+    @FXML
+    private TextField bundlePartNumberField;
 
-	@FXML
-	private Button bundleSubmitButton;
+    @FXML
+    private TextField bundleCommissionField;
 
-	@FXML
-	private TextField databaseDirectoryPath;
+    @FXML
+    private Button bundleSubmitButton;
 
-	@FXML
-	private TextField invoicePartNumberField;
+    @FXML
+    private TextField databaseDirectoryPath;
 
-	@FXML
-	private TextField invoicePartQuantityField;
+    @FXML
+    private TextField invoicePartNumberField;
 
-	@FXML
-	private Button addToInvoiceButton;
+    @FXML
+    private TextField invoicePartQuantityField;
 
-	@FXML
-	private Button removeFromInvoiceButton;
+    @FXML
+    private Button addToInvoiceButton;
 
-	@FXML
-	private Button finishInvoiceButton;
+    @FXML
+    private Button removeFromInvoiceButton;
 
-	@FXML
-	private TextArea invoiceTextArea;
+    @FXML
+    private Button finishInvoiceButton;
 
-	@FXML
-	private ChoiceBox<?> bundlePartChoiceBox;
+    @FXML
+    private TextArea invoiceTextArea;
 
-	@FXML
-	private ChoiceBox<?> itemsChoiceBox;
+    @FXML
+    private ChoiceBox<String> bundlePartChoiceBox;
 
-	@FXML
-	private TextField itemWarehouseField;
+    @FXML
+    private ChoiceBox<String> itemsChoiceBox;
 
-	@FXML
-	private TextField itemsPartNumberField;
+    @FXML
+    private TextField itemWarehouseField;
 
-	@FXML
-	private TextField itemsMoveFileField;
+    @FXML
+    private TextField itemsPartNumberField;
 
-	@FXML
-	private Button itemsExecuteButton;
+    @FXML
+    private TextField itemsMoveFileField;
 
-	@FXML
-	private TextField warehouseNameField;
+    @FXML
+    private Button itemsExecuteButton;
 
-	@FXML
-	private CheckBox vanCheckBox;
+    @FXML
+    private TextField warehouseNameField;
 
-	@FXML
-	private Button createWarehouseButton;
+    @FXML
+    private CheckBox vanCheckBox;
 
-	@FXML
-	private TextArea consoleTextArea;
+    @FXML
+    private ChoiceBox<String> warehouseActionChoiceBox;
 
-	@FXML
-	void initialize() {
-		assert accountListingTreeView != null : "fx:id=\"accountListingTreeView\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert usernameTextField != null : "fx:id=\"usernameTextField\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert bundlePartNameField != null : "fx:id=\"bundlePartNameField\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert bundlePartNumberField != null : "fx:id=\"bundlePartNumberField\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert bundleCommissionField != null : "fx:id=\"bundleCommissionField\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert databaseDirectoryPath != null : "fx:id=\"databaseDirectoryPath\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert invoicePartNumberField != null : "fx:id=\"invoicePartNumberField\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert invoicePartQuantityField != null : "fx:id=\"invoicePartQuantityField\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert invoiceTextArea != null : "fx:id=\"invoiceTextArea\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert itemWarehouseField != null : "fx:id=\"itemWarehouseField\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert itemsPartNumberField != null : "fx:id=\"itemsPartNumberField\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert itemsMoveFileField != null : "fx:id=\"itemsMoveFileField\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert warehouseNameField != null : "fx:id=\"warehouseNameField\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert consoleTextArea != null : "fx:id=\"consoleTextArea\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert bundlePartChoiceBox != null : "fx:id=\"bundlePartChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert vanCheckBox != null : "fx:id=\"vanCheckBox\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert addDeleteChoiceBox != null : "fx:id=\"addDeleteChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert typeChoiceBox != null : "fx:id=\"typeChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert itemsChoiceBox != null : "fx:id=\"itemsChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert accountsSubmitButton != null : "fx:id=\"accountsSubmitButton\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert createWarehouseButton != null : "fx:id=\"crreateWarehouseButton\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert itemsExecuteButton != null : "fx:id=\"itemsExecuteButton\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert finishInvoiceButton != null : "fx:id=\"finishInvoiceButton\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert addToInvoiceButton != null : "fx:id=\"addToInvoiceButton\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert removeFromInvoiceButton != null : "fx:id=\"removeFromInvoiceButton\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert bundleSubmitButton != null : "fx:id=\"bundleSubmitButton\" was not injected: check your FXML file 'mainui.fxml'.";
-	}
+    @FXML
+    private Button createWarehouseButton;
 
-	@FXML
-	public void login(){
+    @FXML
+    private TextArea consoleTextArea;
 
-	}
+    @FXML
+    void initialize() {
+        assert accountListingTreeView != null : "fx:id=\"accountListingTreeView\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert usernameTextField != null : "fx:id=\"usernameTextField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert bundlePartNameField != null : "fx:id=\"bundlePartNameField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert bundlePartNumberField != null : "fx:id=\"bundlePartNumberField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert bundleCommissionField != null : "fx:id=\"bundleCommissionField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert databaseDirectoryPath != null : "fx:id=\"databaseDirectoryPath\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert invoicePartNumberField != null : "fx:id=\"invoicePartNumberField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert invoicePartQuantityField != null : "fx:id=\"invoicePartQuantityField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert invoiceTextArea != null : "fx:id=\"invoiceTextArea\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert itemWarehouseField != null : "fx:id=\"itemWarehouseField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert itemsPartNumberField != null : "fx:id=\"itemsPartNumberField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert itemsMoveFileField != null : "fx:id=\"itemsMoveFileField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert warehouseNameField != null : "fx:id=\"warehouseNameField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert consoleTextArea != null : "fx:id=\"consoleTextArea\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert bundlePartChoiceBox != null : "fx:id=\"bundlePartChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert vanCheckBox != null : "fx:id=\"vanCheckBox\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert addDeleteChoiceBox != null : "fx:id=\"addDeleteChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert typeChoiceBox != null : "fx:id=\"typeChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert warehouseActionChoiceBox != null : "fx:id=\"warehouseActionChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert itemsChoiceBox != null : "fx:id=\"itemsChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert accountsSubmitButton != null : "fx:id=\"accountsSubmitButton\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert createWarehouseButton != null : "fx:id=\"crreateWarehouseButton\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert itemsExecuteButton != null : "fx:id=\"itemsExecuteButton\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert finishInvoiceButton != null : "fx:id=\"finishInvoiceButton\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert addToInvoiceButton != null : "fx:id=\"addToInvoiceButton\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert removeFromInvoiceButton != null : "fx:id=\"removeFromInvoiceButton\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert bundleSubmitButton != null : "fx:id=\"bundleSubmitButton\" was not injected: check your FXML file 'mainui.fxml'.";
+        bundlePartChoiceBox.setItems(FXCollections.observableArrayList("Add Bundle", "Add Part"));
+        addDeleteChoiceBox.setItems(FXCollections.observableArrayList("Add New Account", "Delete Existing Account"));
+        typeChoiceBox.setItems(FXCollections.observableArrayList("System Admin", "Office Manager", "Warehouse Manager", "Employee"));
+        itemsChoiceBox.setItems(FXCollections.observableArrayList("Order Part","Move Part","Display Part","Sell Part","Sort Parts By Name","Sort Parts By Number"));
+        warehouseActionChoiceBox.setItems(FXCollections.observableArrayList("Create New Warehouse/Van","Rename Existing Warehouse/Van"));
+    }
 
-	@FXML
-	public void doCommission(){
+    @FXML
+    public void login() {
 
-	}
+    }
 
-	@FXML
-	public void doSaveDatabase(){
+    @FXML
+    public void doCommission() {
 
-	}
+    }
 
-	@FXML
-	public void doLoadDatabase(){
+    @FXML
+    public void doSaveDatabase() {
 
-	}
+    }
 
-	@FXML
-	public void doAddToInvoice(){
+    @FXML
+    public void doLoadDatabase() {
 
-	}
+    }
 
-	@FXML
-	public void doRemoveFromInvoice(){
+    @FXML
+    public void doAddToInvoice() {
 
-	}
+    }
 
-	@FXML
-	public void doFinishInvoice(){
+    @FXML
+    public void doRemoveFromInvoice() {
 
-	}
+    }
 
-	@FXML
-	public void doItemExecute(){
+    @FXML
+    public void doFinishInvoice() {
 
-	}
+    }
 
-	@FXML
-	public void doCreateVan(){
+    @FXML
+    public void doItemExecute() {
 
-	}
+    }
 
-	@FXML
-	public void doCreateWarehouse(){
+    @FXML
+    public void doCreateVan() {
 
-	}
+    }
 
-	@FXML
-	public void doChangeWarehouseName(){
+    @FXML
+    public void doCreateWarehouse() {
 
-	}
+    }
 
-	@FXML
-	public void doChangeVanName(){
+    @FXML
+    public void doChangeWarehouseName() {
 
-	}
+    }
 
-	@FXML
-	public void doAccountAction(){
+    @FXML
+    public void doChangeVanName() {
 
-	}
+    }
+
+    @FXML
+    public void doAccountAction() {
+
+    }
 
 }
 

@@ -55,7 +55,7 @@
                            <children>
                               <ChoiceBox fx:id="addDeleteChoiceBox" layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
                               <ChoiceBox fx:id="typeChoiceBox" layoutX="14.0" layoutY="47.0" prefWidth="150.0" />
-                              <Button fx:id="accountsSubmitButton" layoutX="481.0" layoutY="23.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="105.0" text="Submit" />
+                              <Button fx:id="accountsSubmitButton" layoutX="481.0" layoutY="23.0" mnemonicParsing="false" onAction="#login" prefHeight="33.0" prefWidth="105.0" text="Submit" />
                               <TreeView fx:id="accountListingTreeView" layoutX="14.0" layoutY="95.0" prefHeight="254.0" prefWidth="572.0" />
                               <TextField fx:id="usernameTextField" layoutX="168.0" layoutY="14.0" prefHeight="25.0" prefWidth="283.0" promptText="Enter username here" />
                               <TextField layoutX="168.0" layoutY="47.0" prefHeight="25.0" prefWidth="284.0" promptText="Enter password here" />
@@ -116,8 +116,8 @@
                            <children>
                               <TextField fx:id="warehouseNameField" layoutX="14.0" layoutY="63.0" prefHeight="25.0" prefWidth="216.0" promptText="Enter name here" />
                               <CheckBox fx:id="vanCheckBox" layoutX="247.0" layoutY="67.0" mnemonicParsing="false" text="Is this a van?" />
-                              <Button fx:id="crreateWarehouseButton" layoutX="379.0" layoutY="63.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Create" />
-                              <ChoiceBox layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
+                              <Button fx:id="createWarehouseButton" layoutX="379.0" layoutY="63.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Create" />
+                              <ChoiceBox fx:id="warehouseActionChoiceBox" layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
                               <TextField layoutX="15.0" layoutY="114.0" prefHeight="25.0" prefWidth="215.0" promptText="Enter new name here" />
                               <Button layoutX="345.0" layoutY="114.0" mnemonicParsing="false" text="Change warehouse name" />
                            </children></AnchorPane>
