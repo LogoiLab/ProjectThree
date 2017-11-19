@@ -56,8 +56,8 @@ class BikePart extends Item {
         this.quantity = quantity;
     }
 
-    public Double getPrice(BikePart p){
-        if(p.onSale){
+    public Double getPrice(){
+        if(this.onSale){
             return salePrice;
         }else
             return listPrice;
