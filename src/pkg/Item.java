@@ -28,4 +28,8 @@ class Item {
         this.itemName = name;
         this.itemNumber = num;
     }
+
+    public String toString(){
+        return null;
+    }
 }
