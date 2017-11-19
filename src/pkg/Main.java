@@ -8,7 +8,6 @@ import java.io.File;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -26,14 +25,6 @@ public class Main extends Application {
         DatabaseHandler.saveDatabase();
       }
     });
-  }
-
-  public static void setSelectedFile(File file) {
-    selectedFile = file;
-  }
-
-  public static File getSelectedFile() {
-    return selectedFile;
   }
 
   public static void main(String[] args) {
