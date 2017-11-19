@@ -1,5 +1,7 @@
 package pkg;
 
+import java.util.ArrayList;
+
 public class InvoiceFactory {
   private static final InvoiceFactory instance = new InvoiceFactory();
 
@@ -11,7 +13,9 @@ public class InvoiceFactory {
     return instance;
   }
 
-  public SalesInvoice createInvoice(ArrayList<String> invoiceParts) {
-    return new SalesInvoice()
+  public SalesInvoice createInvoice(Account account, String customer, ArrayList<String> invoiceParts) {
+    ArrayList<Item> currList = new ArrayList<Item>();
+    currList.add(new Item(WarehouseFactory.getInstance().getWarehouse("MainWarehouse")))
+    return new SalesInvoice(account, customer, new ItemList(currList));
   }
 }
