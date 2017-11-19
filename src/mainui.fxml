@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.162-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane disable="true" prefHeight="400.0" prefWidth="600.0" visible="false">
          <children>
@@ -101,11 +101,11 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <ChoiceBox fx:id="itemsChoiceBox" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="178.0" />
-                              <TextField fx:id="itemWarehouseField" layoutX="14.0" layoutY="52.0" prefHeight="25.0" prefWidth="335.0" promptText="Enter warehouse name here" />
-                              <TextField fx:id="itemsPartNumberField" layoutX="14.0" layoutY="85.0" prefHeight="25.0" prefWidth="335.0" promptText="Enter part number here" />
-                              <TextField fx:id="itemsMoveFileField" layoutX="14.0" layoutY="120.0" prefHeight="25.0" prefWidth="335.0" promptText="Enter move file here" />
-                              <Button fx:id="itemsExecuteButton" layoutX="14.0" layoutY="161.0" mnemonicParsing="false" text="Execute Command" />
+                              <ChoiceBox fx:id="itemsChoiceBox" layoutX="14.0" layoutY="14.0" prefHeight="28.0" prefWidth="180.0" />
+                              <TextField fx:id="itemWarehouseField" layoutX="201.0" layoutY="14.0" prefHeight="28.0" prefWidth="385.0" promptText="Enter warehouse name here" />
+                              <TextField fx:id="itemsPartNumberField" layoutX="201.0" layoutY="49.0" prefHeight="28.0" prefWidth="385.0" promptText="Enter part number here" />
+                              <TextField fx:id="itemsMoveFileField" layoutX="201.0" layoutY="85.0" prefHeight="28.0" prefWidth="385.0" promptText="Enter move file here" />
+                              <Button fx:id="itemsExecuteButton" layoutX="14.0" layoutY="85.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="180.0" text="Execute Command" />
                            </children></AnchorPane>
                   </content>
                 </Tab>
