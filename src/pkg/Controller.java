@@ -91,7 +91,7 @@ public class Controller {
 	private CheckBox vanCheckBox;
 
 	@FXML
-	private Button crreateWarehouseButton;
+	private Button createWarehouseButton;
 
 	@FXML
 	private TextArea consoleTextArea;
@@ -122,9 +122,8 @@ public class Controller {
 		assert itemsExecuteButton != null : "fx:id=\"itemsExecuteButton\" was not injected: check your FXML file 'mainui.fxml'.";
 		assert warehouseNameField != null : "fx:id=\"warehouseNameField\" was not injected: check your FXML file 'mainui.fxml'.";
 		assert vanCheckBox != null : "fx:id=\"vanCheckBox\" was not injected: check your FXML file 'mainui.fxml'.";
-		assert crreateWarehouseButton != null : "fx:id=\"crreateWarehouseButton\" was not injected: check your FXML file 'mainui.fxml'.";
+		assert createWarehouseButton != null : "fx:id=\"crreateWarehouseButton\" was not injected: check your FXML file 'mainui.fxml'.";
 		assert consoleTextArea != null : "fx:id=\"consoleTextArea\" was not injected: check your FXML file 'mainui.fxml'.";
-
 	}
 }
 
