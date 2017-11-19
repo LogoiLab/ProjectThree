@@ -1,6 +1,6 @@
 package pkg;
 
-class WarehouseList extends WarehouseFactory {
+class WarehouseList {
 
   public WarehouseList() {
 

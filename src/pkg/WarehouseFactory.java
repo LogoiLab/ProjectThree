@@ -2,6 +2,7 @@ package pkg;
 
 public class WarehouseFactory{
   private static final WarehouseFactory instance = new WarehouseFactory();
+  private WarehouseList warehouseList;
 
   //private constructor to avoid client applications to use constructor
   private WarehouseFactory(){}
