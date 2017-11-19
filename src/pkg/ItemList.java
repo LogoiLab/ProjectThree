@@ -5,13 +5,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 
-class BikePartList {
+class ItemList {
     private ArrayList<BikePart> currentList;
     private ArrayList<BikePart> list;
     private HashMap<String, BikePart> byName = new HashMap<>();
     private HashMap<Long, BikePart> byNumber = new HashMap<>();
 
-    public BikePartList(ArrayList<BikePart> list) {
+    public ItemList(ArrayList<BikePart> list) {
         this.list = list;
         createHashByName();
         createHashByNumber();
@@ -41,6 +41,7 @@ class BikePartList {
             byNumber.put(i.getPartNumber(), i);
         }
         currentList.equals(list);
+
     }
 
     public BikePart getByNumber(long num){

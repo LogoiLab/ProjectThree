@@ -79,7 +79,7 @@ class BikePart extends Item {
 
     public void toString(BikePart p){
         String s=(p.getPartName()+p.getPartNumber())+p.getListPrice()+p.getSalePrice()+p.isOnSale()+p.getQuantity();
-        OutputBuffer.getInstance().add(s)
+        OutputBuffer.getInstance().add(s);
     }
 
 }
