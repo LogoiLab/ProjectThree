@@ -1,4 +1,5 @@
 package pkg;
+import java.util.*;
 
 class BikePart extends Item {
     private String partName;
@@ -77,9 +78,17 @@ class BikePart extends Item {
         this.quantity = quant;
     }
 
-    public void toString(BikePart p){
-        String s=(p.getPartName()+p.getPartNumber())+p.getListPrice()+p.getSalePrice()+p.isOnSale()+p.getQuantity();
-        OutputBuffer.getInstance().add(s);
+    public static void printMePlz(ArrayList<BikePart> list){
+        String s="";
+        for(int i=0;i<list.size();i++) {
+            BikePart p=list.get(i);
+            if(i==list.size()){
+                s = s + (p.getPartName() + p.getPartNumber()) + p.getListPrice() + p.getSalePrice() + p.isOnSale() + p.getQuantity();
+            }else {
+                s = s + (p.getPartName() + p.getPartNumber()) + p.getListPrice() + p.getSalePrice() + p.isOnSale() + p.getQuantity() + "\n";
+                OutputBuffer.getInstance().add(s);
+            }
+        }
     }
 
 }

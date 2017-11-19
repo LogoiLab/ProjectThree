@@ -26,6 +26,7 @@ class ItemList {
             byName.put(i.getPartName(), i);
         }
         currentList.equals(list);
+        BikePart.printMePlz(currentList);
     }
 
     public BikePart getPartByNumber(Long num){
@@ -41,7 +42,7 @@ class ItemList {
             byNumber.put(i.getPartNumber(), i);
         }
         currentList.equals(list);
-
+        BikePart.printMePlz(currentList);
     }
 
     public BikePart getByNumber(long num){
