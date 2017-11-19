@@ -3,17 +3,8 @@ package pkg;
 import java.util.ArrayList;
 
 public class Warehouse {
-    private long id;
     private String name;
     private ArrayList<ItemList> partList;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
