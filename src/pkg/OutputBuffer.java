@@ -20,7 +20,7 @@ public class OutputBuffer {
         }
     }
 
-    public static String getOutput() {
+    public static String get() {
         String out = output;
         output = "";
         return out;

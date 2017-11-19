@@ -14,6 +14,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.PasswordField;
+import javafx.scene.layout.Pane;
 
 public class Controller {
 
@@ -21,6 +22,11 @@ public class Controller {
 
     private Account currentAccount = new Nobody();
 
+    @FXML
+    private Pane mainPane;
+
+    @FXML
+    private Pane loginPane;
 
     @FXML
     private ResourceBundle resources;
@@ -147,12 +153,18 @@ public class Controller {
         assert warehouseActionChoiceBox != null : "fx:id=\"warehouseActionChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
         assert itemsChoiceBox != null : "fx:id=\"itemsChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
         assert accountsSubmitButton != null : "fx:id=\"accountsSubmitButton\" was not injected: check your FXML file 'mainui.fxml'.";
-        assert createWarehouseButton != null : "fx:id=\"crreateWarehouseButton\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert createWarehouseButton != null : "fx:id=\"createWarehouseButton\" was not injected: check your FXML file 'mainui.fxml'.";
         assert itemsExecuteButton != null : "fx:id=\"itemsExecuteButton\" was not injected: check your FXML file 'mainui.fxml'.";
         assert finishInvoiceButton != null : "fx:id=\"finishInvoiceButton\" was not injected: check your FXML file 'mainui.fxml'.";
         assert addToInvoiceButton != null : "fx:id=\"addToInvoiceButton\" was not injected: check your FXML file 'mainui.fxml'.";
         assert removeFromInvoiceButton != null : "fx:id=\"removeFromInvoiceButton\" was not injected: check your FXML file 'mainui.fxml'.";
         assert bundleSubmitButton != null : "fx:id=\"bundleSubmitButton\" was not injected: check your FXML file 'mainui.fxml'.";
+        mainPane.setVisible(false);
+        mainPane.setDisable(true);
+        mainPane.toBack();
+        loginPane.setVisible(true);
+        loginPane.setDisable(false);
+        loginPane.toFront();
         bundlePartChoiceBox.setItems(FXCollections.observableArrayList("Add Bundle", "Add Part"));
         addDeleteChoiceBox.setItems(FXCollections.observableArrayList("Add New Account", "Delete Existing Account"));
         typeChoiceBox.setItems(FXCollections.observableArrayList("System Admin", "Office Manager", "Warehouse Manager", "Employee"));
@@ -160,7 +172,6 @@ public class Controller {
         warehouseActionChoiceBox.setItems(FXCollections.observableArrayList("Create New Warehouse/Van", "Rename Existing Warehouse/Van"));
         databaseDirectoryPath.setText(DatabaseHandler.getPath());
         clean();
-
     }
 
     private void clean() {
@@ -175,6 +186,7 @@ public class Controller {
         itemWarehouseField.setText(itemWarehouseField.getText().trim());
         warehouseNameField.setText(warehouseNameField.getText().trim());
         warehouseNewNameField.setText(warehouseNewNameField.getText().trim());
+        consoleTextArea.appendText(OutputBuffer.getInstance().get());
     }
 
     @FXML
@@ -182,8 +194,20 @@ public class Controller {
         clean();
         if (LoginHandler.getInstance().doLogin(usernameTextField.getText(), passwordField.getText())) {
             this.currentAccount = LoginHandler.getInstance().getAccount(usernameTextField.getText());
+            loginPane.setVisible(false);
+            loginPane.setDisable(true);
+            loginPane.toBack();
+            mainPane.setVisible(true);
+            mainPane.setDisable(false);
+            mainPane.toFront();
         } else {
-            this.currentAccount = new Nobody();
+          mainPane.setVisible(false);
+          mainPane.setDisable(true);
+          mainPane.toBack();
+          loginPane.setVisible(true);
+          loginPane.setDisable(false);
+          loginPane.toFront();
+          this.currentAccount = new Nobody();
         }
     }
 
