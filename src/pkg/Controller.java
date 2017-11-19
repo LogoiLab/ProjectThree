@@ -163,6 +163,7 @@ public class Controller {
 
     @FXML
     public void doCommission() {
+        Double com=Double.parseDouble(bundleCommissionField.getText());
 
     }
 
