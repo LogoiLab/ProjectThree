@@ -1,10 +1,12 @@
 package pkg;
 
 public abstract class Account {
-  private static int PERM_LEVEL;
-  private static String userName;
-  private static byte[] passHash;
-  private static byte[] passSalt;
+  protected static int PERM_LEVEL;
+  public static String userName;
+  protected static byte[] passHash;
+  protected static byte[] passSalt;
+
+  public Account() {}
 
   public Account(String userName, String password) {
     this.userName = userName;

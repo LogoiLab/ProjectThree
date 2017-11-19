@@ -1,13 +1,14 @@
 package pkg;
 
-public class OutputBuffer{
+public class OutputBuffer {
   private static final OutputBuffer instance = new OutputBuffer();
   private static String output = "";
 
   //private constructor to avoid client applications to use constructor
-  private OutputBuffer(){}
+  private OutputBuffer() {
+  }
 
-  public static synchronized OutputBuffer getInstance(){
+  public static synchronized OutputBuffer getInstance() {
     return instance;
   }
 
