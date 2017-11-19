@@ -29,7 +29,7 @@ class Item {
         this.itemNumber = num;
     }
 
-    public String toString(){
+    public String toString() {
         return null;
     }
 }

@@ -29,8 +29,8 @@ class ItemList {
         BikePart.printMePlz(currentList);
     }
 
-    public BikePart getPartByNumber(Long num){
-         return byNumber.get(num);
+    public BikePart getPartByNumber(Long num) {
+        return byNumber.get(num);
     }
 
     private void createHashByNumber() {
@@ -45,19 +45,19 @@ class ItemList {
         BikePart.printMePlz(currentList);
     }
 
-    public BikePart getByNumber(long num){
+    public BikePart getByNumber(long num) {
         return byNumber.get(num);
     }
 
-    public BikePart getByName(String name){
+    public BikePart getByName(String name) {
         return byName.get(name);
     }
 
-    public ArrayList<BikePart> sortByName(){
+    public ArrayList<BikePart> sortByName() {
         return new ArrayList<BikePart>(byName.values());
     }
 
-    public ArrayList<BikePart> sortByNumber(){
+    public ArrayList<BikePart> sortByNumber() {
         return new ArrayList<BikePart>(byNumber.values());
     }
 
@@ -73,13 +73,13 @@ class ItemList {
         this.currentList = currentList;
     }
 
-    public void addPart(BikePart p){
-        byNumber.put(p.getPartNumber(),p);
-        byName.put(p.getPartName(),p);
+    public void addPart(BikePart p) {
+        byNumber.put(p.getPartNumber(), p);
+        byName.put(p.getPartName(), p);
         currentList.add(p);
     }
 
-    public void removePart(BikePart p){
+    public void removePart(BikePart p) {
         byName.remove(p);
         byNumber.remove(p);
         currentList.remove(p);

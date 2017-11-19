@@ -1,4 +1,5 @@
 package pkg;
+
 import java.util.*;
 
 class BikePart extends Item {
@@ -37,7 +38,7 @@ class BikePart extends Item {
         return salePrice;
     }
 
-    public BikePart getSelf(){
+    public BikePart getSelf() {
         return this;
     }
 
@@ -61,10 +62,10 @@ class BikePart extends Item {
         this.quantity = quantity;
     }
 
-    public Double getPrice(){
-        if(this.onSale){
+    public Double getPrice() {
+        if (this.onSale) {
             return salePrice;
-        }else
+        } else
             return listPrice;
     }
 
@@ -79,56 +80,56 @@ class BikePart extends Item {
     }
 
     @Override
-    public String toString(){
-        return (this.partName+","+this.partNumber+","+this.listPrice+","+this.salePrice+","+this.isOnSale()+","+this.quantity);
+    public String toString() {
+        return (this.partName + "," + this.partNumber + "," + this.listPrice + "," + this.salePrice + "," + this.isOnSale() + "," + this.quantity);
     }
 
-    public static void printMePlz(ArrayList<BikePart> list){
-        String s="";
-        for(int i=0;i<list.size();i++) {
-            BikePart p=list.get(i);
-            if(i==list.size()){
+    public static void printMePlz(ArrayList<BikePart> list) {
+        String s = "";
+        for (int i = 0; i < list.size(); i++) {
+            BikePart p = list.get(i);
+            if (i == list.size()) {
                 s = s + (p.getPartName() + p.getPartNumber()) + p.getListPrice() + p.getSalePrice() + p.isOnSale() + p.getQuantity();
-            }else {
+            } else {
                 s = s + (p.getPartName() + p.getPartNumber()) + p.getListPrice() + p.getSalePrice() + p.isOnSale() + p.getQuantity() + "\n";
                 OutputBuffer.getInstance().add(s);
             }
         }
     }
 
-    public boolean increment(){
-        int temp=this.getQuantity();
-        if(temp++>Integer.MAX_VALUE){
+    public boolean increment() {
+        int temp = this.getQuantity();
+        if (temp++ > Integer.MAX_VALUE) {
             return false;
-        }else
-        this.quantity++;
+        } else
+            this.quantity++;
         return true;
     }
 
-    public boolean decrement(){
-        int temp=this.getQuantity();
-        if(temp-->0) {
+    public boolean decrement() {
+        int temp = this.getQuantity();
+        if (temp-- > 0) {
             this.quantity--;
             return true;
-        }else
+        } else
             return false;
     }
 
-    public boolean increment(int num){
-        int temp=this.getQuantity();
-        if(temp+num>Integer.MAX_VALUE){
+    public boolean increment(int num) {
+        int temp = this.getQuantity();
+        if (temp + num > Integer.MAX_VALUE) {
             return false;
-        }else
-        this.setQuantity(this.quantity+num);
+        } else
+            this.setQuantity(this.quantity + num);
         return true;
     }
 
-    public boolean decrement(int num){
-        int temp=this.quantity;
-        if(temp-num>0){
-            this.setQuantity(this.getQuantity()-num);
+    public boolean decrement(int num) {
+        int temp = this.quantity;
+        if (temp - num > 0) {
+            this.setQuantity(this.getQuantity() - num);
             return true;
-        }else
+        } else
             return false;
     }
 
