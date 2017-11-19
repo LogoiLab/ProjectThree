@@ -112,7 +112,7 @@
             </TabPane>
          </children>
       </Pane>
-      <Pane fx:id="loginPane" disable="true" prefHeight="400.0" prefWidth="600.0" visible="false">
+      <Pane fx:id="loginPane" prefHeight="400.0" prefWidth="600.0">
          <children>
             <GridPane prefHeight="400.0" prefWidth="600.0">
               <columnConstraints>
