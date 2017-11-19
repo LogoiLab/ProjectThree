@@ -15,7 +15,7 @@ public class WarehouseFactory {
   public Warehouse getWarehouse(String name) {
     return warehouseList.getWarehouse(name);
   }
-  
+
   public void createWarehouse(String name, boolean isVan, ItemList list) {
     if(isVan) {
       warehouseList.addWarehouse(new Van(name, list));

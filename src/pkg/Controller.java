@@ -65,6 +65,9 @@ public class Controller {
     private TextField invoicePartNumberField;
 
     @FXML
+    private TextField invoiceWarehouseField;
+
+    @FXML
     private TextField invoicePartQuantityField;
 
     @FXML
@@ -129,6 +132,7 @@ public class Controller {
         assert invoicePartNumberField != null : "fx:id=\"invoicePartNumberField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert invoicePartQuantityField != null : "fx:id=\"invoicePartQuantityField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert invoiceTextArea != null : "fx:id=\"invoiceTextArea\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert invoiceWarehouseField != null : "fx:id=\"invoiceWarehouseField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert itemWarehouseField != null : "fx:id=\"itemWarehouseField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert itemsPartNumberField != null : "fx:id=\"itemsPartNumberField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert itemsMoveFileField != null : "fx:id=\"itemsMoveFileField\" was not injected: check your FXML file 'mainui.fxml'.";
@@ -165,6 +169,7 @@ public class Controller {
         bundlePartNumberField.setText(bundlePartNumberField.getText().trim());
         invoicePartNumberField.setText(invoicePartNumberField.getText().trim());
         invoicePartQuantityField.setText(invoicePartQuantityField.getText().trim());
+        invoiceWarehouseField.setText(invoiceWarehouseField.getText().trim());
         itemsMoveFileField.setText(itemsMoveFileField.getText().trim());
         itemsPartNumberField.setText(itemsPartNumberField.getText().trim());
         itemWarehouseField.setText(itemWarehouseField.getText().trim());
@@ -215,9 +220,7 @@ public class Controller {
     @FXML
     public void doFinishInvoice() {
         clean();
-        for (String i : invoiceParts) {
-
-        }
+        WarehouseFactory.getInstance().getWarehouse(invoiceWarehouseField.getText()).getiList();
     }
 
     @FXML
@@ -230,7 +233,6 @@ public class Controller {
 
             case ("Display Part"):
                 OutputBuffer.getInstance().add(WarehouseFactory.getInstance().getWarehouse("MainWarehouse").getiList().getPartByNumber(Long.parseLong(itemsPartNumberField.getText())).toString());
-            case ("Sell Part"):
             case ("Sort Parts By Name"): {
                 ArrayList<BikePart> temp = WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText()).getiList().sortByName();
                 for (BikePart p : temp) {
