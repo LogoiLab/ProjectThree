@@ -96,9 +96,10 @@ public class DatabaseHandler {
                 WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).setQuantity(q+parts.get(i).getQuantity());
             }
         } catch (FileNotFoundException e) {
+            OutputBuffer.getInstance().add("The file "+invUpdate+" could not be found. Please check spelling and try again");
 
         } catch (IOException e) {
-
+            OutputBuffer.getInstance().add("The BufferedReader was unable to attach to the FileReader");
         }
     }
 
