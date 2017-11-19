@@ -10,4 +10,16 @@ public class WarehouseFactory{
   public static WarehouseFactory getInstance(){
     return instance;
   }
+
+  public Warehouse getWarehouse(String name) {
+    return warehouseList.getWarehouse(name);
+  }
+
+  public void addWarehouse(Warehouse wh) {
+    warehouseList.addWarehouse(wh.getName(), wh);
+  }
+
+  public void createWarehouse(String name, ItemList list){
+    warehouseList.addWarehouse(name, new Warehouse(name,list));
+  }
 }
