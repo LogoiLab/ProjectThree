@@ -148,92 +148,99 @@ public class Controller {
         bundlePartChoiceBox.setItems(FXCollections.observableArrayList("Add Bundle", "Add Part"));
         addDeleteChoiceBox.setItems(FXCollections.observableArrayList("Add New Account", "Delete Existing Account"));
         typeChoiceBox.setItems(FXCollections.observableArrayList("System Admin", "Office Manager", "Warehouse Manager", "Employee"));
-        itemsChoiceBox.setItems(FXCollections.observableArrayList("Order Part","Move Part","Display Part","Sell Part","Sort Parts By Name","Sort Parts By Number"));
-        warehouseActionChoiceBox.setItems(FXCollections.observableArrayList("Create New Warehouse/Van","Rename Existing Warehouse/Van"));
+        itemsChoiceBox.setItems(FXCollections.observableArrayList("Order Part", "Move Part", "Display Part", "Sell Part", "Sort Parts By Name", "Sort Parts By Number"));
+        warehouseActionChoiceBox.setItems(FXCollections.observableArrayList("Create New Warehouse/Van", "Rename Existing Warehouse/Van"));
         databaseDirectoryPath.setText(DatabaseHandler.getPath());
         clean();
+
     }
 
     private void clean() {
-      bundleCommissionField.setText(bundleCommissionField.getText().trim());
-      bundlePartNameField.setText(bundlePartNameField.getText().trim());
-      bundlePartNumberField.setText(bundlePartNumberField.getText().trim());
-      invoicePartNumberField.setText(invoicePartNumberField.getText().trim());
-      invoicePartQuantityField.setText(invoicePartQuantityField.getText().trim());
-      itemsMoveFileField.setText(itemsMoveFileField.getText().trim());
-      itemsPartNumberField.setText(itemsPartNumberField.getText().trim());
-      itemWarehouseField.setText(itemWarehouseField.getText().trim());
-      warehouseNameField.setText(warehouseNameField.getText().trim());
-      warehouseNewNameField.setText(warehouseNewNameField.getText().trim());
+        bundleCommissionField.setText(bundleCommissionField.getText().trim());
+        bundlePartNameField.setText(bundlePartNameField.getText().trim());
+        bundlePartNumberField.setText(bundlePartNumberField.getText().trim());
+        invoicePartNumberField.setText(invoicePartNumberField.getText().trim());
+        invoicePartQuantityField.setText(invoicePartQuantityField.getText().trim());
+        itemsMoveFileField.setText(itemsMoveFileField.getText().trim());
+        itemsPartNumberField.setText(itemsPartNumberField.getText().trim());
+        itemWarehouseField.setText(itemWarehouseField.getText().trim());
+        warehouseNameField.setText(warehouseNameField.getText().trim());
+        warehouseNewNameField.setText(warehouseNewNameField.getText().trim());
     }
 
     @FXML
     public void login() {
-      clean();
-      if (LoginHandler.getInstance().doLogin(usernameTextField.getText(), passwordField.getText())) {
-        this.currentAccount = LoginHandler.getInstance().getAccount(usernameTextField.getText());
-      } else {
-        this.currentAccount =  new Nobody();
-      }
+        clean();
+        if (LoginHandler.getInstance().doLogin(usernameTextField.getText(), passwordField.getText())) {
+            this.currentAccount = LoginHandler.getInstance().getAccount(usernameTextField.getText());
+        } else {
+            this.currentAccount = new Nobody();
+        }
     }
 
     @FXML
     public void doCommission() {
-      clean();
-      Double com=Double.parseDouble(bundleCommissionField.getText());
+        clean();
+        Double com = Double.parseDouble(bundleCommissionField.getText());
     }
 
     @FXML
     public void doSaveDatabase() {
-      clean();
-      DatabaseHandler.saveDatabase();
+        clean();
+        DatabaseHandler.saveDatabase();
     }
 
     @FXML
     public void doLoadDatabase() {
-      clean();
-      DatabaseHandler.loadDatabase();
+        clean();
+        DatabaseHandler.loadDatabase();
     }
 
     @FXML
     public void doAddToInvoice() {
-      clean();
-      invoiceParts.add(invoicePartNumberField.getText()+";"+ invoicePartQuantityField.getText());
+        clean();
+        invoiceParts.add(invoicePartNumberField.getText() + ";" + invoicePartQuantityField.getText());
     }
 
     @FXML
     public void doRemoveFromInvoice() {
-      clean();
+        clean();
     }
 
     @FXML
     public void doFinishInvoice() {
-      clean();
-      for(String i : invoiceParts){
+        clean();
+        for (String i : invoiceParts) {
 
         }
     }
 
     @FXML
     public void doItemExecute() {
-      clean();
+        clean();
+        switch (itemsChoiceBox.getValue()) {
+            case ("Order Part") : WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText());
+                
+        }
     }
+
+}
 
     @FXML
     public void doCreateWarehouse() {
-      clean();
-      WarehouseFactory.getInstance().createWarehouse(warehouseNameField.getText(), vanCheckBox.isSelected(), new ItemList(new ArrayList<BikePart>()));
+        clean();
+        WarehouseFactory.getInstance().createWarehouse(warehouseNameField.getText(), vanCheckBox.isSelected(), new ItemList(new ArrayList<BikePart>()));
     }
 
     @FXML
     public void doChangeWarehouseName() {
-      clean();
-      WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).setWhName(warehouseNewNameField.getText());
+        clean();
+        WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).setWhName(warehouseNewNameField.getText());
     }
 
     @FXML
     public void doAccountAction() {
-      clean();
+        clean();
     }
 
 }
