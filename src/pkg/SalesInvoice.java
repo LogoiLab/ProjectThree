@@ -22,15 +22,6 @@ public class SalesInvoice{
     String bundleName;
     int i;
     String Name;
-    Double commission;
-
-    public Double getCommission() {
-        return commission;
-    }
-
-    public void setCommission(Double commission) {
-        this.commission = commission;
-    }
 
     public SalesInvoice(Account seller, String customer, ItemList list){
         if(saleDate == null){
