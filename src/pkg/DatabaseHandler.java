@@ -7,7 +7,7 @@ import com.google.gson.*;
 
 public class DatabaseHandler {
 /*	public static void loadDatabase() {
-		Gson gson = new GsonBuilder().create();
+    Gson gson = new GsonBuilder().create();
 		try {
 			JsonElement jsonList = new JsonParser().parse(new BufferedReader(new FileReader("database.json")).readLine());
 			for (int i = 0; i < jsonList.getAsJsonObject().get("PartList").getAsJsonArray().size(); i++) {

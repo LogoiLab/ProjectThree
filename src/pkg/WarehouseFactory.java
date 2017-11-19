@@ -1,13 +1,14 @@
 package pkg;
 
-public class WarehouseFactory{
+public class WarehouseFactory {
   private static final WarehouseFactory instance = new WarehouseFactory();
   private WarehouseList warehouseList;
 
   //private constructor to avoid client applications to use constructor
-  private WarehouseFactory(){}
+  private WarehouseFactory() {
+  }
 
-  public static synchronized WarehouseFactory getInstance(){
+  public static synchronized WarehouseFactory getInstance() {
     return instance;
   }
 
@@ -19,7 +20,7 @@ public class WarehouseFactory{
     warehouseList.addWarehouse(wh.getName(), wh);
   }
 
-  public void createWarehouse(String name, ItemList list){
-    warehouseList.addWarehouse(name, new Warehouse(name,list));
+  public void createWarehouse(String name, ItemList list) {
+    warehouseList.addWarehouse(name, new Warehouse(name, list));
   }
 }
