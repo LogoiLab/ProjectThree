@@ -28,4 +28,18 @@ public class WarehouseFactory {
     }
 
   }
+
+  public void moveParts(String wh1, String wh2, Long partnum, int quantity) {
+    if(warehouseList.getWarehouse(wh1).getiList().getPartByNumber(partnum).decrement(quantity)) {
+      if(warehouseList.getWarehouse(wh2).getiList().getPartByNumber(partnum).increment(quantity)) {
+        OutputBuffer.getInstance().add("Parts moved successfully.");
+      } else {
+        warehouseList.getWarehouse(wh1).getiList().getPartByNumber(partnum).increment(quantity);
+        OutputBuffer.getInstance().add("Failed to move parts.");
+      }
+    } else {
+      OutputBuffer.getInstance().add("Failed to move parts.");
+    }
+
+  }
 }
