@@ -22,7 +22,7 @@ public class Warehouse {
     }
 
     public Warehouse(){}
-    
+
      public ArrayList<ItemList> getWarehouseList(String warehouseName){
         for(int i=0;i<warehouseList.size();i++){
             if(warehouseName.equals(warehouseList.get(i).getName())){

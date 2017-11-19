@@ -17,6 +17,8 @@ import javafx.scene.control.PasswordField;
 
 public class Controller {
 
+    private ArrayList<String> invoiceParts;
+
     private Account currentAccount = new Nobody();
 
 
@@ -176,7 +178,7 @@ public class Controller {
 
     @FXML
     public void doAddToInvoice() {
-
+        invoiceParts.add(invoicePartNumberField.getText()+";"+ invoicePartQuantityField.getText());
     }
 
     @FXML
@@ -186,7 +188,9 @@ public class Controller {
 
     @FXML
     public void doFinishInvoice() {
+        for(String i : invoiceParts){
 
+        }
     }
 
     @FXML
