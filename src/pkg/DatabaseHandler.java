@@ -6,8 +6,8 @@ import java.lang.reflect.Type;
 import com.google.gson.*;
 
 public class DatabaseHandler {
-/*	public static void loadDatabase() {
-    Gson gson = new GsonBuilder().create();
+  public static void loadDatabase() {
+/*	    Gson gson = new GsonBuilder().create();
 		try {
 			JsonElement jsonList = new JsonParser().parse(new BufferedReader(new FileReader("database.json")).readLine());
 			for (int i = 0; i < jsonList.getAsJsonObject().get("PartList").getAsJsonArray().size(); i++) {
@@ -23,11 +23,11 @@ public class DatabaseHandler {
 			OutputBuffer.getInstance().add("Database loaded.");
 		} catch (Exception e) {
 			OutputBuffer.getInstance().add("Failed to load database.");
-		}
+		} */
 	}
 
-	public static void saveDatabase(PartList partList) {
-		GsonBuilder builder = new GsonBuilder();
+	public static void saveDatabase() {
+/*		GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.create();
 		JsonElement jsonPartList = gson.toJsonTree(partList.getPartListCurr());
 		JsonElement jsonWarehouseList = gson.toJsonTree(WarehouseFactory.getInstance().getWarehouseList());
@@ -40,6 +40,6 @@ public class DatabaseHandler {
 			OutputBuffer.getInstance().add("Saved database.");
 		} catch (Exception e) {
 			OutputBuffer.getInstance().add("Failed to save database.");
-		}
-	}*/
+		}*/
+	}
 }

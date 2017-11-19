@@ -13,8 +13,11 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
+import javafx.scene.control.PasswordField;
 
 public class Controller {
+
+    private Account currentAccount = new Nobody();
 
 
     @FXML
@@ -37,6 +40,9 @@ public class Controller {
 
     @FXML
     private TextField usernameTextField;
+
+    @FXML
+    private PasswordField passwordField;
 
     @FXML
     private TextField bundlePartNameField;
@@ -146,7 +152,11 @@ public class Controller {
 
     @FXML
     public void login() {
-
+      if (LoginHandler.getInstance().doLogin(usernameTextField.getText(), passwordField.getText())) {
+        this.currentAccount = LoginHandler.getInstance().getAccount(usernameTextField.getText());
+      } else {
+        this.currentAccount =  new Nobody();
+      }
     }
 
     @FXML
@@ -156,12 +166,12 @@ public class Controller {
 
     @FXML
     public void doSaveDatabase() {
-
+      DatabaseHandler.saveDatabase();
     }
 
     @FXML
     public void doLoadDatabase() {
-
+      DatabaseHandler.loadDatabase();
     }
 
     @FXML
@@ -181,11 +191,6 @@ public class Controller {
 
     @FXML
     public void doItemExecute() {
-
-    }
-
-    @FXML
-    public void doCreateVan() {
 
     }
 

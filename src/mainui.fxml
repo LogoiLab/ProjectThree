@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.162-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <Pane disable="true" prefHeight="400.0" prefWidth="600.0" visible="false">
          <children>
@@ -37,7 +37,7 @@
                      <children>
                         <Label text="Please log in:" />
                         <TextField prefHeight="28.0" prefWidth="216.0" promptText="Username" />
-                        <PasswordField promptText="Password" />
+                        <PasswordField fx:id="passwordField" promptText="Password" />
                         <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="201.0" text="Login" />
                      </children>
                   </VBox>
@@ -118,7 +118,7 @@
                               <CheckBox fx:id="vanCheckBox" layoutX="247.0" layoutY="67.0" mnemonicParsing="false" text="Is this a van?" />
                               <Button fx:id="createWarehouseButton" layoutX="379.0" layoutY="63.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Create" />
                               <ChoiceBox fx:id="warehouseActionChoiceBox" layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
-                              <TextField layoutX="15.0" layoutY="114.0" prefHeight="25.0" prefWidth="215.0" promptText="Enter new name here" />
+                              <TextField fx:id="warehouseNewNameField" layoutX="15.0" layoutY="114.0" prefHeight="25.0" prefWidth="215.0" promptText="Enter new name here" />
                               <Button layoutX="345.0" layoutY="114.0" mnemonicParsing="false" text="Change warehouse name" />
                            </children></AnchorPane>
                      </content>
