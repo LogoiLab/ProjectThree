@@ -22,8 +22,17 @@ public class SalesInvoice{
     String bundleName;
     int i;
     String Name;
-    
-    public SalesInvoice(Date saleDate, String customer){
+    Double commission;
+
+    public Double getCommission() {
+        return commission;
+    }
+
+    public void setCommission(Double commission) {
+        this.commission = commission;
+    }
+
+    public SalesInvoice(Account seller, String customer, ItemList list){
         if(saleDate == null){
             this.saleDate = new Date();
         }else{
