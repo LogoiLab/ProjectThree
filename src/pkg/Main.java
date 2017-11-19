@@ -1,9 +1,42 @@
 package pkg;
 
-class Main {
+import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 
-	public Main() {
+import java.io.File;
 
-	}
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
+public class Main extends Application {
+  private static File selectedFile;
+
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    Parent root = FXMLLoader.load(getClass().getResource("ui.fxml"));
+    primaryStage.setTitle("");
+    primaryStage.setScene(new Scene(root));
+    primaryStage.show();
+    primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+      public void handle(WindowEvent we) {
+        DatabaseHandler.saveDatabase();
+      }
+    });
+  }
+
+  public static void setSelectedFile(File file) {
+    selectedFile = file;
+  }
+
+  public static File getSelectedFile() {
+    return selectedFile;
+  }
+
+  public static void main(String[] args) {
+    launch(args);
+  }
 }
