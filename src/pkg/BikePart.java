@@ -36,6 +36,10 @@ class BikePart extends Item {
         return salePrice;
     }
 
+    public BikePart getSelf(){
+        return this;
+    }
+
     public void setSalePrice(Double salePrice) {
         this.salePrice = salePrice;
     }
