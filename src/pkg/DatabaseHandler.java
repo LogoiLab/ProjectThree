@@ -6,12 +6,14 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.google.gson.*;
 
 public class DatabaseHandler {
 
     private static final String path = "";
+    private static String invUpdate = "";
 
     public static void loadDatabase() {
 /*	    Gson gson = new GsonBuilder().create();
@@ -62,6 +64,43 @@ public class DatabaseHandler {
         return path;
     }
 
+
+    public static void updateInventory() {
+        String dest = "";
+        File file = new File(invUpdate);
+        ArrayList<BikePart> parts = new ArrayList<>();
+        try {
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            String line = br.readLine();
+            if (WarehouseFactory.getInstance().getWarehouse(line.split(",")[0]) != null)
+                dest.equals(WarehouseFactory.getInstance().getWarehouse(line.split(",")[0]));
+            else
+                OutputBuffer.getInstance().add("the Warehouse " + line.split(",")[0] + " does not exist. Please add it and try again");
+            while ((line = br.readLine()) != null) {
+                parts.add(new BikePart(line.split(",")[0],Long.parseLong(line.split(",")[1]),Double.parseDouble(line.split(",")[2]),Double.parseDouble(line.split(",")[3]),
+                        Boolean.parseBoolean(line.split(",")[4]),Integer.parseInt(line.split(",")[5])));
+            }
+            for(int i=0;i<parts.size();i++){
+                BikePart p = WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName());
+                if(!p.getListPrice().equals(parts.get(i).getListPrice())){
+                    WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).setListPrice(parts.get(i).getListPrice());
+                }
+                if(!p.getSalePrice().equals(parts.get(i).getSalePrice())){
+                    WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).setSalePrice(parts.get(i).getSalePrice());
+                }
+                if(p.isOnSale() != parts.get(i).isOnSale()){
+                    WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).setOnSale(parts.get(i).isOnSale());
+                }
+                int q=WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).getQuantity();
+                WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).setQuantity(q+parts.get(i).getQuantity());
+            }
+        } catch (FileNotFoundException e) {
+
+        } catch (IOException e) {
+
+        }
+    }
 
     private static void readInventoryFile(File file) {
         String originWarehouse = "";
