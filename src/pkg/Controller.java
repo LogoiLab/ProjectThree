@@ -226,7 +226,23 @@ public class Controller {
         switch (itemsChoiceBox.getValue()) {
             case ("Order Part"):
                 WarehouseFactory.getInstance().moveParts("MainWarehouse", WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText()), Integer.parseInt(itemsPartNumberField.getText()), Integer.parseInt(itemPartQuantityField.getText()));
+            case ("Move Part"):
 
+            case ("Display Part"):
+                OutputBuffer.getInstance().add(WarehouseFactory.getInstance().getWarehouse("MainWarehouse").getiList().getPartByNumber(Long.parseLong(itemsPartNumberField.getText())).toString());
+            case ("Sell Part"):
+            case ("Sort Parts By Name"): {
+                ArrayList<BikePart> temp = WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText()).getiList().sortByName();
+                for (BikePart p : temp) {
+                    OutputBuffer.getInstance().add(p.toString());
+                }
+            }
+            case ("Sort Parts By Number"): {
+                ArrayList<BikePart> temp = WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText()).getiList().sortByNumber();
+                for (BikePart p : temp) {
+                    OutputBuffer.getInstance().add(p.toString());
+                }
+            }
         }
     }
 
