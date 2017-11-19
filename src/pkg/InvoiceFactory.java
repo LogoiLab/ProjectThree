@@ -16,10 +16,11 @@ public class InvoiceFactory {
   public SalesInvoice createInvoice(Account account, String customer, ArrayList<String> invoiceParts) {
     ArrayList<BikePart> currList = new ArrayList<BikePart>();
     double total = 0.0;
-    for (String temp: invoiceParts) {
-      BikePart part = WarehouseFactory.getInstance().getWarehouse("MainWarehouse").getItemList().getPartByNumber(temp.split(";")[0]);
-      total += part
-      currList.add(part);
+    for (String invprt: invoiceParts) {
+      BikePart part = WarehouseFactory.getInstance().getWarehouse("MainWarehouse").getiList().getPartByNumber(Long.parseLong(invprt.split(";")[0]));
+      total += part.getPrice();
+      BikePart temp = new BikePart(part.getPartName(), part.getPartNumber(), part.getListPrice(), part.getSalePrice(), part.isOnSale(), Integer.parseInt(invprt.split(";")[1]));
+      currList.add(temp);
     }
     return new SalesInvoice(account, customer, new ItemList(currList));
   }
