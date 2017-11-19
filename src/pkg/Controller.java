@@ -130,7 +130,7 @@ public class Controller {
         assert itemsPartNumberField != null : "fx:id=\"itemsPartNumberField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert itemsMoveFileField != null : "fx:id=\"itemsMoveFileField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert warehouseNameField != null : "fx:id=\"warehouseNameField\" was not injected: check your FXML file 'mainui.fxml'.";
-        assert warehouseNameField != null : "fx:id=\"warehouseNewNameField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert warehouseNewNameField != null : "fx:id=\"warehouseNewNameField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert consoleTextArea != null : "fx:id=\"consoleTextArea\" was not injected: check your FXML file 'mainui.fxml'.";
         assert bundlePartChoiceBox != null : "fx:id=\"bundlePartChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
         assert vanCheckBox != null : "fx:id=\"vanCheckBox\" was not injected: check your FXML file 'mainui.fxml'.";
@@ -150,10 +150,26 @@ public class Controller {
         typeChoiceBox.setItems(FXCollections.observableArrayList("System Admin", "Office Manager", "Warehouse Manager", "Employee"));
         itemsChoiceBox.setItems(FXCollections.observableArrayList("Order Part","Move Part","Display Part","Sell Part","Sort Parts By Name","Sort Parts By Number"));
         warehouseActionChoiceBox.setItems(FXCollections.observableArrayList("Create New Warehouse/Van","Rename Existing Warehouse/Van"));
+        databaseDirectoryPath.setText(DatabaseHandler.getPath());
+        clean();
+    }
+
+    private void clean() {
+      bundleCommissionField.setText(bundleCommissionField.getText().trim());
+      bundlePartNameField.setText(bundlePartNameField.getText().trim());
+      bundlePartNumberField.setText(bundlePartNumberField.getText().trim());
+      invoicePartNumberField.setText(invoicePartNumberField.getText().trim());
+      invoicePartQuantityField.setText(invoicePartQuantityField.getText().trim());
+      itemsMoveFileField.setText(itemsMoveFileField.getText().trim());
+      itemsPartNumberField.setText(itemsPartNumberField.getText().trim());
+      itemWarehouseField.setText(itemWarehouseField.getText().trim());
+      warehouseNameField.setText(warehouseNameField.getText().trim());
+      warehouseNewNameField.setText(warehouseNewNameField.getText().trim());
     }
 
     @FXML
     public void login() {
+      clean();
       if (LoginHandler.getInstance().doLogin(usernameTextField.getText(), passwordField.getText())) {
         this.currentAccount = LoginHandler.getInstance().getAccount(usernameTextField.getText());
       } else {
@@ -163,64 +179,61 @@ public class Controller {
 
     @FXML
     public void doCommission() {
-        Double com=Double.parseDouble(bundleCommissionField.getText());
-
+      clean();
+      Double com=Double.parseDouble(bundleCommissionField.getText());
     }
 
     @FXML
     public void doSaveDatabase() {
+      clean();
       DatabaseHandler.saveDatabase();
     }
 
     @FXML
     public void doLoadDatabase() {
+      clean();
       DatabaseHandler.loadDatabase();
     }
 
     @FXML
     public void doAddToInvoice() {
-        invoiceParts.add(invoicePartNumberField.getText()+";"+ invoicePartQuantityField.getText());
+      clean();
+      invoiceParts.add(invoicePartNumberField.getText()+";"+ invoicePartQuantityField.getText());
     }
 
     @FXML
     public void doRemoveFromInvoice() {
-
+      clean();
     }
 
     @FXML
     public void doFinishInvoice() {
-        for(String i : invoiceParts){
+      clean();
+      for(String i : invoiceParts){
 
         }
     }
 
     @FXML
     public void doItemExecute() {
-
+      clean();
     }
 
     @FXML
     public void doCreateWarehouse() {
-      switch (warehouseActionChoiceBox.getValue()) {
-        case "Create New Warehouse/Van" : {
-          WarehouseFactory.getInstance().createWarehouse(warehouseNameField.getText(), vanCheckBox.isSelected(), new ItemList(new ArrayList<BikePart>()));
-          break;
-        }
-        case "Rename Existing Warehouse/Van" : {
-          WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).setWhName(warehouseNewNameField.getText());
-          break;
-        }
-      }
+      clean();
+      WarehouseFactory.getInstance().createWarehouse(warehouseNameField.getText(), vanCheckBox.isSelected(), new ItemList(new ArrayList<BikePart>()));
     }
 
     @FXML
     public void doChangeWarehouseName() {
+      clean();
       WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).setWhName(warehouseNewNameField.getText());
     }
 
     @FXML
     public void doAccountAction() {
-
+      clean();
     }
 
 }

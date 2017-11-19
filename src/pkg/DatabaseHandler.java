@@ -6,6 +6,9 @@ import java.lang.reflect.Type;
 import com.google.gson.*;
 
 public class DatabaseHandler {
+
+  private static final String path = "";
+
   public static void loadDatabase() {
 /*	    Gson gson = new GsonBuilder().create();
 		try {
@@ -42,4 +45,8 @@ public class DatabaseHandler {
 			OutputBuffer.getInstance().add("Failed to save database.");
 		}*/
 	}
+
+	public static String getPath() {
+    return path;
+  }
 }
