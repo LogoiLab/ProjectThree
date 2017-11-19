@@ -116,6 +116,9 @@ public class Controller {
     private TextArea consoleTextArea;
 
     @FXML
+    private TextField itemPartQuantityField;
+
+    @FXML
     void initialize() {
         assert accountListingTreeView != null : "fx:id=\"accountListingTreeView\" was not injected: check your FXML file 'mainui.fxml'.";
         assert usernameTextField != null : "fx:id=\"usernameTextField\" was not injected: check your FXML file 'mainui.fxml'.";
@@ -131,6 +134,7 @@ public class Controller {
         assert itemsMoveFileField != null : "fx:id=\"itemsMoveFileField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert warehouseNameField != null : "fx:id=\"warehouseNameField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert warehouseNewNameField != null : "fx:id=\"warehouseNewNameField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert itemPartQuantityField != null : "fx:id=\"itemPartQuantityField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert consoleTextArea != null : "fx:id=\"consoleTextArea\" was not injected: check your FXML file 'mainui.fxml'.";
         assert bundlePartChoiceBox != null : "fx:id=\"bundlePartChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
         assert vanCheckBox != null : "fx:id=\"vanCheckBox\" was not injected: check your FXML file 'mainui.fxml'.";
@@ -220,8 +224,9 @@ public class Controller {
     public void doItemExecute() {
         clean();
         switch (itemsChoiceBox.getValue()) {
-            case ("Order Part") : WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText());
-                
+            case ("Order Part"):
+                WarehouseFactory.getInstance().moveParts("MainWarehouse", WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText()), Integer.parseInt(itemsPartNumberField.getText()), Integer.parseInt(itemPartQuantityField.getText()));
+
         }
     }
 

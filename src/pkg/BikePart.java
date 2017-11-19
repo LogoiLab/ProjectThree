@@ -91,37 +91,37 @@ class BikePart extends Item {
         }
     }
 
-    public boolean increment(BikePart p){
-        int temp=p.getQuantity();
+    public boolean increment(){
+        int temp=this.getQuantity();
         if(temp++>Integer.MAX_VALUE){
             return false;
         }else
-        p.quantity++;
+        this.quantity++;
         return true;
     }
 
-    public boolean decrement(BikePart p){
-        int temp=p.getQuantity();
+    public boolean decrement(){
+        int temp=this.getQuantity();
         if(temp-->0) {
-            p.quantity--;
+            this.quantity--;
             return true;
         }else
             return false;
     }
 
-    public boolean increment(BikePart p, int num){
-        int temp=p.getQuantity();
+    public boolean increment(int num){
+        int temp=this.getQuantity();
         if(temp+num>Integer.MAX_VALUE){
             return false;
         }else
-        p.setQuantity(p.quantity+num);
+        this.setQuantity(this.quantity+num);
         return true;
     }
 
-    public boolean decrement(BikePart p, int num){
-        int temp=p.quantity;
+    public boolean decrement(int num){
+        int temp=this.quantity;
         if(temp-num>0){
-            p.setQuantity(p.getQuantity()-num);
+            this.setQuantity(this.getQuantity()-num);
             return true;
         }else
             return false;
