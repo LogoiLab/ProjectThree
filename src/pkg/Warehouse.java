@@ -17,9 +17,9 @@ public class Warehouse {
         this.warehouseListName = warehouseListName;
     }
     
-    public Warehouse(String whName, HashMap<String, Warehouse> map) {
+    public Warehouse(String whName, ArrayList<ItemList> partList) {
         this.warehouseListName = whName;
-        this.warehouseList = map;
+        this.partList = partList;
     }
     
     //Double check and see if this is what we want or am I being stupid!
