@@ -27,4 +27,5 @@ public class Warehouse {
     public void setiList(ItemList iList) {
         this.iList = iList;
     }
+
 }

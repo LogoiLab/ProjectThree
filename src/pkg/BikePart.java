@@ -68,7 +68,6 @@ class BikePart extends Item {
     }
 
 
-
     public BikePart(String name, long num, Double list, Double sale, boolean onSale, int quant) {
         this.partName = name;
         this.partNumber = num;
@@ -76,6 +75,11 @@ class BikePart extends Item {
         this.salePrice = sale;
         this.onSale = onSale;
         this.quantity = quant;
+    }
+
+    public void toString(BikePart p){
+        String s=(p.getPartName()+p.getPartNumber())+p.getListPrice()+p.getSalePrice()+p.isOnSale()+p.getQuantity();
+        OutputBuffer.getInstance().add(s)
     }
 
 }
