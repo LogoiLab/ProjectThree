@@ -88,13 +88,14 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextField fx:id="invoicePartNumberField" layoutX="14.0" layoutY="60.0" prefHeight="25.0" prefWidth="192.0" />
+                              <TextField fx:id="invoicePartNumberField" layoutX="13.0" layoutY="103.0" prefHeight="25.0" prefWidth="192.0" />
                               <TextField fx:id="invoicePartQuantityField" layoutX="214.0" layoutY="60.0" prefHeight="25.0" prefWidth="98.0" promptText="quantity" />
                               <Button fx:id="addToInvoiceButton" layoutX="327.0" layoutY="60.0" mnemonicParsing="false" text="Add to invoice" />
                               <Button fx:id="removeFromInvoiceButton" layoutX="449.0" layoutY="60.0" mnemonicParsing="false" text="Remove from invoice" />
-                              <Button fx:id="finishInvoiceButton" layoutX="257.0" layoutY="103.0" mnemonicParsing="false" text="Finish invoice" />
+                              <Button fx:id="finishInvoiceButton" layoutX="387.0" layoutY="103.0" mnemonicParsing="false" text="Finish invoice" />
                               <TextArea fx:id="invoiceTextArea" layoutX="14.0" layoutY="148.0" prefHeight="215.0" prefWidth="573.0" />
                               <ChoiceBox fx:id="bundlePartChoiceBox" layoutX="14.0" layoutY="22.0" prefHeight="25.0" prefWidth="190.0" />
+                              <TextField fx:id="invoiceWarehouseField" layoutX="14.0" layoutY="60.0" prefHeight="25.0" prefWidth="190.0" promptText="Enter warehouse here" />
                            </children></AnchorPane>
                   </content>
                 </Tab>
