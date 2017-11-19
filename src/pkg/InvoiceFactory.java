@@ -10,4 +10,8 @@ public class InvoiceFactory {
   public static synchronized InvoiceFactory getInstance() {
     return instance;
   }
+
+  public SalesInvoice createInvoice(ArrayList<String> invoiceParts) {
+    return new SalesInvoice()
+  }
 }
