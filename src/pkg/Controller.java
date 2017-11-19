@@ -225,7 +225,7 @@ public class Controller {
         clean();
         switch (itemsChoiceBox.getValue()) {
             case ("Order Part"):
-                WarehouseFactory.getInstance().moveParts("MainWarehouse", WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText()), Integer.parseInt(itemsPartNumberField.getText()), Integer.parseInt(itemPartQuantityField.getText()));
+                WarehouseFactory.getInstance().moveParts("MainWarehouse", itemWarehouseField.getText(), Long.parseLong(itemsPartNumberField.getText()), Integer.parseInt(itemPartQuantityField.getText()));
             case ("Move Part"):
 
             case ("Display Part"):
