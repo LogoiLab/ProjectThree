@@ -2,6 +2,7 @@ package pkg;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.collections.FXCollections.*;
@@ -92,6 +93,9 @@ public class Controller {
     private TextField warehouseNameField;
 
     @FXML
+    private TextField warehouseNewNameField;
+
+    @FXML
     private CheckBox vanCheckBox;
 
     @FXML
@@ -118,6 +122,7 @@ public class Controller {
         assert itemsPartNumberField != null : "fx:id=\"itemsPartNumberField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert itemsMoveFileField != null : "fx:id=\"itemsMoveFileField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert warehouseNameField != null : "fx:id=\"warehouseNameField\" was not injected: check your FXML file 'mainui.fxml'.";
+        assert warehouseNameField != null : "fx:id=\"warehouseNewNameField\" was not injected: check your FXML file 'mainui.fxml'.";
         assert consoleTextArea != null : "fx:id=\"consoleTextArea\" was not injected: check your FXML file 'mainui.fxml'.";
         assert bundlePartChoiceBox != null : "fx:id=\"bundlePartChoiceBox\" was not injected: check your FXML file 'mainui.fxml'.";
         assert vanCheckBox != null : "fx:id=\"vanCheckBox\" was not injected: check your FXML file 'mainui.fxml'.";
@@ -186,17 +191,21 @@ public class Controller {
 
     @FXML
     public void doCreateWarehouse() {
-
+      switch (warehouseActionChoiceBox.getValue()) {
+        case "Create New Warehouse/Van" : {
+          WarehouseFactory.getInstance().createWarehouse(warehouseNameField.getText(), vanCheckBox.isSelected(), new ItemList(new ArrayList<Item>()));
+          break;
+        }
+        case "Rename Existing Warehouse/Van" : {
+          WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).setName(warehouseNewNameField.getText());
+          break;
+        }
+      }
     }
 
     @FXML
     public void doChangeWarehouseName() {
-
-    }
-
-    @FXML
-    public void doChangeVanName() {
-
+      WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).setName(warehouseNewNameField.getText());
     }
 
     @FXML

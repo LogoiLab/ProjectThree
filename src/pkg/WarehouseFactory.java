@@ -20,7 +20,12 @@ public class WarehouseFactory {
     warehouseList.addWarehouse(wh.getName(), wh);
   }
 
-  public void createWarehouse(String name, ItemList list) {
-    warehouseList.addWarehouse(name, new Warehouse(name, list));
+  public void createWarehouse(String name, boolean isVan, ItemList list) {
+    if(isVan) {
+      warehouseList.addWarehouse(name, new Van(name, list));
+    } else {
+      warehouseList.addWarehouse(name, new Warehouse(name, list));
+    }
+
   }
 }
