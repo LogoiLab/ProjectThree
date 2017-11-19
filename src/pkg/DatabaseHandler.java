@@ -46,6 +46,14 @@ public class DatabaseHandler {
 		}*/
 	}
 
+	public static void readMoveFile(String path) {
+    String wh1 = "";
+    String wh2 = "";
+    Long partnum = new Long(0);
+    int quantity = 0;
+    WarehouseFactory.getInstance().moveParts(wh1, wh2, partnum, quantity);
+  }
+
 	public static String getPath() {
     return path;
   }

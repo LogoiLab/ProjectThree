@@ -230,7 +230,7 @@ public class Controller {
             case ("Order Part"):
                 WarehouseFactory.getInstance().moveParts("MainWarehouse", itemWarehouseField.getText(), Long.parseLong(itemsPartNumberField.getText()), Integer.parseInt(itemPartQuantityField.getText()));
             case ("Move Part"):
-
+                DatabaseHandler.readMoveFile(itemsMoveFileField.getText());
             case ("Display Part"):
                 OutputBuffer.getInstance().add(WarehouseFactory.getInstance().getWarehouse("MainWarehouse").getiList().getPartByNumber(Long.parseLong(itemsPartNumberField.getText())).toString());
             case ("Sort Parts By Name"): {
