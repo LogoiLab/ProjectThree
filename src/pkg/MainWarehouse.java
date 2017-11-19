@@ -1,9 +1,17 @@
 package pkg;
 
-class MainWarehouse implements Warehouse {
+import java.util.ArrayList;
 
-	public MainWarehouse() {
+class MainWarehouse extends Warehouse {
+	private final String name="CONNOR_THE_GREAT";
+	private ArrayList<ItemList> partList;
 
+	public MainWarehouse(ArrayList<ItemList> list) {
+		this.partList.equals(list);
+	}
+
+	public ArrayList<ItemList> getParts(){
+		return partList;
 	}
 
 }
