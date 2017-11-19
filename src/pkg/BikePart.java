@@ -78,6 +78,11 @@ class BikePart extends Item {
         this.quantity = quant;
     }
 
+    @Override
+    public String toString(){
+        return (this.partName+","+this.partNumber+","+this.listPrice+","+this.salePrice+","+this.isOnSale()+","+this.quantity);
+    }
+
     public static void printMePlz(ArrayList<BikePart> list){
         String s="";
         for(int i=0;i<list.size();i++) {
