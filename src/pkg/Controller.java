@@ -203,11 +203,11 @@ public class Controller {
     public void doCreateWarehouse() {
       switch (warehouseActionChoiceBox.getValue()) {
         case "Create New Warehouse/Van" : {
-          WarehouseFactory.getInstance().createWarehouse(warehouseNameField.getText(), vanCheckBox.isSelected(), new ItemList(new ArrayList<Item>()));
+          WarehouseFactory.getInstance().createWarehouse(warehouseNameField.getText(), vanCheckBox.isSelected(), new ItemList(new ArrayList<BikePart>()));
           break;
         }
         case "Rename Existing Warehouse/Van" : {
-          WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).setName(warehouseNewNameField.getText());
+          WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).setWhName(warehouseNewNameField.getText());
           break;
         }
       }
@@ -215,7 +215,7 @@ public class Controller {
 
     @FXML
     public void doChangeWarehouseName() {
-      WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).setName(warehouseNewNameField.getText());
+      WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).setWhName(warehouseNewNameField.getText());
     }
 
     @FXML

@@ -7,6 +7,10 @@ public class Warehouse {
     private String name;
     private ItemList iList;
 
+    public Warehouse() {
+
+    }
+
     public Warehouse(String whName, ItemList partList) {
         this.name = whName;
         this.iList = partList;

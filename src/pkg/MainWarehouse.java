@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 class MainWarehouse extends Warehouse {
 	private final String name="MainWarehouse";
-	private ArrayList<ItemList> partList;
+	private ItemList partList;
 
-	public MainWarehouse(ArrayList<ItemList> list) {
+	public MainWarehouse(ItemList list) {
 		this.partList.equals(list);
 	}
 
-	public ArrayList<ItemList> getParts(){
+	public ItemList getParts(){
 		return partList;
 	}
 
