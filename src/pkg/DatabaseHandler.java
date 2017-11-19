@@ -83,6 +83,10 @@ public class DatabaseHandler {
             }
             for(int i=0;i<parts.size();i++){
                 BikePart p = WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName());
+                if(!WarehouseFactory.getInstance().getWarehouse(dest).getiList().getCurrentList().contains(p)){
+                    WarehouseFactory.getInstance().getWarehouse(dest).getiList().addPart(p);
+                    break;
+                }
                 if(!p.getListPrice().equals(parts.get(i).getListPrice())){
                     WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).setListPrice(parts.get(i).getListPrice());
                 }
@@ -92,7 +96,8 @@ public class DatabaseHandler {
                 if(p.isOnSale() != parts.get(i).isOnSale()){
                     WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).setOnSale(parts.get(i).isOnSale());
                 }
-                WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).setQuantity((WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).getQuantity())+parts.get(i).getQuantity());
+                WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).setQuantity(
+                        (WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName()).getQuantity())+parts.get(i).getQuantity());
             }
         } catch (FileNotFoundException e) {
             OutputBuffer.getInstance().add("The file "+invUpdate+" could not be found. Please check spelling and try again");
