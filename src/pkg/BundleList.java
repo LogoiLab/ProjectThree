@@ -15,19 +15,18 @@ class BundleList {
         this.bundleListName = bundleListName;
     }
 
-    public void addBundle(Bundle b){
-        bundleList.put(b.getBundleName(),b);
+    public void addBundle(Bundle b) {
+        bundleList.put(b.getBundleName(), b);
     }
-
 
     public BundleList(String name, HashMap<String, Bundle> map) {
         this.bundleListName = name;
         this.bundleList = map;
     }
 
-    public ItemList getBundledItems(String bundleName){
-        for(int i=0;i<bundleList.size();i++){
-            if(bundleName.equals(bundleList.get(i).getBundleName())){
+    public ItemList getBundledItems(String bundleName) {
+        for (int i = 0; i < bundleList.size(); i++) {
+            if (bundleName.equals(bundleList.get(i).getBundleName())) {
                 return bundleList.get(i).getItems();
             }
         }

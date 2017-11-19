@@ -35,7 +35,7 @@ public class DatabaseHandler {
 
     public static void saveDatabase() {
 /*		GsonBuilder builder = new GsonBuilder();
-		Gson gson = builder.create();
+        Gson gson = builder.create();
 		JsonElement jsonPartList = gson.toJsonTree(partList.getPartListCurr());
 		JsonElement jsonWarehouseList = gson.toJsonTree(WarehouseFactory.getInstance().getWarehouseList());
 		JsonObject jsonList = new JsonObject();

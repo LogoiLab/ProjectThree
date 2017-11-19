@@ -13,13 +13,13 @@ class WarehouseList {
         this.WHash = WHash;
     }
 
-    public Warehouse getWarehouse(String name){
+    public Warehouse getWarehouse(String name) {
         return WHash.get(name);
     }
 
-    public void addWarehouse(Warehouse w){
-        String name=w.getWhName();
-        WHash.put(name,w);
+    public void addWarehouse(Warehouse w) {
+        String name = w.getWhName();
+        WHash.put(name, w);
     }
 
     public WarehouseList() {
