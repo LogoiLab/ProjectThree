@@ -5,18 +5,23 @@
  */
 package pkg;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author cvasquez13
  */
-public class SalesInvoice extends InvoiceFactory{
+public class SalesInvoice{
     Date saleDate;
     String customer;
-    //List<part> parts
+    List<BundleList> bundleList;
     String receiver;
     double invoiceTotal;
+    String bundleName;
+    int i;
+    String Name;
     
     public SalesInvoice(Date saleDate, String customer){
         if(saleDate == null){
@@ -25,14 +30,17 @@ public class SalesInvoice extends InvoiceFactory{
             this.saleDate = saleDate;
         }
         this.customer = customer;
-        //this.parts = new List<>;
+        this.bundleList = new ArrayList<>();
         this.invoiceTotal = 0;
     }
     
-   /** public void addInvoice(Whpart part) {
-    * Whpart.add(part);
-    * invoiceTotal += Double.parseDouble(part.getBp().getSp());
-    }**/
+    public void addInvoice(BundleList bl) {
+     bundleList.add(bl);
+     bundleName = bl.getBundleListName();
+            
+    // invoiceTotal += Double.parseDouble(bl.getBundleListName());
+    //need an easier way to get to partname then saleprice of part
+    }
     
     public void addReceiver(String name){
         receiver = name;
@@ -43,10 +51,10 @@ public class SalesInvoice extends InvoiceFactory{
     }
     
     public String toString() {
-        String saleAssociate = "Invoice: " + customer + "Date: " + saleDate + "\n";
-        //for(Whpart part: parts)
-        //    saleAssociate += part.toString();
-        //saleAssociate += invoiceTotal;
-        return saleAssociate;
+        String employee = "Invoice: " + customer + "Date: " + saleDate + "\n";
+        for(BundleList bl: bundleList)
+            employee += bl.toString();
+        employee += invoiceTotal;
+        return employee;
     }
 }

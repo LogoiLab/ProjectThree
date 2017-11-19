@@ -1,11 +1,38 @@
 package pkg;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Warehouse {
+    private String warehouseListName;
     private String name;
     private ArrayList<ItemList> partList;
+    private HashMap<String, Warehouse> warehouseList = new HashMap<>();
 
+    public String getWarehouseListName() {
+        return warehouseListName;
+    }
+
+    public void setWarehouseListName(String warehouseListName) {
+        this.warehouseListName = warehouseListName;
+    }
+    
+    public Warehouse(String whName, HashMap<String, Warehouse> map) {
+        this.warehouseListName = whName;
+        this.warehouseList = map;
+    }
+    
+    //Double check and see if this is what we want or am I being stupid!
+    //Thouhgt process if warehouseName is in the warehouse list return that warehouses itemlist
+     public ArrayList<ItemList> getWarehouseList(String warehouseName){
+        for(int i=0;i<warehouseList.size();i++){
+            if(warehouseName.equals(warehouseList.get(i).getName())){
+                return warehouseList.get(i).getPartList();
+            }
+        }
+        return null;
+    }
+    
     public String getName() {
         return name;
     }
