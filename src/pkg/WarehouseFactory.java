@@ -17,14 +17,14 @@ public class WarehouseFactory {
   }
 
   public void addWarehouse(Warehouse wh) {
-    warehouseList.addWarehouse(wh.getName(), wh);
+    warehouseList.addWarehouse(wh);
   }
 
   public void createWarehouse(String name, boolean isVan, ItemList list) {
     if(isVan) {
-      warehouseList.addWarehouse(name, new Van(name, list));
+      warehouseList.addWarehouse(new Van(name, list));
     } else {
-      warehouseList.addWarehouse(name, new Warehouse(name, list));
+      warehouseList.addWarehouse(new Warehouse(name, list));
     }
 
   }
