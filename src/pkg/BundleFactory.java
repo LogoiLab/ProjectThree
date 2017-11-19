@@ -7,7 +7,7 @@ public class BundleFactory{
 	//private constructor to avoid client applications to use constructor
 	private BundleFactory(){}
 
-	public static BundleFactory getInstance(){
+	public static synchronized BundleFactory getInstance(){
 		return instance;
 	}
 

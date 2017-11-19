@@ -6,7 +6,7 @@ public class InvoiceFactory{
 	//private constructor to avoid client applications to use constructor
 	private InvoiceFactory(){}
 
-	public static InvoiceFactory getInstance(){
+	public static synchronized InvoiceFactory getInstance(){
 		return instance;
 	}
 }

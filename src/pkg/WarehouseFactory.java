@@ -7,7 +7,7 @@ public class WarehouseFactory{
   //private constructor to avoid client applications to use constructor
   private WarehouseFactory(){}
 
-  public static WarehouseFactory getInstance(){
+  public static synchronized WarehouseFactory getInstance(){
     return instance;
   }
 

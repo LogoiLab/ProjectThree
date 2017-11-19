@@ -7,7 +7,7 @@ public class OutputBuffer{
   //private constructor to avoid client applications to use constructor
   private OutputBuffer(){}
 
-  public static OutputBuffer getInstance(){
+  public static synchronized OutputBuffer getInstance(){
     return instance;
   }
 
