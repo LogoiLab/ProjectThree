@@ -53,6 +53,14 @@ class ItemList {
         return byName.get(name);
     }
 
+    public ArrayList<BikePart> sortByName(){
+        return new ArrayList<BikePart>(byName.values());
+    }
+
+    public ArrayList<BikePart> sortByNumber(){
+        return new ArrayList<BikePart>(byNumber.values());
+    }
+
     public ArrayList<BikePart> getBikePartList() {
         return list;
     }
@@ -63,6 +71,18 @@ class ItemList {
 
     public void setCurrentList(ArrayList<BikePart> currentList) {
         this.currentList = currentList;
+    }
+
+    public void addPart(BikePart p){
+        byNumber.put(p.getPartNumber(),p);
+        byName.put(p.getPartName(),p);
+        currentList.add(p);
+    }
+
+    public void removePart(BikePart p){
+        byName.remove(p);
+        byNumber.remove(p);
+        currentList.remove(p);
     }
 
 }
