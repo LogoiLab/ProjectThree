@@ -205,6 +205,7 @@ public class Controller {
     @FXML
     public void doRemoveFromInvoice() {
         clean();
+        InvoiceFactory.getInstance().removeFromInvoice(invoicePartNumberField.getText());
     }
 
     @FXML
@@ -224,7 +225,6 @@ public class Controller {
         }
     }
 
-}
 
     @FXML
     public void doCreateWarehouse() {

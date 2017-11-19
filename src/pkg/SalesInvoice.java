@@ -14,21 +14,24 @@ import java.util.List;
  * @author cvasquez13
  */
 public class SalesInvoice{
-    Date saleDate;
-    String customer;
-    ItemList itemList;
-    double invoiceTotal;
-    String bundleName;
+    private Date saleDate;
+    private String customer;
+    private ItemList itemList;
+    private double invoiceTotal;
 
-    public SalesInvoice(Account seller, String customer, ItemList list){
+    public SalesInvoice(Account seller, String customer, ItemList list, double total){
         this.saleDate = new Date();
         this.customer = customer;
         this.itemList = list;
-        this.invoiceTotal = 0;
+        this.invoiceTotal = total;
     }
     
     public Date saleDate(){
         return saleDate;
+    }
+
+    public ItemList getItemList() {
+        return this.itemList;
     }
     
     public String toString() {

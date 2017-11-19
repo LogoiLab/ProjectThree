@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class InvoiceFactory {
   private static final InvoiceFactory instance = new InvoiceFactory();
+  private static SalesInvoice currentInvoice;
 
   //private constructor to avoid client applications to use constructor
   private InvoiceFactory() {
@@ -22,6 +23,13 @@ public class InvoiceFactory {
       BikePart temp = new BikePart(part.getPartName(), part.getPartNumber(), part.getListPrice(), part.getSalePrice(), part.isOnSale(), Integer.parseInt(invprt.split(";")[1]));
       currList.add(temp);
     }
-    return new SalesInvoice(account, customer, new ItemList(currList));
+    currentInvoice = new SalesInvoice(account, customer, new ItemList(currList), total);
+    return currentInvoice;
   }
+
+  public SalesInvoice removeFromInvoice(String part) {
+    currentInvoice.getItemList().removePart(currentInvoice.getItemList().getPartByNumber(Long.parseLong(part.split(";")[0])));
+    return currentInvoice;
+  }
+
 }
