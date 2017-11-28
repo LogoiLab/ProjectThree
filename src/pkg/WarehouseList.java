@@ -1,5 +1,7 @@
 package pkg;
 
+import javafx.beans.binding.When;
+
 import java.util.HashMap;
 
 class WarehouseList {
@@ -24,6 +26,14 @@ class WarehouseList {
 
     public WarehouseList() {
 
+    }
+
+    public boolean isEmpty() {
+        return this.WHash.isEmpty();
+    }
+
+    public void appendWHash(HashMap<String, Warehouse> WHash) {
+        this.WHash.putAll(WHash);
     }
 
 }

@@ -45,4 +45,13 @@ public class WarehouseFactory {
             OutputBuffer.getInstance().add("Failed to move parts.");
         }
     }
+
+    public void populate(WarehouseList whList) {
+      if (warehouseList.isEmpty()) {
+        this.warehouseList.setWHash(whList.getWHash());
+      } else {
+        this.warehouseList.appendWHash(whList.getWHash());
+      }
+    }
+
 }
