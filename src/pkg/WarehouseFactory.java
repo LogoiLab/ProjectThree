@@ -16,6 +16,10 @@ public class WarehouseFactory {
         return warehouseList.getWarehouse(name);
     }
 
+    public WarehouseList getWarehouseList() {
+      return warehouseList;
+    }
+
     public void createWarehouse(String name, boolean isVan, ItemList list) {
         if (isVan) {
             warehouseList.addWarehouse(new Van(name, list));
@@ -23,6 +27,10 @@ public class WarehouseFactory {
             warehouseList.addWarehouse(new Warehouse(name, list));
         }
 
+    }
+
+    public void addWarehouse(Warehouse wh) {
+      warehouseList.addWarehouse(wh);
     }
 
     public void moveParts(String wh1, String wh2, Long partnum, int quantity) {
