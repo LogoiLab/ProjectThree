@@ -33,4 +33,17 @@ class BundleList {
         return null;
     }
 
+    public HashMap<String, Bundle> getBundleList() {
+        return this.bundleList;
+    }
+
+    public boolean isEmpty() {
+        return this.bundleList.isEmpty();
+    }
+
+    public void appendBundleList(String name, HashMap<String, Bundle> bl) {
+        this.setBundleListName(name);
+        this.bundleList.putAll(bl);
+    }
+
 }

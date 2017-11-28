@@ -19,4 +19,16 @@ public class BundleFactory {
     public void newBundle(String name, ItemList list) {
         bundles.addBundle(new Bundle(name, list));
     }
+
+    public BundleList getBundleList() {
+        return bundles;
+    }
+
+    public void populate(BundleList bl) {
+        if(bundles.isEmpty()) {
+            bundles = bl;
+        } else {
+            bundles.appendBundleList(bl.getBundleListName(), bl.getBundleList());
+        }
+    }
 }
