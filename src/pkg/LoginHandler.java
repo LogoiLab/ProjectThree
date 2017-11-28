@@ -25,4 +25,16 @@ public class LoginHandler {
     public Account getAccount(String uname) {
         return accountList.get(uname);
     }
+
+    public HashMap<String, Account> getAccounts() {
+        return this.accountList;
+    }
+
+    public void populate(HashMap<String, Account> accountList) {
+        if (this.accountList.isEmpty()) {
+            this.accountList = accountList;
+        } else {
+            this.accountList.putAll(accountList);
+        }
+    }
 }
