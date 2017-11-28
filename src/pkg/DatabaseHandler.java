@@ -19,11 +19,9 @@ public class DatabaseHandler {
     Gson gson = new GsonBuilder().create();
     try {
       JsonElement jsonList = new JsonParser().parse(new BufferedReader(new FileReader("database.json")).readLine());
-      for (int i = 0; i < jsonList.getAsJsonObject().get("WarehouseList").getAsJsonArray().size(); i++) {
-        JsonObject jsonWarehouse = jsonList.getAsJsonObject().get("PartList").getAsJsonArray().get(i).getAsJsonObject();
-        Warehouse warehouse = gson.fromJson(jsonWarehouse, Warehouse.class);
-        WarehouseFactory.getInstance().addWarehouse(warehouse);
-      }
+      JsonObject jsonWarehouseList = jsonList.getAsJsonObject().get("WarehouseList").getAsJsonObject();
+      WarehouseList warehouseList = gson.fromJson(jsonWarehouseList, WarehouseList.class);
+      WarehouseFactory.getInstance().populate(warehouseList);
       OutputBuffer.getInstance().add("Database loaded.");
     } catch (Exception e) {
       OutputBuffer.getInstance().add("Failed to load database.");
@@ -34,8 +32,12 @@ public class DatabaseHandler {
     GsonBuilder builder = new GsonBuilder();
     Gson gson = builder.create();
     JsonElement jsonWarehouseList = gson.toJsonTree(WarehouseFactory.getInstance().getWarehouseList());
+    JsonElement jsonAccountList = gson.toJsonTree(LoginHandler.getInstance().getAccounts());
+    JsonElement jsonBundleList = gson.toJsonTree(BundleFactory.getInstance().getBundleList());
     JsonObject jsonList = new JsonObject();
     jsonList.add("WarehouseList", jsonWarehouseList);
+    jsonList.add("AccountList", jsonAccountList);
+    jsonList.add("BundleList", jsonBundleList);
     try (Writer writer = new FileWriter("database.json")) {
       writer.write(gson.toJson(jsonList));
       writer.close();
