@@ -10,7 +10,10 @@ class ItemList {
     private ArrayList<BikePart> list;
     private HashMap<String, BikePart> byName = new HashMap<>();
     private HashMap<Long, BikePart> byNumber = new HashMap<>();
-
+    private HashMap<Integer, BikePart> byQuantity = new HashMap<>();
+    private HashMap<Integer, BikePart> lowQuantity = new HashMap<>();
+    
+    
     public ItemList(ArrayList<BikePart> list) {
         this.list = list;
         createHashByName();
@@ -52,6 +55,55 @@ class ItemList {
     public BikePart getByName(String name) {
         return byName.get(name);
     }
+    
+    //Display by Quantity
+    public BikePart getByQuantity(Integer quan) {
+        return byQuantity.get(quan);
+    }
+    
+    private void createHashByQuantity() {
+        list.equals(currentList);
+        currentList.clear();
+        Comparator<BikePart> BY_QUANT = Comparator.comparing(BikePart::getQuantity);
+        Collections.sort(list, BY_QUANT);
+        for (BikePart i : this.list) {
+            byQuantity.put(i.getQuantity(), i);
+        }
+        currentList.equals(list);
+        BikePart.printMePlz(currentList);
+    }
+    
+    /* @param LowQuantity 
+    * @return 
+    * I may need to add a method to spit out a list of "lowQuantityProdcuts"
+   */ 
+ 
+ 
+ 	private HashMap lowQuantityProduct(Integer LowQuantity, HashMap<Integer, BikePart> list) { 
+		HashMap<Integer, BikePart> x = new HashMap(); 
+ 		for (Integer key : list.keySet()) { 
+			if (list.get(key).getQuantity() >= LowQuantity) { 
+				x.put(key, list.get(key)); 
+ 			} 
+		} 
+		return x; 
+ 	} 
+        
+    
+    
+    /*
+    * Something like this may be suitable for us in the controller to let user select lowest applicable quantity
+    private void itemsUnderMinimum() { 
+		String temp = JOptionPane.showInputDialog(null, "enter the lowest Quantity"); 
+		String temppro = obj.lowQuantityProduct(temp); 
+		if (temppro == null) { 
+ 			JOptionPane.showMessageDialog(null, "the inventory is fully stocked", "Error", INFO_MESSAGE); 
+		} else { 
+			JOptionPane(temppro, new Product().getListHeader(), new Product().getTitle()).setVisible(true); 
+		} 
+	}
+    */
+    
 
     public ArrayList<BikePart> sortByName() {
         return new ArrayList<BikePart>(byName.values());
