@@ -9,6 +9,7 @@ class BikePart extends Item {
     private Double salePrice;
     private boolean onSale;
     private int quantity;
+    private int percentOfTotal;
 
     public String getPartName() {
         return partName;
@@ -132,5 +133,22 @@ class BikePart extends Item {
         } else
             return false;
     }
+   //This is for commission
+    /** 
+     * 
+     * @return 
+     */ 
+    public float calculateTotal(ArrayList<BikePart> list) { 
 
+            float temp = 0; 
+            for (int i = 0; i < list.size(); i++) { 
+                 BikePart p = list.get(i);
+                 if(i == list.size()){
+                     temp += p.getPrice() * p.quantity;
+                 } else {
+                     return 0;
+                 }    
+            } 
+            return temp * ((percentOfTotal / 100) + 1); 
+    } 
 }

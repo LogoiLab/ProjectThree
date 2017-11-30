@@ -36,4 +36,6 @@ public class SalesInvoice {
     public String toString() {
         return "Invoice: " + customer + "Date: " + saleDate + "\n";
     }
+    
+    
 }
