@@ -10,6 +10,23 @@ import java.util.HashMap;
 public class Warehouse {
 	private String name;
 	private ItemList iList;
+	private int minStock;
+
+	/**
+	 *
+	 * @return minStock
+	 */
+	public int getMinStock() {
+		return minStock;
+	}
+
+	/**
+	 * 
+	 * @param minStock
+	 */
+	public void setMinStock(int minStock) {
+		this.minStock = minStock;
+	}
 
 	/**
 	 * 
