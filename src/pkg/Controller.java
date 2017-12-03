@@ -221,7 +221,7 @@ public class Controller {
 	 * 
 	 */
 	@FXML
-	public void handleLogin(ActionEvent event) {
+	public void login(ActionEvent event) {
 		clean();
 		if (LoginHandler.getInstance().doLogin(usernameTextField.getText(), passwordField.getText())) {
 			this.currentAccount = LoginHandler.getInstance().getAccount(usernameTextField.getText());

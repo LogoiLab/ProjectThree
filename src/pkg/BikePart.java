@@ -209,5 +209,5 @@ class BikePart extends Item {
 		} else
 			return false;
 	}
-	
+
 }
