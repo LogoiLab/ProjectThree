@@ -14,7 +14,6 @@ class BikePart extends Item {
 	private Double salePrice;
 	private boolean onSale;
 	private int quantity;
-	private Double commission;
 
 	/**
 	 * @return partName
@@ -125,14 +124,13 @@ class BikePart extends Item {
 	 * @param onSale
 	 * @param quant
 	 */
-	public BikePart(String name, long num, Double list, Double sale, boolean onSale, int quant, Double com) {
+	public BikePart(String name, long num, Double list, Double sale, boolean onSale, int quant) {
 		this.partName = name;
 		this.partNumber = num;
 		this.listPrice = list;
 		this.salePrice = sale;
 		this.onSale = onSale;
 		this.quantity = quant;
-		this.commission = com;
 	}
 
 	/* (non-Javadoc)
@@ -211,18 +209,5 @@ class BikePart extends Item {
 		} else
 			return false;
 	}
-
-	/**
-	 * @param commission
-	 */
-	public void setCommission(Double commission) {
-		this.commission = commission;
-	}
-
-	/**
-	 * @return commission
-	 */
-	public Double getCommission() {
-		return this.commission;
-	}
+	
 }
