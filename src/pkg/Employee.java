@@ -34,4 +34,11 @@ class Employee extends Account {
 		this.com = com;
 	}
 
+	/**
+	 * @return
+	 */
+	public int getPermLevel() {
+		return this.PERM_LEVEL;
+	}
+
 }

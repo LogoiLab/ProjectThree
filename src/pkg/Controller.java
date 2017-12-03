@@ -20,7 +20,7 @@ public class Controller {
 
 	private ArrayList<String> invoiceParts;
 
-	private Account currentAccount = new Nobody();
+	private Account currentAccount;
 
 	@FXML
 	private Pane mainPane;
@@ -243,23 +243,23 @@ public class Controller {
 		}
 
 		switch (this.currentAccount.getPermLevel()) {
-		case 4: {
+			case 4: {
 			set4Perm();
 			break;
 		}
-		case 3: {
+			case 3: {
 			set3Perm();
 			break;
 		}
-		case 2: {
+			case 2: {
 			set2Perm();
 			break;
 		}
-		case 1: {
+			case 1: {
 			set1Perm();
 			break;
 		}
-		case 0: {
+			case 0: {
 			mainPane.setVisible(false);
 			mainPane.setDisable(true);
 			mainPane.toBack();

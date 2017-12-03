@@ -28,13 +28,6 @@ public abstract class Account {
 	}
 
 	/**
-	 * @return
-	 */
-	public int getPermLevel() {
-		return this.PERM_LEVEL;
-	}
-
-	/**
 	 * @return username
 	 */
 	public String getUserName() {
@@ -62,4 +55,5 @@ public abstract class Account {
 		}
 	}
 
+	public abstract int getPermLevel();
 }

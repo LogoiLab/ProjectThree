@@ -17,4 +17,11 @@ class Admin extends Account {
 		super.passHash = Hasher.hashPassword(password.toCharArray(), super.passSalt, 32, 512);
 	}
 
+	/**
+	 * @return
+	 */
+	public int getPermLevel() {
+		return this.PERM_LEVEL;
+	}
+
 }

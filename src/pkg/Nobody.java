@@ -15,4 +15,11 @@ class Nobody extends Account {
 		super.setUserName("nobody");
 	}
 
+	/**
+	 * @return
+	 */
+	public int getPermLevel() {
+		return this.PERM_LEVEL;
+	}
+
 }

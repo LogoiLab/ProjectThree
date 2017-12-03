@@ -18,6 +18,7 @@ public class LoginHandler {
 	 * 
 	 */
 	private LoginHandler() {
+		addAccount(new Nobody());
 	}
 
 	/**
@@ -33,7 +34,7 @@ public class LoginHandler {
 	 * @return
 	 */
 	public boolean doLogin(String uname, String upass) {
-		//addAccount(new Admin("admin", "password"));
+		addAccount(new Admin("admin", "password"));
 		//System.out.println(uname);
 		//return accountList.get(uname).checkHash(uname, upass);
 		return true;
