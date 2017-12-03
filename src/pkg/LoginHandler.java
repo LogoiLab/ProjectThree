@@ -7,6 +7,9 @@ import java.util.HashMap;
  * Handles account logins.
  */
 public class LoginHandler {
+
+	private static Account currentAccount;
+
 	private static final LoginHandler instance = new LoginHandler();
 	/**
 	 * 
@@ -19,6 +22,14 @@ public class LoginHandler {
 	 */
 	private LoginHandler() {
 		addAccount(new Nobody());
+	}
+
+	public static Account getCurrentAccount() {
+		return currentAccount;
+	}
+
+	public static void setCurrentAccount(Account acc) {
+		currentAccount = acc;
 	}
 
 	/**

@@ -129,7 +129,7 @@
                   <VBox prefHeight="400.0" prefWidth="600.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <Label text="Please log in:" />
-                        <TextField prefHeight="28.0" prefWidth="216.0" promptText="Username" />
+                        <TextField fx:id="usernameField" prefHeight="28.0" prefWidth="216.0" promptText="Username" />
                         <PasswordField fx:id="passwordField" promptText="Password" />
                         <Button onAction='#login' mnemonicParsing="false" prefHeight="28.0" prefWidth="201.0" text="Login" />
                      </children>

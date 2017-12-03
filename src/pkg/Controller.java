@@ -20,8 +20,6 @@ public class Controller {
 
 	private ArrayList<String> invoiceParts;
 
-	private Account currentAccount;
-
 	@FXML
 	private Pane mainPane;
 
@@ -48,6 +46,9 @@ public class Controller {
 
 	@FXML
 	private TextField usernameTextField;
+
+	@FXML
+	private TextField usernameField;
 
 	@FXML
 	private PasswordField passwordField;
@@ -224,8 +225,9 @@ public class Controller {
 	public void login(ActionEvent event) {
 		clean();
 		System.out.println(usernameTextField.getText());
-		if (LoginHandler.getInstance().doLogin(usernameTextField.getText(), passwordField.getText())) {
-			this.currentAccount = LoginHandler.getInstance().getAccount(usernameTextField.getText());
+		if (LoginHandler.getInstance().doLogin(usernameField.getText(), passwordField.getText())) {
+			System.out.println("IT BE HERE!!!!:" + usernameField.getText());
+			LoginHandler.getInstance().setCurrentAccount(LoginHandler.getInstance().getAccount(usernameField.getText()));
 			loginPane.setVisible(false);
 			loginPane.setDisable(true);
 			loginPane.toBack();
@@ -239,10 +241,10 @@ public class Controller {
 			loginPane.setVisible(true);
 			loginPane.setDisable(false);
 			loginPane.toFront();
-			this.currentAccount = new Nobody();
+			LoginHandler.getInstance().setCurrentAccount(LoginHandler.getInstance().getAccount("nobody"));
 		}
 
-		switch (this.currentAccount.getPermLevel()) {
+		switch (LoginHandler.getInstance().getCurrentAccount().getPermLevel()) {
 			case 4: {
 			set4Perm();
 			break;
@@ -266,7 +268,7 @@ public class Controller {
 			loginPane.setVisible(true);
 			loginPane.setDisable(false);
 			loginPane.toFront();
-			this.currentAccount = new Nobody();
+			LoginHandler.getInstance().setCurrentAccount(new Nobody());
 			break;
 		}
 		}
