@@ -223,6 +223,7 @@ public class Controller {
 	@FXML
 	public void login(ActionEvent event) {
 		clean();
+		System.out.println(usernameTextField.getText());
 		if (LoginHandler.getInstance().doLogin(usernameTextField.getText(), passwordField.getText())) {
 			this.currentAccount = LoginHandler.getInstance().getAccount(usernameTextField.getText());
 			loginPane.setVisible(false);
