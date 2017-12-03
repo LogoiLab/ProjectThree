@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.collections.FXCollections.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
@@ -220,7 +221,7 @@ public class Controller {
 	 * 
 	 */
 	@FXML
-	public void login() {
+	public void handleLogin(ActionEvent event) {
 		clean();
 		if (LoginHandler.getInstance().doLogin(usernameTextField.getText(), passwordField.getText())) {
 			this.currentAccount = LoginHandler.getInstance().getAccount(usernameTextField.getText());

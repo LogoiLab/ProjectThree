@@ -131,7 +131,7 @@
                         <Label text="Please log in:" />
                         <TextField prefHeight="28.0" prefWidth="216.0" promptText="Username" />
                         <PasswordField fx:id="passwordField" promptText="Password" />
-                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="201.0" text="Login" />
+                        <Button fx:id="login" onAction='#handleLogin' mnemonicParsing="false" prefHeight="28.0" prefWidth="201.0" text="Login" />
                      </children>
                   </VBox>
                </children>
