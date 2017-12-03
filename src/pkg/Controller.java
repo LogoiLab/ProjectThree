@@ -432,6 +432,7 @@ public class Controller {
 	@FXML
 	public void doAccountAction() {
 		clean();
+		
 	}
 
 }
