@@ -53,8 +53,8 @@ public class SalesInvoice {
     public String toString() {
         String s = "";
         s = s + ("Invoice: " + customer + "Date: " + saleDate + "\n");
-        for (Item i : getItemList()) {
-            s = s + i.toString();
+        for (int i=0; i<getItemList().getCurrentList().size();i++) {
+            s = s + getItemList().getCurrentList().get(i).toString();
         }
         return "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" + s + "\n\n" + "Invoice total: " + invoiceTotal + "                Commission for sale: " + (this.commission * invoiceTotal);
     }
