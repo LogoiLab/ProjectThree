@@ -132,7 +132,7 @@ class BikePart extends Item {
 		this.salePrice = sale;
 		this.onSale = onSale;
 		this.quantity = quant;
-		this.percentOfTotal = com;
+		this.commission = com;
 	}
 
 	/* (non-Javadoc)
@@ -223,6 +223,6 @@ class BikePart extends Item {
 	 * @return commission
 	 */
 	public Double getCommission() {
-		return commision;
+		return this.commission;
 	}
 }
