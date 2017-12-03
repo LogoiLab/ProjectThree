@@ -2,6 +2,10 @@ package pkg;
 
 import java.util.HashMap;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * Handles account logins.
+ */
 public class LoginHandler {
 	private static final LoginHandler instance = new LoginHandler();
 	/**

@@ -1,5 +1,9 @@
 package pkg;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * Main warehouse factory insures warehouses are protected.
+ */
 public class WarehouseFactory {
 	private static final WarehouseFactory instance = new WarehouseFactory();
 	private WarehouseList warehouseList;

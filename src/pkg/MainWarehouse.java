@@ -2,6 +2,10 @@ package pkg;
 
 import java.util.ArrayList;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * The default warehouse for the main part lists.
+ */
 class MainWarehouse extends Warehouse {
 	private final String name = "MainWarehouse";
 	private ItemList partList;

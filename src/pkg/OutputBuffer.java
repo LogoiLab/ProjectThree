@@ -1,5 +1,9 @@
 package pkg;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * Handles text based output.
+ */
 public class OutputBuffer {
 	private static final OutputBuffer instance = new OutputBuffer();
 	private static String output = "";

@@ -1,5 +1,9 @@
 package pkg;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * Defines an OfficeManager account.
+ */
 class OfficeManager extends Account {
 
 	private static int PERM_LEVEL = 3;

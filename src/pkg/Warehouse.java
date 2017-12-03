@@ -3,6 +3,10 @@ package pkg;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * Stores information regarding a Warehouse
+ */
 public class Warehouse {
 	private String name;
 	private ItemList iList;

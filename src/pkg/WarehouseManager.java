@@ -1,5 +1,10 @@
 package pkg;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * Sets account and permission level.
+ */
+
 class WarehouseManager extends Account {
 
 	private static int PERM_LEVEL = 2;

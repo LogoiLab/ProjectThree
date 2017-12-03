@@ -11,6 +11,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * The rain in Main falls mainly in the plain.
+ */
 public class Main extends Application {
 	private static File selectedFile;
 

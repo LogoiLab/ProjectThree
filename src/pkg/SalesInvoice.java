@@ -10,7 +10,8 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author cvasquez13
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * An invoice model.
  */
 public class SalesInvoice {
 	private Date saleDate;

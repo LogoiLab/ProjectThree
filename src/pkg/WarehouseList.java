@@ -2,6 +2,10 @@ package pkg;
 
 import java.util.HashMap;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * Manages a list of warehouses.
+ */
 class WarehouseList {
 	private HashMap<String, Warehouse> WHash = new HashMap<>();
 
