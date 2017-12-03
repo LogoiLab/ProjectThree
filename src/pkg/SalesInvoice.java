@@ -13,29 +13,43 @@ import java.util.List;
  * @author cvasquez13
  */
 public class SalesInvoice {
-    private Date saleDate;
-    private String customer;
-    private ItemList itemList;
-    private double invoiceTotal;
+	private Date saleDate;
+	private String customer;
+	private ItemList itemList;
+	private double invoiceTotal;
 
-    public SalesInvoice(Account seller, String customer, ItemList list, double total) {
-        this.saleDate = new Date();
-        this.customer = customer;
-        this.itemList = list;
-        this.invoiceTotal = total;
-    }
+	/**
+	 * @param seller
+	 * @param customer
+	 * @param list
+	 * @param total
+	 */
+	public SalesInvoice(Account seller, String customer, ItemList list, double total) {
+		this.saleDate = new Date();
+		this.customer = customer;
+		this.itemList = list;
+		this.invoiceTotal = total;
+	}
 
-    public Date saleDate() {
-        return saleDate;
-    }
+	/**
+	 * @return
+	 */
+	public Date saleDate() {
+		return saleDate;
+	}
 
-    public ItemList getItemList() {
-        return this.itemList;
-    }
+	/**
+	 * @return
+	 */
+	public ItemList getItemList() {
+		return this.itemList;
+	}
 
-    public String toString() {
-        return "Invoice: " + customer + "Date: " + saleDate + "\n";
-    }
-    
-    
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	public String toString() {
+		return "Invoice: " + customer + "Date: " + saleDate + "\n";
+	}
+
 }

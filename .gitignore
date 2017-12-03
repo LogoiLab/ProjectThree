@@ -45,6 +45,8 @@ doc/spec/latex/WRITINGTHREE.pdf
 .AppleDouble
 .LSOverride
 .idea
+.project
+.classpath
 
 # Icon must end with two \r
 Icon
