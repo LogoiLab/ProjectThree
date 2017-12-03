@@ -1,5 +1,8 @@
 package pkg;
-
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description constructor class for system admin
+ */
 class Admin extends Account {
 
 	private static int PERM_LEVEL = 4;

@@ -1,5 +1,10 @@
 package pkg;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description Employee creation and deletion, password/username storage
+ */
+
 class Employee extends Account {
 
 	private static int PERM_LEVEL = 1;
@@ -16,7 +21,7 @@ class Employee extends Account {
 	}
 
 	/**
-	 * @return
+	 * @return commission total
 	 */
 	public double getCommission() {
 		return this.com;

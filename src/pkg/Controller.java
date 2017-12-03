@@ -10,6 +10,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description interprates input from the GUI and calls the correct class methods passing input from fields and ActionEvents from the GUI
+ */
+
 public class Controller {
 
 	private ArrayList<String> invoiceParts;
@@ -194,6 +199,7 @@ public class Controller {
 		databaseDirectoryPath.setText(DatabaseHandler.getPath());
 		clean();
 	}
+
 
 	private void clean() {
 		bundleCommissionField.setText(bundleCommissionField.getText().trim());

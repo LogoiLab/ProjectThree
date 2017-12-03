@@ -3,12 +3,17 @@ package pkg;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description Coagulates bundles
+ */
+
 class BundleList {
 	private String bundleListName;
 	private HashMap<String, Bundle> bundleList = new HashMap<>();
 
 	/**
-	 * @return
+	 * @return bundleList name (String)
 	 */
 	public String getBundleListName() {
 		return bundleListName;
@@ -39,7 +44,7 @@ class BundleList {
 
 	/**
 	 * @param bundleName
-	 * @return
+	 * @return items from a bundle in a bundleList
 	 */
 	public ItemList getBundledItems(String bundleName) {
 		for (int i = 0; i < bundleList.size(); i++) {
@@ -51,14 +56,14 @@ class BundleList {
 	}
 
 	/**
-	 * @return
+	 * @return bundleList
 	 */
 	public HashMap<String, Bundle> getBundleList() {
 		return this.bundleList;
 	}
 
 	/**
-	 * @return
+	 * @return true/false whether the bundleList is empty
 	 */
 	public boolean isEmpty() {
 		return this.bundleList.isEmpty();

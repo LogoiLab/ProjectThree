@@ -1,11 +1,16 @@
 package pkg;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description Handles Items, which are printed on invoices
+ */
+
 class Item {
 	private String itemName;
 	private long itemNumber;
 
 	/**
-	 * @return
+	 * @return itemName
 	 */
 	public String getItemName() {
 		return itemName;
@@ -19,7 +24,7 @@ class Item {
 	}
 
 	/**
-	 * @return
+	 * @return itemNumber
 	 */
 	public long getItemNumber() {
 		return itemNumber;

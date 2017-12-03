@@ -2,6 +2,11 @@ package pkg;
 
 import java.util.ArrayList;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description singleton instance of an invoiceList that contains all invoices
+ */
+
 public class InvoiceFactory {
 	private static final InvoiceFactory instance = new InvoiceFactory();
 	private static SalesInvoice currentInvoice;
@@ -14,7 +19,7 @@ public class InvoiceFactory {
 	}
 
 	/**
-	 * @return
+	 * @return invoice instance
 	 */
 	public static synchronized InvoiceFactory getInstance() {
 		return instance;
@@ -24,7 +29,7 @@ public class InvoiceFactory {
 	 * @param account
 	 * @param customer
 	 * @param invoiceParts
-	 * @return
+	 * @return SalesInvoice
 	 */
 	public SalesInvoice createInvoice(Account account, String customer, ArrayList<String> invoiceParts) {
 		ArrayList<BikePart> currList = new ArrayList<BikePart>();
@@ -43,7 +48,7 @@ public class InvoiceFactory {
 
 	/**
 	 * @param part
-	 * @return
+	 * @return updated invoice
 	 */
 	public SalesInvoice removeFromInvoice(String part) {
 		currentInvoice.getItemList()

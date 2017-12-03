@@ -5,6 +5,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description coagulates Items into and ItemList
+ */
+
 class ItemList {
 	private ArrayList<BikePart> currentList;
 	private ArrayList<BikePart> list;
@@ -39,7 +44,7 @@ class ItemList {
 
 	/**
 	 * @param num
-	 * @return
+	 * @return BikePart that matches the partNumber
 	 */
 	public BikePart getPartByNumber(Long num) {
 		return byNumber.get(num);
@@ -70,7 +75,7 @@ class ItemList {
 
 	/**
 	 * @param name
-	 * @return
+	 * @return BikePart that matches the partName
 	 */
 	public BikePart getByName(String name) {
 		return byName.get(name);
@@ -79,7 +84,7 @@ class ItemList {
 	// Display by Quantity
 	/**
 	 * @param quan
-	 * @return
+	 * @return BikePart that matches the quantity
 	 */
 	public BikePart getByQuantity(Integer quan) {
 		return byQuantity.get(quan);
@@ -100,17 +105,10 @@ class ItemList {
 		BikePart.printMePlz(currentList);
 	}
 
-	/*
-	 * @param LowQuantity
-	 * 
-	 * @return I may need to add a method to spit out a list of
-	 * "lowQuantityProdcuts"
-	 */
-
 	/**
 	 * @param LowQuantity
 	 * @param list
-	 * @return
+	 * @return HashMap matching a BikePart by the lower bound of its quantity
 	 */
 	private HashMap lowQuantityProduct(Integer LowQuantity, HashMap<Integer, BikePart> list) {
 		HashMap<Integer, BikePart> x = new HashMap();
@@ -133,28 +131,28 @@ class ItemList {
 	 */
 
 	/**
-	 * @return
+	 * @return sorted ArrayList of BikeParts
 	 */
 	public ArrayList<BikePart> sortByName() {
 		return new ArrayList<BikePart>(byName.values());
 	}
 
 	/**
-	 * @return
+	 * @return sorted ArrayList of BikeParts
 	 */
 	public ArrayList<BikePart> sortByNumber() {
 		return new ArrayList<BikePart>(byNumber.values());
 	}
 
 	/**
-	 * @return
+	 * @return ArrayList of BikeParts
 	 */
 	public ArrayList<BikePart> getBikePartList() {
 		return list;
 	}
 
 	/**
-	 * @return
+	 * @return current Arrayist of BikeParts
 	 */
 	public ArrayList<BikePart> getCurrentList() {
 		return currentList;

@@ -10,6 +10,11 @@ import java.util.ArrayList;
 
 import com.google.gson.*;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description Handles persistency of the program
+ */
+
 public class DatabaseHandler {
 
 	private static final String path = "";
@@ -66,14 +71,14 @@ public class DatabaseHandler {
 	}
 
 	/**
-	 * @return
+	 * @return file path
 	 */
 	public static String getPath() {
 		return path;
 	}
 
 	/**
-	 * 
+	 * @return strings to the OutputBuffer
 	 */
 	public static void updateInventory() {
 		String dest = "";
@@ -127,6 +132,7 @@ public class DatabaseHandler {
 
 	/**
 	 * @param file
+	 * @return Strings to the OutputBuffer
 	 */
 	private static void readInventoryFile(File file) {
 		String originWarehouse = "";
@@ -200,6 +206,7 @@ public class DatabaseHandler {
 	 * @param line
 	 * @param origin
 	 * @param dest
+	 * @return String to the OutputBuffer
 	 */
 	private static void readInventoryLine(String line, String origin, String dest) {
 		String partName = null;

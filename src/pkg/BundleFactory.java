@@ -1,5 +1,10 @@
 package pkg;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description singleton instance of a bundleList that handles the bundles
+ */
+
 public class BundleFactory {
 	private static final BundleFactory instance = new BundleFactory();
 	private static BundleList bundles;
@@ -12,7 +17,7 @@ public class BundleFactory {
 	}
 
 	/**
-	 * @return
+	 * @return bundleFactory instance
 	 */
 	public static synchronized BundleFactory getInstance() {
 		return instance;
@@ -20,7 +25,7 @@ public class BundleFactory {
 
 	/**
 	 * @param bundleName
-	 * @return
+	 * @return ItemList
 	 */
 	public ItemList getBundle(String bundleName) {
 		return bundles.getBundledItems(bundleName);
@@ -35,7 +40,7 @@ public class BundleFactory {
 	}
 
 	/**
-	 * @return
+	 * @return bundles
 	 */
 	public BundleList getBundleList() {
 		return bundles;

@@ -2,6 +2,11 @@ package pkg;
 
 import java.util.*;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description constructor class for Bikeparts
+ */
+
 class BikePart extends Item {
 	private String partName;
 	private long partNumber;
@@ -9,10 +14,10 @@ class BikePart extends Item {
 	private Double salePrice;
 	private boolean onSale;
 	private int quantity;
-	private int percentOfTotal;
+	private Double commission;
 
 	/**
-	 * @return
+	 * @return partName
 	 */
 	public String getPartName() {
 		return partName;
@@ -26,7 +31,7 @@ class BikePart extends Item {
 	}
 
 	/**
-	 * @return
+	 * @return partNumber
 	 */
 	public long getPartNumber() {
 		return partNumber;
@@ -40,7 +45,7 @@ class BikePart extends Item {
 	}
 
 	/**
-	 * @return
+	 * @return listPrice
 	 */
 	public Double getListPrice() {
 		return listPrice;
@@ -54,14 +59,14 @@ class BikePart extends Item {
 	}
 
 	/**
-	 * @return
+	 * @return salePrice
 	 */
 	public Double getSalePrice() {
 		return salePrice;
 	}
 
 	/**
-	 * @return
+	 * @return whole Bikepart object
 	 */
 	public BikePart getSelf() {
 		return this;
@@ -75,7 +80,7 @@ class BikePart extends Item {
 	}
 
 	/**
-	 * @return
+	 * @return onSale (true/false)
 	 */
 	public boolean isOnSale() {
 		return onSale;
@@ -89,7 +94,7 @@ class BikePart extends Item {
 	}
 
 	/**
-	 * @return
+	 * @return quantity
 	 */
 	public int getQuantity() {
 		return quantity;
@@ -103,7 +108,7 @@ class BikePart extends Item {
 	}
 
 	/**
-	 * @return
+	 * @return cost of a part
 	 */
 	public Double getPrice() {
 		if (this.onSale) {
@@ -120,13 +125,14 @@ class BikePart extends Item {
 	 * @param onSale
 	 * @param quant
 	 */
-	public BikePart(String name, long num, Double list, Double sale, boolean onSale, int quant) {
+	public BikePart(String name, long num, Double list, Double sale, boolean onSale, int quant, Double com) {
 		this.partName = name;
 		this.partNumber = num;
 		this.listPrice = list;
 		this.salePrice = sale;
 		this.onSale = onSale;
 		this.quantity = quant;
+		this.percentOfTotal = com;
 	}
 
 	/* (non-Javadoc)
@@ -157,7 +163,7 @@ class BikePart extends Item {
 	}
 
 	/**
-	 * @return
+	 * @return true/false whether the increment was successful
 	 */
 	public boolean increment() {
 		int temp = this.getQuantity();
@@ -169,7 +175,7 @@ class BikePart extends Item {
 	}
 
 	/**
-	 * @return
+	 * @return true/false whether the decrement was successful
 	 */
 	public boolean decrement() {
 		int temp = this.getQuantity();
@@ -182,7 +188,7 @@ class BikePart extends Item {
 
 	/**
 	 * @param num
-	 * @return
+	 * @return true/false whether the increment was successful
 	 */
 	public boolean increment(int num) {
 		int temp = this.getQuantity();
@@ -195,7 +201,7 @@ class BikePart extends Item {
 
 	/**
 	 * @param num
-	 * @return
+	 * @return true/false whether the decrement was succesful
 	 */
 	public boolean decrement(int num) {
 		int temp = this.quantity;
@@ -206,26 +212,17 @@ class BikePart extends Item {
 			return false;
 	}
 
-	// This is for commission
 	/**
-	 * 
-	 * @return
+	 * @param commission
 	 */
-	/**
-	 * @param list
-	 * @return
-	 */
-	public float calculateTotal(ArrayList<BikePart> list) {
+	public void setCommission(Double commission) {
+		this.commission = commission;
+	}
 
-		float temp = 0;
-		for (int i = 0; i < list.size(); i++) {
-			BikePart p = list.get(i);
-			if (i == list.size()) {
-				temp += p.getPrice() * p.quantity;
-			} else {
-				return 0;
-			}
-		}
-		return temp * ((percentOfTotal / 100) + 1);
+	/**
+	 * @return commission
+	 */
+	public Double getCommission() {
+		return commision;
 	}
 }

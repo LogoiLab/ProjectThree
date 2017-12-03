@@ -1,5 +1,10 @@
 package pkg;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description Handles creation and deletion of accounts, matches password at login
+ */
+
 public abstract class Account {
 	protected static int PERM_LEVEL;
 	public static String userName;
@@ -30,7 +35,7 @@ public abstract class Account {
 	}
 
 	/**
-	 * @return
+	 * @return username
 	 */
 	public String getUserName() {
 		return this.userName;
@@ -46,7 +51,7 @@ public abstract class Account {
 	/**
 	 * @param uname
 	 * @param upass
-	 * @return
+	 * @return match or wrong username
 	 */
 	public boolean checkHash(String uname, String upass) {
 		if (this.userName.equals(uname)

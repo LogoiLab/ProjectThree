@@ -1,11 +1,16 @@
 package pkg;
 
+/**
+ * @author Connor Byrd, Chad Baxter, Chris Vasquez
+ * @Description coagulates ItemList objects
+ */
+
 class Bundle {
 	private String bundleName;
 	private ItemList items;
 
 	/**
-	 * @return
+	 * @return bundleName
 	 */
 	public String getBundleName() {
 		return bundleName;
@@ -19,7 +24,7 @@ class Bundle {
 	}
 
 	/**
-	 * @return
+	 * @return items in the itemlist
 	 */
 	public ItemList getItems() {
 		return items;
