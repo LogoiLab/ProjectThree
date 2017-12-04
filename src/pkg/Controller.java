@@ -196,7 +196,7 @@ public class Controller {
     addDeleteChoiceBox.setItems(FXCollections.observableArrayList("Add New Account", "Delete Existing Account"));
     typeChoiceBox.setItems(
             FXCollections.observableArrayList("System Admin", "Office Manager", "Warehouse Manager", "Employee"));
-    itemsChoiceBox.setItems(FXCollections.observableArrayList("Order Part", "Move Part", "Display Part",
+    itemsChoiceBox.setItems(FXCollections.observableArrayList("Update Inventory", "Order Part", "Move Part", "Display Part",
             "Sell Part", "Sort Parts By Name", "Sort Parts By Number"));
     warehouseActionChoiceBox.setItems(
             FXCollections.observableArrayList("Create New Warehouse/Van", "Rename Existing Warehouse/Van"));
@@ -284,6 +284,7 @@ public class Controller {
         break;
       }
     }
+    clean();
   }
 
   /**
@@ -340,6 +341,7 @@ public class Controller {
     clean();
     Double com = Double.parseDouble(bundleCommissionField.getText());
     InvoiceFactory.getInstance().getCurrentInvoice().setCommission(com);
+    clean();
   }
 
   /**
@@ -349,6 +351,7 @@ public class Controller {
   public void doSaveDatabase() {
     clean();
     DatabaseHandler.saveDatabase();
+    clean();
   }
 
   /**
@@ -358,6 +361,7 @@ public class Controller {
   public void doLoadDatabase() {
     clean();
     DatabaseHandler.loadDatabase();
+    clean();
   }
 
   /**
@@ -367,6 +371,7 @@ public class Controller {
   public void doAddToInvoice() {
     clean();
     invoiceParts.add(invoicePartNumberField.getText() + ";" + invoicePartQuantityField.getText());
+    clean();
   }
 
   /**
@@ -376,6 +381,7 @@ public class Controller {
   public void doRemoveFromInvoice() {
     clean();
     InvoiceFactory.getInstance().removeFromInvoice(invoicePartNumberField.getText());
+    clean();
   }
 
   /**
@@ -385,6 +391,7 @@ public class Controller {
   public void doFinishInvoice() {
     clean();
     invoiceTextArea.setText(InvoiceFactory.getInstance().getCurrentInvoice().toString());
+    clean();
   }
 
   /**
@@ -394,6 +401,7 @@ public class Controller {
   public void doItemExecute() {
     clean();
     switch (itemsChoiceBox.getValue()) {
+      case ("Update Inventory") : DatabaseHandler.readInventoryFile(new File(itemsMoveFileField.getText()));
       case ("Order Part"):
         WarehouseFactory.getInstance().moveParts("MainWarehouse", itemWarehouseField.getText(),
                 Long.parseLong(itemsPartNumberField.getText()), Integer.parseInt(itemPartQuantityField.getText()));
@@ -407,17 +415,18 @@ public class Controller {
         ArrayList<BikePart> temp = WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText())
                 .getiList().sortByName();
         for (BikePart p : temp) {
-          OutputBuffer.getInstance().add(p.toString() + "\n");
+          OutputBuffer.getInstance().add(p.toString());
         }
       }
       case ("Sort Parts By Number"): {
         ArrayList<BikePart> temp = WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText())
                 .getiList().sortByNumber();
         for (BikePart p : temp) {
-          OutputBuffer.getInstance().add(p.toString() + "\n");
+          OutputBuffer.getInstance().add(p.toString());
         }
       }
     }
+    clean();
   }
 
   /**
@@ -428,6 +437,7 @@ public class Controller {
     clean();
     WarehouseFactory.getInstance().createWarehouse(warehouseNameField.getText(), vanCheckBox.isSelected());
     OutputBuffer.getInstance().add("The warehouse " + warehouseNameField.getText() + " was created\n");
+    clean();
   }
 
   /**
@@ -440,6 +450,7 @@ public class Controller {
     WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText())
             .setWhName(warehouseNewNameField.getText());
     OutputBuffer.getInstance().add("The warehouse named " + s + " was changed to " + warehouseNewNameField.getText() + "\n");
+    clean();
   }
 
   /**
