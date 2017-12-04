@@ -14,7 +14,7 @@ class Nobody extends Account {
    *
    */
   public Nobody() {
-    super.setUserName("nobody");
+    this.setUserName("nobody");
   }
 
   /**
@@ -36,6 +36,20 @@ class Nobody extends Account {
     } else {
       return false;
     }
+  }
+
+  /**
+   * @return username
+   */
+  public String getUserName() {
+    return this.userName;
+  }
+
+  /**
+   * @param userName
+   */
+  public void setUserName(String userName) {
+    this.userName = userName;
   }
 
 }

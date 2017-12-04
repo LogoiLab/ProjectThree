@@ -27,19 +27,9 @@ public abstract class Account {
     this.passHash = Hasher.hashPassword(password.toCharArray(), this.passSalt, 32, 512);
   }
 
-  /**
-   * @return username
-   */
-  public String getUserName() {
-    return this.userName;
-  }
+  public abstract String getUserName();
 
-  /**
-   * @param userName
-   */
-  public void setUserName(String userName) {
-    this.userName = userName;
-  }
+  public abstract void setUserName(String userName);
 
   public abstract int getPermLevel();
 
