@@ -202,6 +202,7 @@ public class Controller {
             FXCollections.observableArrayList("Create New Warehouse/Van", "Rename Existing Warehouse/Van"));
     databaseDirectoryPath.setText(DatabaseHandler.getPath());
     clean();
+    databaseDirectoryPath.setText("./database.json");
   }
 
 
