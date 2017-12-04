@@ -37,7 +37,7 @@ public class BundleFactory {
    * @param list
    */
   public void newBundle(String name, ItemList list) {
-    bundles.addBundle(new Bundle(name, list));
+    bundles.addBundle(new Bundle(name, list, list.getTotal()));
   }
 
   /**

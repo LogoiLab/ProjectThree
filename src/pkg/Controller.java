@@ -220,11 +220,22 @@ public class Controller {
 		consoleTextArea.appendText(OutputBuffer.getInstance().get());
 	}
 
+	@FXML
+	public void logout() {
+		mainPane.setVisible(false);
+		mainPane.setDisable(true);
+		mainPane.toBack();
+		loginPane.setVisible(true);
+		loginPane.setDisable(false);
+		loginPane.toFront();
+		LoginHandler.getInstance().setCurrentAccount(LoginHandler.getInstance().getAccount("nobody"));
+	}
+
 	/**
 	 *
 	 */
 	@FXML
-	public void login(ActionEvent event) {
+	public void login() {
 		clean();
 		System.out.println(usernameTextField.getText());
 		if (LoginHandler.getInstance().doLogin(usernameField.getText(), passwordField.getText())) {

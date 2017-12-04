@@ -109,7 +109,8 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <TextArea fx:id="consoleTextArea" layoutX="13.0" layoutY="15.0" prefHeight="342.0" prefWidth="575.0" />
+                                        <Button mnemonicParsing="false" onAction="#logout" text="Log Out" layoutY="5.0"/>
+                                        <TextArea fx:id="consoleTextArea" layoutX="13.0" layoutY="35.0" prefHeight="322.0" prefWidth="575.0" />
                                     </children>
                                 </AnchorPane>
                             </content>
