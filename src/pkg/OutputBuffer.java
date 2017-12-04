@@ -29,7 +29,7 @@ public class OutputBuffer {
   public static void add(String str) {
     str = str.trim();
     if (output.equals("")) {
-      output = str;
+      output = str + "\n";
     } else {
       output = output + "\n" + str;
     }
