@@ -8,14 +8,16 @@ package pkg;
 class Bundle {
   private String bundleName;
   private ItemList items;
+  private Double total;
 
   /**
    * @param name
    * @param list
    */
-  public Bundle(String name, ItemList list) {
+  public Bundle(String name, ItemList list, Double tot) {
     this.bundleName.equals(name);
     this.items = list;
+    this.total = tot;
   }
 
   /**

@@ -184,4 +184,12 @@ class ItemList {
     currentList.remove(p);
   }
 
+  public Double getTotal(){
+    Double tot=0.0;
+    for(BikePart i : currentList){
+      tot+=i.getPrice();
+    }
+    return tot;
+  }
+
 }

@@ -228,7 +228,6 @@ public class Controller {
 		clean();
 		System.out.println(usernameTextField.getText());
 		if (LoginHandler.getInstance().doLogin(usernameField.getText(), passwordField.getText())) {
-			System.out.println("IT BE HERE!!!!:" + usernameField.getText());
 			LoginHandler.getInstance().setCurrentAccount(LoginHandler.getInstance().getAccount(usernameField.getText()));
 			loginPane.setVisible(false);
 			loginPane.setDisable(true);
@@ -329,6 +328,7 @@ public class Controller {
 	public void doCommission() {
 		clean();
 		Double com = Double.parseDouble(bundleCommissionField.getText());
+		InvoiceFactory.getInstance().getCurrentInvoice().setCommission(com);
 	}
 
 	/**

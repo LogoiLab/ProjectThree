@@ -1,5 +1,8 @@
 package pkg;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 /**
@@ -75,6 +78,13 @@ class BundleList {
   public void appendBundleList(String name, HashMap<String, Bundle> bl) {
     this.setBundleListName(name);
     this.bundleList.putAll(bl);
+  }
+
+  public ArrayList<Bundle> getAsAL() {
+    ArrayList<Bundle> list = new ArrayList<>();
+    Comparator<Bundle> BY_NAME = Comparator.comparing(Bundle::getBundleName);
+    Collections.sort(list, BY_NAME);
+    return list;
   }
 
 }

@@ -26,6 +26,10 @@ public class InvoiceFactory {
     return instance;
   }
 
+  public static SalesInvoice getCurrentInvoice() {
+    return currentInvoice;
+  }
+
   /**
    * @param account
    * @param customer
