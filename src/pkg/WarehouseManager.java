@@ -35,7 +35,7 @@ class WarehouseManager extends Account {
    */
   public boolean checkHash(String uname, String upass) {
     if (this.userName.equals(uname)
-            && Arrays.equals(this.passHash, (Hasher.hashPassword(upass.toCharArray(), this.passSalt, 32, 512)))){
+            && Arrays.equals(this.passHash, (Hasher.hashPassword(upass.toCharArray(), this.passSalt, 32, 512)))) {
       return true;
     } else {
       return false;

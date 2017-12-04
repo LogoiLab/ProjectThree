@@ -42,5 +42,6 @@ public abstract class Account {
   }
 
   public abstract int getPermLevel();
+
   public abstract boolean checkHash(String uname, String upass);
 }

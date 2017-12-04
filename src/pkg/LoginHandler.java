@@ -17,17 +17,14 @@ public class LoginHandler {
 
   // private constructor to avoid client applications to use constructor
 
-	public void removeAccount(String n){
-		this.accountList.remove(n);
-	}
+  /**
+   *
+   */
+  private LoginHandler() {
+    addAccount(new Nobody());
+  }
 
-	// private constructor to avoid client applications to use constructor
-	/**
-	 *
-	 */
-	private LoginHandler() {
-		addAccount(new Nobody());
-	}
+  // private constructor to avoid client applications to use constructor
 
   public static Account getCurrentAccount() {
     return currentAccount;
@@ -42,6 +39,10 @@ public class LoginHandler {
    */
   public static synchronized LoginHandler getInstance() {
     return instance;
+  }
+
+  public void removeAccount(String n) {
+    this.accountList.remove(n);
   }
 
   /**
