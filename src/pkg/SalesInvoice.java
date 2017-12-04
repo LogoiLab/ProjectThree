@@ -67,6 +67,7 @@ public class SalesInvoice {
         for(Bundle b : this.bundleList.getAsAL()){
             s = s + b.getBundleName() + ": " + b.getItems().getTotal()+"\n";
         }
+        OutputBuffer.getInstance().add("Commission Value: $"+this.commission * buntot);
         return "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" + s + "\n\n" + "Invoice total: " + invoiceTotal + "                Commission for sale: " + (this.commission * invoiceTotal);
     }
 
