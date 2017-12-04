@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class LoginHandler {
 
   private static final LoginHandler instance = new LoginHandler();
-  private static Account currentAccount = new Nobody();
+  private static Account currentAccount;
   /**
    *
    */
