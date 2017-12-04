@@ -146,7 +146,7 @@ public class DatabaseHandler {
       if (originWarehouse.equals("mainWarehouse")) {
         while ((line = bufferedReader.readLine()) != null) {
           String partName = line.split(",")[0];
-          int quantity = Integer.parseInt(line.split(",")[1]);
+          Integer quantity = Integer.parseInt(line.split(",")[1]);
           if (quantity > WarehouseFactory.getInstance().getWarehouse("MainWarehouse").getiList()
                   .getByName(partName).getQuantity()) {
             OutputBuffer.getInstance().add("Not enough parts available.");

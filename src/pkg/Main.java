@@ -21,6 +21,7 @@ public class Main extends Application {
    * @param args
    */
   public static void main(String[] args) {
+    DatabaseHandler.loadDatabase();
     launch(args);
     LoginHandler.getInstance().addAccount(new Admin("admin", "password"));
   }

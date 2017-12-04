@@ -442,7 +442,7 @@ public class Controller {
   public void doCreateWarehouse() {
     clean();
     WarehouseFactory.getInstance().createWarehouse(warehouseNameField.getText(), vanCheckBox.isSelected());
-    OutputBuffer.getInstance().add("The warehouse " + warehouseNameField.getText() + " was created\n");
+    OutputBuffer.getInstance().add("The warehouse " + warehouseNameField.getText() + " was created");
     clean();
   }
 
@@ -455,7 +455,7 @@ public class Controller {
     String s = WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).getWhName();
     WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText())
             .setWhName(warehouseNewNameField.getText());
-    OutputBuffer.getInstance().add("The warehouse named " + s + " was changed to " + warehouseNewNameField.getText() + "\n");
+    OutputBuffer.getInstance().add("The warehouse named " + s + " was changed to " + warehouseNewNameField.getText() + "");
     clean();
   }
 

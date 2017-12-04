@@ -77,7 +77,7 @@ public class WarehouseFactory {
    * @param partnum
    * @param quantity
    */
-  public void moveParts(String wh1, String wh2, Long partnum, int quantity) {
+  public void moveParts(String wh1, String wh2, Long partnum, Integer quantity) {
     if (warehouseList.getWarehouse(wh1).getiList().getPartByNumber(partnum).decrement(quantity)) {
       if (warehouseList.getWarehouse(wh2).getiList().getPartByNumber(partnum).increment(quantity)) {
         OutputBuffer.getInstance().add("Parts moved successfully.");
