@@ -26,7 +26,7 @@ public class InvoiceFactory {
     return instance;
   }
 
-  public static SalesInvoice getCurrentInvoice() {
+  public SalesInvoice getCurrentInvoice() {
     return currentInvoice;
   }
 

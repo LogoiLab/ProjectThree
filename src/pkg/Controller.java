@@ -373,7 +373,7 @@ public class Controller {
 	@FXML
 	public void doFinishInvoice() {
 		clean();
-		WarehouseFactory.getInstance().getWarehouse(invoiceWarehouseField.getText()).getiList();
+		invoiceTextArea.setText(InvoiceFactory.getInstance().getCurrentInvoice().toString());
 	}
 
 	/**
@@ -456,5 +456,4 @@ public class Controller {
 		}
 		clean();
 	}
-//"System Admin", "Office Manager", "Warehouse Manager", "Employee"
 }
