@@ -51,9 +51,7 @@ public class LoginHandler {
    */
   public boolean doLogin(String uname, String upass) {
     addAccount(new Admin("admin", "password"));
-    //System.out.println(uname);
-    //return accountList.get(uname).checkHash(uname, upass);
-    return true;
+    return accountList.get(uname).checkHash(uname, upass);
   }
 
   /**
