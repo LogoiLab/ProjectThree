@@ -55,17 +55,6 @@ public class DatabaseHandler {
   }
 
   /**
-   * @param path
-   */
-  public static void readMoveFile(String path) {
-    String wh1 = "";
-    String wh2 = "";
-    Long partnum = new Long(0);
-    int quantity = 0;
-    WarehouseFactory.getInstance().moveParts(wh1, wh2, partnum, quantity);
-  }
-
-  /**
    * @return file path
    */
   public static String getPath() {
@@ -129,7 +118,7 @@ public class DatabaseHandler {
    * @param file
    * @return Strings to the OutputBuffer
    */
-  private static void readInventoryFile(File file) {
+  public static void readInventoryFile(File file) {
     String originWarehouse = "";
     String destinationWarehouse = "";
 

@@ -1,12 +1,14 @@
 package pkg;
 
+import java.util.ArrayList;
+
 /**
  * @author Connor Byrd, Chad Baxter, Chris Vasquez
  * Main warehouse factory insures warehouses are protected.
  */
 public class WarehouseFactory {
   private static final WarehouseFactory instance = new WarehouseFactory();
-  private WarehouseList warehouseList;
+  private WarehouseList warehouseList = new WarehouseList();
 
   // private constructor to avoid client applications to use constructor
 
@@ -48,6 +50,16 @@ public class WarehouseFactory {
       warehouseList.addWarehouse(new Van(name, list));
     } else {
       warehouseList.addWarehouse(new Warehouse(name, list));
+    }
+
+  }
+
+  public void createWarehouse(String name, boolean isVan) {
+    ArrayList<BikePart> temp = new ArrayList<>();
+    if (isVan) {
+      warehouseList.addWarehouse(new Van(name, new ItemList(temp)));
+    } else {
+      warehouseList.addWarehouse(new Warehouse(name, new ItemList(temp)));
     }
 
   }

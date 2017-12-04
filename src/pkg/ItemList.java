@@ -11,8 +11,8 @@ import java.util.HashMap;
  */
 
 class ItemList {
-  private ArrayList<BikePart> currentList;
-  private ArrayList<BikePart> list;
+  private ArrayList<BikePart> currentList = new ArrayList<>();
+  private ArrayList<BikePart> list = new ArrayList<>();
   private HashMap<String, BikePart> byName = new HashMap<>();
   private HashMap<Long, BikePart> byNumber = new HashMap<>();
   private HashMap<Integer, BikePart> byQuantity = new HashMap<>();
@@ -25,6 +25,7 @@ class ItemList {
     this.list = list;
     createHashByName();
     createHashByNumber();
+    this.currentList = list;
   }
 
   /**
@@ -32,7 +33,7 @@ class ItemList {
    */
   private void createHashByName() {
     list.equals(currentList);
-    currentList.clear();
+    //currentList.clear();
     Comparator<BikePart> BY_NAME = Comparator.comparing(BikePart::getPartName);
     Collections.sort(list, BY_NAME);
     for (BikePart i : this.list) {

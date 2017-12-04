@@ -42,8 +42,7 @@ class WarehouseList {
    * @param w
    */
   public void addWarehouse(Warehouse w) {
-    String name = w.getWhName();
-    WHash.put(name, w);
+    WHash.put(w.getWhName(), w);
   }
 
   /**

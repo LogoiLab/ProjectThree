@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -397,23 +398,24 @@ public class Controller {
 		case ("Order Part"):
 			WarehouseFactory.getInstance().moveParts("MainWarehouse", itemWarehouseField.getText(),
 					Long.parseLong(itemsPartNumberField.getText()), Integer.parseInt(itemPartQuantityField.getText()));
+			OutputBuffer.getInstance().add(itemPartQuantityField.getText() + "of the part with the part number " + itemsPartNumberField.getText() + " has been ordered and moved into the main warehouse\n");
 		case ("Move Part"):
-			DatabaseHandler.readMoveFile(itemsMoveFileField.getText());
+			DatabaseHandler.readInventoryFile(new File(itemsMoveFileField.getText()));
 		case ("Display Part"):
 			OutputBuffer.getInstance().add(WarehouseFactory.getInstance().getWarehouse("MainWarehouse").getiList()
-					.getPartByNumber(Long.parseLong(itemsPartNumberField.getText())).toString());
+					.getPartByNumber(Long.parseLong(itemsPartNumberField.getText())).toString() + "\n");
 		case ("Sort Parts By Name"): {
 			ArrayList<BikePart> temp = WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText())
 					.getiList().sortByName();
 			for (BikePart p : temp) {
-				OutputBuffer.getInstance().add(p.toString());
+				OutputBuffer.getInstance().add(p.toString() + "\n");
 			}
 		}
 		case ("Sort Parts By Number"): {
 			ArrayList<BikePart> temp = WarehouseFactory.getInstance().getWarehouse(itemWarehouseField.getText())
 					.getiList().sortByNumber();
 			for (BikePart p : temp) {
-				OutputBuffer.getInstance().add(p.toString());
+				OutputBuffer.getInstance().add(p.toString() + "\n");
 			}
 		}
 		}
@@ -425,8 +427,8 @@ public class Controller {
 	@FXML
 	public void doCreateWarehouse() {
 		clean();
-		WarehouseFactory.getInstance().createWarehouse(warehouseNameField.getText(), vanCheckBox.isSelected(),
-				new ItemList(new ArrayList<BikePart>()));
+		WarehouseFactory.getInstance().createWarehouse(warehouseNameField.getText(), vanCheckBox.isSelected());
+		OutputBuffer.getInstance().add("The warehouse " + warehouseNameField.getText() + " was created\n");
 	}
 
 	/**
@@ -435,8 +437,10 @@ public class Controller {
 	@FXML
 	public void doChangeWarehouseName() {
 		clean();
+		String s = WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText()).getWhName();
 		WarehouseFactory.getInstance().getWarehouse(warehouseNameField.getText())
 				.setWhName(warehouseNewNameField.getText());
+		OutputBuffer.getInstance().add("The warehouse named " + s + " was changed to " + warehouseNewNameField.getText()+"\n");
 	}
 
 	/**
@@ -444,25 +448,32 @@ public class Controller {
 	 */
 	@FXML
 	public void doAccountAction() {
+		clean();
 		switch (addDeleteChoiceBox.getValue()){
 			case "Add New Account":{
 				switch (typeChoiceBox.getValue()){
 					case "System Admin":{
 						LoginHandler.getInstance().addAccount(new Admin(usernameTextField.getText(),passwordTextField.getText()));
+						OutputBuffer.getInstance().add("New system admin added\n");
 					}
 					case "Office Manager":{
 						LoginHandler.getInstance().addAccount(new OfficeManager(usernameTextField.getText(),passwordTextField.getText()));
+						OutputBuffer.getInstance().add("New office manager added\n");
 					}
 					case "Warehouse Manager":{
 						LoginHandler.getInstance().addAccount(new WarehouseManager(usernameTextField.getText(),passwordTextField.getText()));
+						OutputBuffer.getInstance().add("New warehouse manager added\n");
 					}
 					case "Employee":{
 						LoginHandler.getInstance().addAccount(new Employee(usernameTextField.getText(),passwordTextField.getText()));
+						OutputBuffer.getInstance().add("New employee added\n");
 					}
 				}
 			}
 			case "Delete Existing Account":{
+				String s = LoginHandler.getInstance().getAccount(usernameTextField.getText()).getUserName();
 				LoginHandler.getInstance().removeAccount(usernameTextField.getText());
+				OutputBuffer.getInstance().add("Account with the user name " + s + " deleted\n");
 			}
 		}
 		clean();

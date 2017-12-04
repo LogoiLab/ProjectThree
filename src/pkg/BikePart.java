@@ -42,6 +42,7 @@ class BikePart extends Item {
       if (i == list.size()) {
         s = s + (p.getPartName() + p.getPartNumber()) + p.getListPrice() + p.getSalePrice() + p.isOnSale()
                 + p.getQuantity();
+        OutputBuffer.getInstance().add(s);
       } else {
         s = s + (p.getPartName() + p.getPartNumber()) + p.getListPrice() + p.getSalePrice() + p.isOnSale()
                 + p.getQuantity() + "\n";
