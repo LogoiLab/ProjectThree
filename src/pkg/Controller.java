@@ -101,6 +101,9 @@ public class Controller {
   private TextField itemWarehouseField;
 
   @FXML
+  private TextField passTextField;
+
+  @FXML
   private TextField itemsPartNumberField;
 
   @FXML
@@ -470,26 +473,27 @@ public class Controller {
       case "Add New Account": {
         switch (typeChoiceBox.getValue()) {
           case "System Admin": {
-            LoginHandler.getInstance().addAccount(new Admin(usernameTextField.getText(), passwordTextField.getText()));
+            LoginHandler.getInstance().addAccount(new Admin(usernameTextField.getText(), passTextField.getText()));
             OutputBuffer.getInstance().add("New system admin added");
             break;
           }
           case "Office Manager": {
-            LoginHandler.getInstance().addAccount(new OfficeManager(usernameTextField.getText(), passwordTextField.getText()));
+            LoginHandler.getInstance().addAccount(new OfficeManager(usernameTextField.getText(), passTextField.getText()));
             OutputBuffer.getInstance().add("New office manager added");
             break;
           }
           case "Warehouse Manager": {
-            LoginHandler.getInstance().addAccount(new WarehouseManager(usernameTextField.getText(), passwordTextField.getText()));
+            LoginHandler.getInstance().addAccount(new WarehouseManager(usernameTextField.getText(), passTextField.getText()));
             OutputBuffer.getInstance().add("New warehouse manager added");
             break;
           }
           case "Employee": {
-            LoginHandler.getInstance().addAccount(new Employee(usernameTextField.getText(), passwordTextField.getText()));
+            LoginHandler.getInstance().addAccount(new Employee(usernameTextField.getText(), passTextField.getText()));
             OutputBuffer.getInstance().add("New employee added");
             break;
           }
         }
+        break;
       }
       case "Delete Existing Account": {
         String s = LoginHandler.getInstance().getAccount(usernameTextField.getText()).getUserName();
