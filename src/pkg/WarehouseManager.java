@@ -1,5 +1,7 @@
 package pkg;
 
+import java.util.Arrays;
+
 /**
  * @author Connor Byrd, Chad Baxter, Chris Vasquez
  * Sets account and permission level.
@@ -33,7 +35,7 @@ class WarehouseManager extends Account {
    */
   public boolean checkHash(String uname, String upass) {
     if (this.userName.equals(uname)
-            && this.passHash.equals(Hasher.hashPassword(upass.toCharArray(), this.passSalt, 32, 512))) {
+            && Arrays.equals(this.passHash, (Hasher.hashPassword(upass.toCharArray(), this.passSalt, 32, 512)))){
       return true;
     } else {
       return false;
