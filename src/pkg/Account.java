@@ -7,9 +7,9 @@ package pkg;
 
 public abstract class Account {
   public static String userName;
-  protected static int PERM_LEVEL;
-  protected static byte[] passHash;
-  protected static byte[] passSalt;
+  public static int PERM_LEVEL;
+  public static byte[] passHash;
+  public static byte[] passSalt;
 
   /**
    *
