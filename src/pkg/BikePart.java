@@ -9,11 +9,11 @@ import java.util.ArrayList;
 
 class BikePart extends Item {
   private String partName;
-  private long partNumber;
+  private Long partNumber;
   private Double listPrice;
   private Double salePrice;
   private boolean onSale;
-  private int quantity;
+  private Integer quantity;
 
   /**
    * @param name
@@ -23,13 +23,15 @@ class BikePart extends Item {
    * @param onSale
    * @param quant
    */
-  public BikePart(String name, long num, Double list, Double sale, boolean onSale, int quant) {
+  public BikePart(String name, Long num, Double list, Double sale, boolean onSale, Integer quant) {
     this.partName = name;
     this.partNumber = num;
     this.listPrice = list;
     this.salePrice = sale;
     this.onSale = onSale;
     this.quantity = quant;
+    super.setItemName(name);
+    super.setItemNumber(num);
   }
 
   /**
@@ -131,14 +133,14 @@ class BikePart extends Item {
   /**
    * @return quantity
    */
-  public int getQuantity() {
+  public Integer getQuantity() {
     return quantity;
   }
 
   /**
    * @param quantity
    */
-  public void setQuantity(int quantity) {
+  public void setQuantity(Integer quantity) {
     this.quantity = quantity;
   }
 
@@ -165,7 +167,7 @@ class BikePart extends Item {
    * @return true/false whether the increment was successful
    */
   public boolean increment() {
-    int temp = this.getQuantity();
+    Integer temp = this.getQuantity();
     if (temp++ > Integer.MAX_VALUE) {
       return false;
     } else
@@ -177,7 +179,7 @@ class BikePart extends Item {
    * @return true/false whether the decrement was successful
    */
   public boolean decrement() {
-    int temp = this.getQuantity();
+    Integer temp = this.getQuantity();
     if (temp-- > 0) {
       this.quantity--;
       return true;
@@ -189,8 +191,8 @@ class BikePart extends Item {
    * @param num
    * @return true/false whether the increment was successful
    */
-  public boolean increment(int num) {
-    int temp = this.getQuantity();
+  public boolean increment(Integer num) {
+    Integer temp = this.getQuantity();
     if (temp + num > Integer.MAX_VALUE) {
       return false;
     } else
@@ -202,8 +204,8 @@ class BikePart extends Item {
    * @param num
    * @return true/false whether the decrement was succesful
    */
-  public boolean decrement(int num) {
-    int temp = this.quantity;
+  public boolean decrement(Integer num) {
+    Integer temp = this.quantity;
     if (temp - num > 0) {
       this.setQuantity(this.getQuantity() - num);
       return true;

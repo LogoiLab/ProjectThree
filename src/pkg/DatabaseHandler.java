@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class DatabaseHandler {
 
   private static final String path = "";
-  private static String invUpdate = "";
+  //private static String invUpdate = "";
 
   /**
    *
@@ -64,50 +64,42 @@ public class DatabaseHandler {
   /**
    * @return strings to the OutputBuffer
    */
-  public static void updateInventory() {
-    String dest = "";
-    File file = new File(invUpdate);
+  public static void updateInventory(File file) {
+    //File file = new File(invUpdate);
     ArrayList<BikePart> parts = new ArrayList<>();
     try {
       FileReader fr = new FileReader(file);
       BufferedReader br = new BufferedReader(fr);
       String line = br.readLine();
-      if (WarehouseFactory.getInstance().getWarehouse(line.split(",")[0]) != null)
-        dest.equals(WarehouseFactory.getInstance().getWarehouse(line.split(",")[0]));
-      else
-        OutputBuffer.getInstance()
-                .add("the Warehouse " + line.split(",")[0] + " does not exist. Please add it and try again");
       while ((line = br.readLine()) != null) {
         parts.add(new BikePart(line.split(",")[0], Long.parseLong(line.split(",")[1]),
                 Double.parseDouble(line.split(",")[2]), Double.parseDouble(line.split(",")[3]),
                 Boolean.parseBoolean(line.split(",")[4]), Integer.parseInt(line.split(",")[5])));
       }
       for (int i = 0; i < parts.size(); i++) {
-        BikePart p = WarehouseFactory.getInstance().getWarehouse(dest).getiList()
-                .getByName(parts.get(i).getPartName());
-        if (!WarehouseFactory.getInstance().getWarehouse(dest).getiList().getCurrentList().contains(p)) {
-          WarehouseFactory.getInstance().getWarehouse(dest).getiList().addPart(p);
-          break;
+        BikePart p = parts.get(i);
+        if (!WarehouseFactory.getInstance().getWarehouse("mainWarehouse").getiList().getCurrentList().contains(p)) {
+          WarehouseFactory.getInstance().getWarehouse("mainWarehouse").getiList().addPart(p);
         }
         if (!p.getListPrice().equals(parts.get(i).getListPrice())) {
-          WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName())
+          WarehouseFactory.getInstance().getWarehouse("mainWarehouse").getiList().getByName(parts.get(i).getPartName())
                   .setListPrice(parts.get(i).getListPrice());
         }
         if (!p.getSalePrice().equals(parts.get(i).getSalePrice())) {
-          WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName())
+          WarehouseFactory.getInstance().getWarehouse("mainWarehouse").getiList().getByName(parts.get(i).getPartName())
                   .setSalePrice(parts.get(i).getSalePrice());
         }
         if (p.isOnSale() != parts.get(i).isOnSale()) {
-          WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName())
+          WarehouseFactory.getInstance().getWarehouse("mainWarehouse").getiList().getByName(parts.get(i).getPartName())
                   .setOnSale(parts.get(i).isOnSale());
         }
-        WarehouseFactory.getInstance().getWarehouse(dest).getiList().getByName(parts.get(i).getPartName())
-                .setQuantity((WarehouseFactory.getInstance().getWarehouse(dest).getiList()
+        WarehouseFactory.getInstance().getWarehouse("mainWarehouse").getiList().getByName(parts.get(i).getPartName())
+                .setQuantity((WarehouseFactory.getInstance().getWarehouse("mainWarehouse").getiList()
                         .getByName(parts.get(i).getPartName()).getQuantity()) + parts.get(i).getQuantity());
       }
     } catch (FileNotFoundException e) {
       OutputBuffer.getInstance()
-              .add("The file " + invUpdate + " could not be found. Please check spelling and try again");
+              .add("The file " + file + " could not be found. Please check spelling and try again");
 
     } catch (IOException e) {
       OutputBuffer.getInstance().add("The BufferedReader was unable to attach to the FileReader");
