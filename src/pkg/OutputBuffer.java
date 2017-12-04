@@ -5,47 +5,48 @@ package pkg;
  * Handles text based output.
  */
 public class OutputBuffer {
-	private static final OutputBuffer instance = new OutputBuffer();
-	private static String output = "";
+  private static final OutputBuffer instance = new OutputBuffer();
+  private static String output = "";
 
-	// private constructor to avoid client applications to use constructor
-	/**
-	 * 
-	 */
-	private OutputBuffer() {
-	}
+  // private constructor to avoid client applications to use constructor
 
-	/**
-	 * @return
-	 */
-	public static synchronized OutputBuffer getInstance() {
-		return instance;
-	}
+  /**
+   *
+   */
+  private OutputBuffer() {
+  }
 
-	/**
-	 * @param str
-	 */
-	public static void add(String str) {
-		if (output.equals("")) {
-			output = str;
-		} else {
-			output = output + "\n" + str;
-		}
-	}
+  /**
+   * @return
+   */
+  public static synchronized OutputBuffer getInstance() {
+    return instance;
+  }
 
-	/**
-	 * @return
-	 */
-	public static String get() {
-		String out = output;
-		output = "";
-		return out;
-	}
+  /**
+   * @param str
+   */
+  public static void add(String str) {
+    if (output.equals("")) {
+      output = str;
+    } else {
+      output = output + "\n" + str;
+    }
+  }
 
-	/**
-	 * 
-	 */
-	public static void clear() {
-		output = "";
-	}
+  /**
+   * @return
+   */
+  public static String get() {
+    String out = output;
+    output = "";
+    return out;
+  }
+
+  /**
+   *
+   */
+  public static void clear() {
+    output = "";
+  }
 }

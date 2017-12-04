@@ -6,57 +6,57 @@ package pkg;
  */
 
 class Item {
-    private String itemName;
-    private long itemNumber;
+  private String itemName;
+  private long itemNumber;
 
-    /**
-     * @return itemName
-     */
-    public String getItemName() {
-        return itemName;
-    }
+  /**
+   *
+   */
+  public Item() {
 
-    /**
-     * @param itemName
-     */
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
+  }
 
-    /**
-     * @return itemNumber
-     */
-    public long getItemNumber() {
-        return itemNumber;
-    }
+  /**
+   * @param name
+   * @param num
+   */
+  public Item(String name, long num) {
+    this.itemName = name;
+    this.itemNumber = num;
+  }
 
-    /**
-     * @param itemNumber
-     */
-    public void setItemNumber(long itemNumber) {
-        this.itemNumber = itemNumber;
-    }
+  /**
+   * @return itemName
+   */
+  public String getItemName() {
+    return itemName;
+  }
 
-    /**
-     *
-     */
-    public Item() {
+  /**
+   * @param itemName
+   */
+  public void setItemName(String itemName) {
+    this.itemName = itemName;
+  }
 
-    }
+  /**
+   * @return itemNumber
+   */
+  public long getItemNumber() {
+    return itemNumber;
+  }
 
-    /**
-     * @param name
-     * @param num
-     */
-    public Item(String name, long num) {
-        this.itemName = name;
-        this.itemNumber = num;
-    }
+  /**
+   * @param itemNumber
+   */
+  public void setItemNumber(long itemNumber) {
+    this.itemNumber = itemNumber;
+  }
 
-    /* (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return this.getItemName() + " " + this.getItemNumber();
-    }
+  /* (non-Javadoc)
+   * @see java.lang.Object#toString()
+   */
+  public String toString() {
+    return this.getItemName() + " " + this.getItemNumber();
+  }
 }

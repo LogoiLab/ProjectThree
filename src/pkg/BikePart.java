@@ -1,6 +1,6 @@
 package pkg;
 
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * @author Connor Byrd, Chad Baxter, Chris Vasquez
@@ -8,206 +8,206 @@ import java.util.*;
  */
 
 class BikePart extends Item {
-	private String partName;
-	private long partNumber;
-	private Double listPrice;
-	private Double salePrice;
-	private boolean onSale;
-	private int quantity;
+  private String partName;
+  private long partNumber;
+  private Double listPrice;
+  private Double salePrice;
+  private boolean onSale;
+  private int quantity;
 
-	/**
-	 * @return partName
-	 */
-	public String getPartName() {
-		return partName;
-	}
+  /**
+   * @param name
+   * @param num
+   * @param list
+   * @param sale
+   * @param onSale
+   * @param quant
+   */
+  public BikePart(String name, long num, Double list, Double sale, boolean onSale, int quant) {
+    this.partName = name;
+    this.partNumber = num;
+    this.listPrice = list;
+    this.salePrice = sale;
+    this.onSale = onSale;
+    this.quantity = quant;
+  }
 
-	/**
-	 * @param partName
-	 */
-	public void setPartName(String partName) {
-		this.partName = partName;
-	}
+  /**
+   * @param list
+   */
+  public static void printMePlz(ArrayList<BikePart> list) {
+    String s = "";
+    for (int i = 0; i < list.size(); i++) {
+      BikePart p = list.get(i);
+      if (i == list.size()) {
+        s = s + (p.getPartName() + p.getPartNumber()) + p.getListPrice() + p.getSalePrice() + p.isOnSale()
+                + p.getQuantity();
+      } else {
+        s = s + (p.getPartName() + p.getPartNumber()) + p.getListPrice() + p.getSalePrice() + p.isOnSale()
+                + p.getQuantity() + "\n";
+        OutputBuffer.getInstance().add(s);
+      }
+    }
+  }
 
-	/**
-	 * @return partNumber
-	 */
-	public long getPartNumber() {
-		return partNumber;
-	}
+  /**
+   * @return partName
+   */
+  public String getPartName() {
+    return partName;
+  }
 
-	/**
-	 * @param partNumber
-	 */
-	public void setPartNumber(long partNumber) {
-		this.partNumber = partNumber;
-	}
+  /**
+   * @param partName
+   */
+  public void setPartName(String partName) {
+    this.partName = partName;
+  }
 
-	/**
-	 * @return listPrice
-	 */
-	public Double getListPrice() {
-		return listPrice;
-	}
+  /**
+   * @return partNumber
+   */
+  public long getPartNumber() {
+    return partNumber;
+  }
 
-	/**
-	 * @param listPrice
-	 */
-	public void setListPrice(Double listPrice) {
-		this.listPrice = listPrice;
-	}
+  /**
+   * @param partNumber
+   */
+  public void setPartNumber(long partNumber) {
+    this.partNumber = partNumber;
+  }
 
-	/**
-	 * @return salePrice
-	 */
-	public Double getSalePrice() {
-		return salePrice;
-	}
+  /**
+   * @return listPrice
+   */
+  public Double getListPrice() {
+    return listPrice;
+  }
 
-	/**
-	 * @return whole Bikepart object
-	 */
-	public BikePart getSelf() {
-		return this;
-	}
+  /**
+   * @param listPrice
+   */
+  public void setListPrice(Double listPrice) {
+    this.listPrice = listPrice;
+  }
 
-	/**
-	 * @param salePrice
-	 */
-	public void setSalePrice(Double salePrice) {
-		this.salePrice = salePrice;
-	}
+  /**
+   * @return salePrice
+   */
+  public Double getSalePrice() {
+    return salePrice;
+  }
 
-	/**
-	 * @return onSale (true/false)
-	 */
-	public boolean isOnSale() {
-		return onSale;
-	}
+  /**
+   * @param salePrice
+   */
+  public void setSalePrice(Double salePrice) {
+    this.salePrice = salePrice;
+  }
 
-	/**
-	 * @param onSale
-	 */
-	public void setOnSale(boolean onSale) {
-		this.onSale = onSale;
-	}
+  /**
+   * @return whole Bikepart object
+   */
+  public BikePart getSelf() {
+    return this;
+  }
 
-	/**
-	 * @return quantity
-	 */
-	public int getQuantity() {
-		return quantity;
-	}
+  /**
+   * @return onSale (true/false)
+   */
+  public boolean isOnSale() {
+    return onSale;
+  }
 
-	/**
-	 * @param quantity
-	 */
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
+  /**
+   * @param onSale
+   */
+  public void setOnSale(boolean onSale) {
+    this.onSale = onSale;
+  }
 
-	/**
-	 * @return cost of a part
-	 */
-	public Double getPrice() {
-		if (this.onSale) {
-			return salePrice;
-		} else
-			return listPrice;
-	}
+  /**
+   * @return quantity
+   */
+  public int getQuantity() {
+    return quantity;
+  }
 
-	/**
-	 * @param name
-	 * @param num
-	 * @param list
-	 * @param sale
-	 * @param onSale
-	 * @param quant
-	 */
-	public BikePart(String name, long num, Double list, Double sale, boolean onSale, int quant) {
-		this.partName = name;
-		this.partNumber = num;
-		this.listPrice = list;
-		this.salePrice = sale;
-		this.onSale = onSale;
-		this.quantity = quant;
-	}
+  /**
+   * @param quantity
+   */
+  public void setQuantity(int quantity) {
+    this.quantity = quantity;
+  }
 
-	/* (non-Javadoc)
-	 * @see pkg.Item#toString()
-	 */
-	@Override
-	public String toString() {
-		return (this.partName + "," + this.partNumber + "," + this.listPrice + "," + this.salePrice + ","
-				+ this.isOnSale() + "," + this.quantity);
-	}
+  /**
+   * @return cost of a part
+   */
+  public Double getPrice() {
+    if (this.onSale) {
+      return salePrice;
+    } else
+      return listPrice;
+  }
 
-	/**
-	 * @param list
-	 */
-	public static void printMePlz(ArrayList<BikePart> list) {
-		String s = "";
-		for (int i = 0; i < list.size(); i++) {
-			BikePart p = list.get(i);
-			if (i == list.size()) {
-				s = s + (p.getPartName() + p.getPartNumber()) + p.getListPrice() + p.getSalePrice() + p.isOnSale()
-						+ p.getQuantity();
-			} else {
-				s = s + (p.getPartName() + p.getPartNumber()) + p.getListPrice() + p.getSalePrice() + p.isOnSale()
-						+ p.getQuantity() + "\n";
-				OutputBuffer.getInstance().add(s);
-			}
-		}
-	}
+  /* (non-Javadoc)
+   * @see pkg.Item#toString()
+   */
+  @Override
+  public String toString() {
+    return (this.partName + "," + this.partNumber + "," + this.listPrice + "," + this.salePrice + ","
+            + this.isOnSale() + "," + this.quantity);
+  }
 
-	/**
-	 * @return true/false whether the increment was successful
-	 */
-	public boolean increment() {
-		int temp = this.getQuantity();
-		if (temp++ > Integer.MAX_VALUE) {
-			return false;
-		} else
-			this.quantity++;
-		return true;
-	}
+  /**
+   * @return true/false whether the increment was successful
+   */
+  public boolean increment() {
+    int temp = this.getQuantity();
+    if (temp++ > Integer.MAX_VALUE) {
+      return false;
+    } else
+      this.quantity++;
+    return true;
+  }
 
-	/**
-	 * @return true/false whether the decrement was successful
-	 */
-	public boolean decrement() {
-		int temp = this.getQuantity();
-		if (temp-- > 0) {
-			this.quantity--;
-			return true;
-		} else
-			return false;
-	}
+  /**
+   * @return true/false whether the decrement was successful
+   */
+  public boolean decrement() {
+    int temp = this.getQuantity();
+    if (temp-- > 0) {
+      this.quantity--;
+      return true;
+    } else
+      return false;
+  }
 
-	/**
-	 * @param num
-	 * @return true/false whether the increment was successful
-	 */
-	public boolean increment(int num) {
-		int temp = this.getQuantity();
-		if (temp + num > Integer.MAX_VALUE) {
-			return false;
-		} else
-			this.setQuantity(this.quantity + num);
-		return true;
-	}
+  /**
+   * @param num
+   * @return true/false whether the increment was successful
+   */
+  public boolean increment(int num) {
+    int temp = this.getQuantity();
+    if (temp + num > Integer.MAX_VALUE) {
+      return false;
+    } else
+      this.setQuantity(this.quantity + num);
+    return true;
+  }
 
-	/**
-	 * @param num
-	 * @return true/false whether the decrement was succesful
-	 */
-	public boolean decrement(int num) {
-		int temp = this.quantity;
-		if (temp - num > 0) {
-			this.setQuantity(this.getQuantity() - num);
-			return true;
-		} else
-			return false;
-	}
+  /**
+   * @param num
+   * @return true/false whether the decrement was succesful
+   */
+  public boolean decrement(int num) {
+    int temp = this.quantity;
+    if (temp - num > 0) {
+      this.setQuantity(this.getQuantity() - num);
+      return true;
+    } else
+      return false;
+  }
 
 }

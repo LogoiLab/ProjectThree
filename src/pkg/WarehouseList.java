@@ -7,57 +7,57 @@ import java.util.HashMap;
  * Manages a list of warehouses.
  */
 class WarehouseList {
-	private HashMap<String, Warehouse> WHash = new HashMap<>();
+  private HashMap<String, Warehouse> WHash = new HashMap<>();
 
-	/**
-	 * @return
-	 */
-	public HashMap<String, Warehouse> getWHash() {
-		return WHash;
-	}
+  /**
+   *
+   */
+  public WarehouseList() {
 
-	/**
-	 * @param WHash
-	 */
-	public void setWHash(HashMap<String, Warehouse> WHash) {
-		this.WHash = WHash;
-	}
+  }
 
-	/**
-	 * @param name
-	 * @return
-	 */
-	public Warehouse getWarehouse(String name) {
-		return WHash.get(name);
-	}
+  /**
+   * @return
+   */
+  public HashMap<String, Warehouse> getWHash() {
+    return WHash;
+  }
 
-	/**
-	 * @param w
-	 */
-	public void addWarehouse(Warehouse w) {
-		String name = w.getWhName();
-		WHash.put(name, w);
-	}
+  /**
+   * @param WHash
+   */
+  public void setWHash(HashMap<String, Warehouse> WHash) {
+    this.WHash = WHash;
+  }
 
-	/**
-	 * 
-	 */
-	public WarehouseList() {
+  /**
+   * @param name
+   * @return
+   */
+  public Warehouse getWarehouse(String name) {
+    return WHash.get(name);
+  }
 
-	}
+  /**
+   * @param w
+   */
+  public void addWarehouse(Warehouse w) {
+    String name = w.getWhName();
+    WHash.put(name, w);
+  }
 
-	/**
-	 * @return
-	 */
-	public boolean isEmpty() {
-		return this.WHash.isEmpty();
-	}
+  /**
+   * @return
+   */
+  public boolean isEmpty() {
+    return this.WHash.isEmpty();
+  }
 
-	/**
-	 * @param WHash
-	 */
-	public void appendWHash(HashMap<String, Warehouse> WHash) {
-		this.WHash.putAll(WHash);
-	}
+  /**
+   * @param WHash
+   */
+  public void appendWHash(HashMap<String, Warehouse> WHash) {
+    this.WHash.putAll(WHash);
+  }
 
 }
