@@ -75,9 +75,15 @@ public class SalesInvoice {
         Double tot = 0.0;
         this.buntot = 0.0;
         tot+=this.itemList.getTotal();
+        for(BikePart b : this.itemList.getCurrentList()){
+            b.decrement();
+        }
         for(Bundle b : this.bundleList.getAsAL()){
             tot+=b.getItems().getTotal();
             this.buntot+=b.getItems().getTotal();
+            for(BikePart i : b.getItems().getCurrentList()){
+                i.decrement();
+            }
         }
         return tot;
     }
