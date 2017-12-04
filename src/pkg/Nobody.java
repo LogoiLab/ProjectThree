@@ -6,20 +6,20 @@ package pkg;
  */
 class Nobody extends Account {
 
-	private static int PERM_LEVEL = 0;
+  private static int PERM_LEVEL = 0;
 
-	/**
-	 * 
-	 */
-	public Nobody() {
-		super.setUserName("nobody");
-	}
+  /**
+   *
+   */
+  public Nobody() {
+    super.setUserName("nobody");
+  }
 
-	/**
-	 * @return
-	 */
-	public int getPermLevel() {
-		return this.PERM_LEVEL;
-	}
+  /**
+   * @return
+   */
+  public int getPermLevel() {
+    return this.PERM_LEVEL;
+  }
 
 }

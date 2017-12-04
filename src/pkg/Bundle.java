@@ -6,44 +6,44 @@ package pkg;
  */
 
 class Bundle {
-	private String bundleName;
-	private ItemList items;
+  private String bundleName;
+  private ItemList items;
 
-	/**
-	 * @return bundleName
-	 */
-	public String getBundleName() {
-		return bundleName;
-	}
+  /**
+   * @param name
+   * @param list
+   */
+  public Bundle(String name, ItemList list) {
+    this.bundleName.equals(name);
+    this.items = list;
+  }
 
-	/**
-	 * @param bundleName
-	 */
-	public void setBundleName(String bundleName) {
-		this.bundleName = bundleName;
-	}
+  /**
+   * @return bundleName
+   */
+  public String getBundleName() {
+    return bundleName;
+  }
 
-	/**
-	 * @return items in the itemlist
-	 */
-	public ItemList getItems() {
-		return items;
-	}
+  /**
+   * @param bundleName
+   */
+  public void setBundleName(String bundleName) {
+    this.bundleName = bundleName;
+  }
 
-	/**
-	 * @param items
-	 */
-	public void setItems(ItemList items) {
-		this.items = items;
-	}
+  /**
+   * @return items in the itemlist
+   */
+  public ItemList getItems() {
+    return items;
+  }
 
-	/**
-	 * @param name
-	 * @param list
-	 */
-	public Bundle(String name, ItemList list) {
-		this.bundleName.equals(name);
-		this.items = list;
-	}
+  /**
+   * @param items
+   */
+  public void setItems(ItemList items) {
+    this.items = items;
+  }
 
 }

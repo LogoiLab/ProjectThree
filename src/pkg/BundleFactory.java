@@ -6,54 +6,55 @@ package pkg;
  */
 
 public class BundleFactory {
-	private static final BundleFactory instance = new BundleFactory();
-	private static BundleList bundles;
+  private static final BundleFactory instance = new BundleFactory();
+  private static BundleList bundles;
 
-	// private constructor to avoid client applications to use constructor
-	/**
-	 * 
-	 */
-	private BundleFactory() {
-	}
+  // private constructor to avoid client applications to use constructor
 
-	/**
-	 * @return bundleFactory instance
-	 */
-	public static synchronized BundleFactory getInstance() {
-		return instance;
-	}
+  /**
+   *
+   */
+  private BundleFactory() {
+  }
 
-	/**
-	 * @param bundleName
-	 * @return ItemList
-	 */
-	public ItemList getBundle(String bundleName) {
-		return bundles.getBundledItems(bundleName);
-	}
+  /**
+   * @return bundleFactory instance
+   */
+  public static synchronized BundleFactory getInstance() {
+    return instance;
+  }
 
-	/**
-	 * @param name
-	 * @param list
-	 */
-	public void newBundle(String name, ItemList list) {
-		bundles.addBundle(new Bundle(name, list));
-	}
+  /**
+   * @param bundleName
+   * @return ItemList
+   */
+  public ItemList getBundle(String bundleName) {
+    return bundles.getBundledItems(bundleName);
+  }
 
-	/**
-	 * @return bundles
-	 */
-	public BundleList getBundleList() {
-		return bundles;
-	}
+  /**
+   * @param name
+   * @param list
+   */
+  public void newBundle(String name, ItemList list) {
+    bundles.addBundle(new Bundle(name, list));
+  }
 
-	/**
-	 * @param bl
-	 */
-	public void populate(BundleList bl) {
-		if (bundles.isEmpty()) {
-			bundles = bl;
-		} else {
-			bundles.appendBundleList(bl.getBundleListName(), bl.getBundleList());
-		}
-	}
+  /**
+   * @return bundles
+   */
+  public BundleList getBundleList() {
+    return bundles;
+  }
+
+  /**
+   * @param bl
+   */
+  public void populate(BundleList bl) {
+    if (bundles.isEmpty()) {
+      bundles = bl;
+    } else {
+      bundles.appendBundleList(bl.getBundleListName(), bl.getBundleList());
+    }
+  }
 }
