@@ -24,6 +24,9 @@ public class Controller {
 	private Pane mainPane;
 
 	@FXML
+	private TextField passwordTextField;
+
+	@FXML
 	private Pane loginPane;
 
 	@FXML
@@ -431,8 +434,28 @@ public class Controller {
 	 */
 	@FXML
 	public void doAccountAction() {
+		switch (addDeleteChoiceBox.getValue()){
+			case "Add New Account":{
+				switch (typeChoiceBox.getValue()){
+					case "System Admin":{
+						LoginHandler.getInstance().addAccount(new Admin(usernameTextField.getText(),passwordTextField.getText()));
+					}
+					case "Office Manager":{
+						LoginHandler.getInstance().addAccount(new OfficeManager(usernameTextField.getText(),passwordTextField.getText()));
+					}
+					case "Warehouse Manager":{
+						LoginHandler.getInstance().addAccount(new WarehouseManager(usernameTextField.getText(),passwordTextField.getText()));
+					}
+					case "Employee":{
+						LoginHandler.getInstance().addAccount(new Employee(usernameTextField.getText(),passwordTextField.getText()));
+					}
+				}
+			}
+			case "Delete Existing Account":{
+				LoginHandler.getInstance().removeAccount(usernameTextField.getText());
+			}
+		}
 		clean();
-		
 	}
-
+//"System Admin", "Office Manager", "Warehouse Manager", "Employee"
 }

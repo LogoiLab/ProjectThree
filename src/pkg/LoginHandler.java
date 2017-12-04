@@ -16,6 +16,10 @@ public class LoginHandler {
 	 */
 	private HashMap<String, Account> accountList = new HashMap<String, Account>();
 
+	public void removeAccount(String n){
+		this.accountList.remove(n);
+	}
+
 	// private constructor to avoid client applications to use constructor
 	/**
 	 * 
