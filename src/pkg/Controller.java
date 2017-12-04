@@ -464,26 +464,26 @@ public class Controller {
         switch (typeChoiceBox.getValue()) {
           case "System Admin": {
             LoginHandler.getInstance().addAccount(new Admin(usernameTextField.getText(), passwordTextField.getText()));
-            OutputBuffer.getInstance().add("New system admin added\n");
+            OutputBuffer.getInstance().add("New system admin added");
           }
           case "Office Manager": {
             LoginHandler.getInstance().addAccount(new OfficeManager(usernameTextField.getText(), passwordTextField.getText()));
-            OutputBuffer.getInstance().add("New office manager added\n");
+            OutputBuffer.getInstance().add("New office manager added");
           }
           case "Warehouse Manager": {
             LoginHandler.getInstance().addAccount(new WarehouseManager(usernameTextField.getText(), passwordTextField.getText()));
-            OutputBuffer.getInstance().add("New warehouse manager added\n");
+            OutputBuffer.getInstance().add("New warehouse manager added");
           }
           case "Employee": {
             LoginHandler.getInstance().addAccount(new Employee(usernameTextField.getText(), passwordTextField.getText()));
-            OutputBuffer.getInstance().add("New employee added\n");
+            OutputBuffer.getInstance().add("New employee added");
           }
         }
       }
       case "Delete Existing Account": {
         String s = LoginHandler.getInstance().getAccount(usernameTextField.getText()).getUserName();
         LoginHandler.getInstance().removeAccount(usernameTextField.getText());
-        OutputBuffer.getInstance().add("Account with the user name " + s + " deleted\n");
+        OutputBuffer.getInstance().add("Account with the user name " + s + " deleted");
       }
     }
     clean();
