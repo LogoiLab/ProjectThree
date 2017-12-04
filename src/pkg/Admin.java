@@ -41,4 +41,17 @@ class Admin extends Account {
     }
   }
 
+  /**
+   * @return username
+   */
+  public String getUserName() {
+    return this.userName;
+  }
+
+  /**
+   * @param userName
+   */
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
 }
