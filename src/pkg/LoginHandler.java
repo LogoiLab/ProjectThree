@@ -17,26 +17,17 @@ public class LoginHandler {
 
   // private constructor to avoid client applications to use constructor
 
-<<<<<<< HEAD
 	public void removeAccount(String n){
 		this.accountList.remove(n);
 	}
 
 	// private constructor to avoid client applications to use constructor
 	/**
-	 * 
+	 *
 	 */
 	private LoginHandler() {
 		addAccount(new Nobody());
 	}
-=======
-  /**
-   *
-   */
-  private LoginHandler() {
-    addAccount(new Nobody());
-  }
->>>>>>> 651c527f5889eed0c254e6f093634ef42b04de3d
 
   public static Account getCurrentAccount() {
     return currentAccount;
