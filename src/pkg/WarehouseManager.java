@@ -16,12 +16,14 @@ class WarehouseManager extends Account {
    * @param password
    */
   public WarehouseManager(String userName, String password) {
+    super.PERM_LEVEL = this.PERM_LEVEL;
     super.userName = userName;
     super.passSalt = Hasher.generateSalt();
     super.passHash = Hasher.hashPassword(password.toCharArray(), super.passSalt, 32, 512);
   }
 
   public WarehouseManager(String userName, byte[] passHash, byte[] passSalt) {
+    super.PERM_LEVEL = this.PERM_LEVEL;
     super.userName = userName;
     super.passSalt = passHash;
     super.passHash = passSalt;

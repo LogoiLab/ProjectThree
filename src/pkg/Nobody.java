@@ -14,6 +14,7 @@ class Nobody extends Account {
    *
    */
   public Nobody() {
+    super.PERM_LEVEL = this.PERM_LEVEL;
     this.setUserName("nobody");
   }
 
