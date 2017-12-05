@@ -6,6 +6,7 @@
 package pkg;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * @author Connor Byrd, Chad Baxter, Chris Vasquez
@@ -13,30 +14,26 @@ import java.util.Date;
  */
 public class SalesInvoice {
   private Date saleDate;
-  private String customer;
   private ItemList itemList;
   private Double invoiceTotal;
   private Double commission;
-  private BundleList bundleList;
+  private BundleList bundleList=new BundleList("",new HashMap<String,Bundle>());
   private Double buntot;
 
   /**
    * @param seller
-   * @param customer
    * @param list
    * @param total
    */
-  public SalesInvoice(Account seller, String customer, ItemList list, Double total, BundleList bundle) {
+  public SalesInvoice(Account seller, ItemList list, Double total, BundleList bundle) {
     this.saleDate = new Date();
-    this.customer = customer;
     this.itemList = list;
     this.invoiceTotal = total;
     this.bundleList = bundle;
   }
 
-  public SalesInvoice(Account seller, String customer, ItemList list, Double total) {
+  public SalesInvoice(Account seller, ItemList list, Double total) {
     this.saleDate = new Date();
-    this.customer = customer;
     this.itemList = list;
     this.invoiceTotal = total;
   }
@@ -60,15 +57,20 @@ public class SalesInvoice {
    */
   public String toString() {
     String s = "";
-    s = s + ("Invoice: " + customer + "Date: " + saleDate + "\n");
+    s = s + ("Invoice: " + "\n" + "Date: " + saleDate + "\n");
     for (int i = 0; i < getItemList().getCurrentList().size(); i++) {
       s = s + getItemList().getCurrentList().get(i).toString() + "\n";
     }
-    for (Bundle b : this.bundleList.getAsAL()) {
-      s = s + b.getBundleName() + ": " + b.getItems().getTotal() + "\n";
+    if (!this.bundleList.isEmpty()) {
+      for (Bundle b : this.bundleList.getAsAL()) {
+        s = s + b.getBundleName() + ": " + b.getItems().getTotal() + "\n";
+      }
+      OutputBuffer.getInstance().add("Commission Value: $" + this.commission * buntot);
+      return "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" + s + "\n\n" + "Invoice total: " + invoiceTotal + "                Commission for sale: " + (this.commission * invoiceTotal);
+    }else{
+      return "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" + s + "\n\n" + "Invoice total: " + invoiceTotal;
     }
-    OutputBuffer.getInstance().add("Commission Value: $" + this.commission * buntot);
-    return "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" + s + "\n\n" + "Invoice total: " + invoiceTotal + "                Commission for sale: " + (this.commission * invoiceTotal);
+
   }
 
   public Double getInvoiceTotal() {

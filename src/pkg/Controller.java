@@ -365,7 +365,21 @@ public class Controller {
   @FXML
   public void doAddToInvoice() {
     clean();
-    invoiceParts.add(invoicePartNumberField.getText() + ";" + invoicePartQuantityField.getText());
+    try {
+      if (WarehouseFactory.getInstance().getWarehouseList().getWarehouse("mainWarehouse").getiList().getPartByNumber(Long.parseLong(invoicePartNumberField.getText())).getQuantity() < Integer.parseInt(invoicePartQuantityField.getText())) {
+        invoiceTextArea.setText("There are not that many parts of that type in the main warehouse");
+      } else {
+        invoiceParts.add(invoicePartNumberField.getText() + ";" + invoicePartQuantityField.getText());
+        WarehouseFactory.getInstance().getWarehouseList().getWarehouse("mainWarehouse").getiList().getPartByNumber(Long.parseLong(invoicePartNumberField.getText())).decrement(Integer.parseInt(invoicePartQuantityField.getText()));
+        invoiceTextArea.setText("");
+        invoiceTextArea.appendText("The current invoice is composed of: \n");
+        for (String s : invoiceParts) {
+          invoiceTextArea.appendText(s + "\n");
+        }
+      }
+    }catch(NullPointerException e){
+      invoiceTextArea.setText("That part does not exist in the main warehouse");
+    }
     clean();
   }
 
@@ -375,7 +389,16 @@ public class Controller {
   @FXML
   public void doRemoveFromInvoice() {
     clean();
-    InvoiceFactory.getInstance().removeFromInvoice(invoicePartNumberField.getText());
+    for (String s : invoiceParts) {
+      if (s.equals(invoicePartNumberField.getText())) {
+        invoiceParts.remove(s);
+      }
+    }
+    invoiceTextArea.setText("");
+    invoiceTextArea.appendText("The current invoice is composed of: \n");
+    for (String s : invoiceParts) {
+      invoiceTextArea.appendText(s + "\n");
+    }
     clean();
   }
 
@@ -385,6 +408,7 @@ public class Controller {
   @FXML
   public void doFinishInvoice() {
     clean();
+    InvoiceFactory.getInstance().createInvoice(LoginHandler.getCurrentAccount(), invoiceParts);
     invoiceTextArea.setText(InvoiceFactory.getInstance().getCurrentInvoice().toString());
     clean();
   }
@@ -396,8 +420,9 @@ public class Controller {
   public void doItemExecute() {
     clean();
     switch (itemsChoiceBox.getValue()) {
-      case ("Update Inventory") : DatabaseHandler.updateInventory(new File(itemsMoveFileField.getText()));
-      break;
+      case ("Update Inventory"):
+        DatabaseHandler.updateInventory(new File(itemsMoveFileField.getText()));
+        break;
       case ("Order Part"):
         WarehouseFactory.getInstance().moveParts("MainWarehouse", itemWarehouseField.getText(),
                 Long.parseLong(itemsPartNumberField.getText()), Integer.parseInt(itemPartQuantityField.getText()));

@@ -176,6 +176,10 @@ class ItemList {
     currentList.add(p);
   }
 
+  public void addPart(String partNum, String quantity){
+
+  }
+
   /**
    * @param p
    */
