@@ -61,4 +61,10 @@ public class InvoiceFactory {
     return currentInvoice;
   }
 
+  public SalesInvoice addToInvoice(String part) {
+    currentInvoice.getItemList()
+            .addPart(currentInvoice.getItemList().getPartByNumber(Long.parseLong(part.split(";")[0])));
+    return currentInvoice;
+  }
+
 }

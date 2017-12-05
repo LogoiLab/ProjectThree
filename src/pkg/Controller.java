@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class Controller {
 
-  private ArrayList<String> invoiceParts;
+  private ArrayList<String> invoiceParts = new ArrayList<>();
 
   @FXML
   private Pane mainPane;
