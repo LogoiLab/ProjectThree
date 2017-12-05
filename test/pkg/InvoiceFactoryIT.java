@@ -72,26 +72,10 @@ public class InvoiceFactoryIT {
     public void testCreateInvoice() {
         System.out.println("createInvoice");
         Account account = null;
-        String customer = "";
         ArrayList<String> invoiceParts = null;
         InvoiceFactory instance = null;
         SalesInvoice expResult = null;
-        SalesInvoice result = instance.createInvoice(account, customer, invoiceParts);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of removeFromInvoice method, of class InvoiceFactory.
-     */
-    @Test
-    public void testRemoveFromInvoice() {
-        System.out.println("removeFromInvoice");
-        String part = "";
-        InvoiceFactory instance = null;
-        SalesInvoice expResult = null;
-        SalesInvoice result = instance.removeFromInvoice(part);
+        SalesInvoice result = instance.createInvoice(account, invoiceParts);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

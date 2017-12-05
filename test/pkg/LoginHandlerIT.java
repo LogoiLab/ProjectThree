@@ -146,18 +146,5 @@ public class LoginHandlerIT {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of populate method, of class LoginHandler.
-     */
-    @Test
-    public void testPopulate() {
-        System.out.println("populate");
-        HashMap<String, Account> accountList = null;
-        LoginHandler instance = null;
-        instance.populate(accountList);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }

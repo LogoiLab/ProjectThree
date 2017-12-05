@@ -4,6 +4,8 @@ import com.google.gson.*;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
 
 /**
  * @author Connor Byrd, Chad Baxter, Chris Vasquez
@@ -24,9 +26,26 @@ public class DatabaseHandler {
       JsonElement jsonList = new JsonParser()
               .parse(new BufferedReader(new FileReader("database.json")).readLine());
       JsonObject jsonWarehouseList = jsonList.getAsJsonObject().get("WarehouseList").getAsJsonObject();
+      JsonObject jsonAccountList = jsonList.getAsJsonObject().get("AccountList").getAsJsonObject();
       WarehouseList warehouseList = gson.fromJson(jsonWarehouseList, WarehouseList.class);
+      HashMap<String, ArrayList<Object>> accountList = gson.fromJson(jsonAccountList, HashMap.class);
       WarehouseFactory.getInstance().populate(warehouseList);
-      OutputBuffer.getInstance().add("Database loaded.");
+      OutputBuffer.getInstance().add("Warehouses populated.");
+      ArrayList<Account> al = new ArrayList<>();
+      for(int i = 0; i < accountList.size(); i++) {
+        Object[] names = accountList.keySet().toArray();
+        ArrayList<ArrayList<Object>> fields = new ArrayList<ArrayList<Object>>(accountList.values());
+        switch ((int)fields.get(i).get(0)) {
+          case 0 : {
+            al.add(new Nobody());
+          }
+          case 1 : {
+            al.add(new Employee((String)names[i], (byte[])fields.get(i).get(1),(byte[])fields.get(i).get(2)));
+          }
+        }
+      }
+      OutputBuffer.getInstance().add("Accounts populated.");
+      OutputBuffer.getInstance().add("Database fully loaded.");
     } catch (Exception e) {
       OutputBuffer.getInstance().add("Failed to load database.");
     }
@@ -38,8 +57,16 @@ public class DatabaseHandler {
   public static void saveDatabase() {
     GsonBuilder builder = new GsonBuilder();
     Gson gson = builder.create();
+    HashMap<String,ArrayList<Object>> accounts = new HashMap<>();
+    for(Account a : LoginHandler.getInstance().getAccounts().values()) {
+      ArrayList<Object> al = new ArrayList<>();
+      al.add(a.getPermLevel());
+      al.add(a.passHash);
+      al.add(a.passSalt);
+      accounts.put(a.getUserName(), al);
+    }
     JsonElement jsonWarehouseList = gson.toJsonTree(WarehouseFactory.getInstance().getWarehouseList());
-    JsonElement jsonAccountList = gson.toJsonTree(LoginHandler.getInstance().getAccounts());
+    JsonElement jsonAccountList = gson.toJsonTree(accounts);
     JsonElement jsonBundleList = gson.toJsonTree(BundleFactory.getInstance().getBundleList());
     JsonObject jsonList = new JsonObject();
     jsonList.add("WarehouseList", jsonWarehouseList);

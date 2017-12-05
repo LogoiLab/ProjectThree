@@ -1,5 +1,6 @@
 package pkg;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -81,11 +82,9 @@ public class LoginHandler {
   /**
    * @param accountList
    */
-  public void populate(HashMap<String, Account> accountList) {
-    if (this.accountList.isEmpty()) {
-      this.accountList = accountList;
-    } else {
-      this.accountList.putAll(accountList);
+  public void populate(ArrayList<Account> accountList) {
+    for(Account a : accountList) {
+      this.accountList.put(a.getUserName(), a);
     }
   }
 }
