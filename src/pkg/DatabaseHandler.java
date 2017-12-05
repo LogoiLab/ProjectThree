@@ -42,6 +42,15 @@ public class DatabaseHandler {
           case 1 : {
             al.add(new Employee((String)names[i], (byte[])fields.get(i).get(1),(byte[])fields.get(i).get(2)));
           }
+          case 2 : {
+            al.add(new WarehouseManager((String)names[i], (byte[])fields.get(i).get(1),(byte[])fields.get(i).get(2)));
+          }
+          case 3 : {
+            al.add(new OfficeManager((String)names[i], (byte[])fields.get(i).get(1),(byte[])fields.get(i).get(2)));
+          }
+          case 4 : {
+            al.add(new Admin((String)names[i], (byte[])fields.get(i).get(1),(byte[])fields.get(i).get(2)));
+          }
         }
       }
       OutputBuffer.getInstance().add("Accounts populated.");

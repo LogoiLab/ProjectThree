@@ -20,6 +20,12 @@ class Admin extends Account {
     super.passHash = Hasher.hashPassword(password.toCharArray(), super.passSalt, 32, 512);
   }
 
+  public Admin(String userName, byte[] passHash, byte[] passSalt) {
+    super.userName = userName;
+    super.passSalt = passHash;
+    super.passHash = passSalt;
+  }
+
   /**
    * @return
    */
