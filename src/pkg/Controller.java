@@ -277,18 +277,9 @@ public class Controller {
         set1Perm();
         break;
       }
-      case 0: {
-        mainPane.setVisible(false);
-        mainPane.setDisable(true);
-        mainPane.toBack();
-        loginPane.setVisible(true);
-        loginPane.setDisable(false);
-        loginPane.toFront();
-        LoginHandler.getInstance().setCurrentAccount(new Nobody());
-        break;
-      }
     }
     clean();
+    passwordField.setText("");
   }
 
   /**
