@@ -35,27 +35,29 @@ public class DatabaseHandler {
       for(int i = 0; i < accountList.size(); i++) {
         Object[] names = accountList.keySet().toArray();
         ArrayList<ArrayList<Object>> fields = new ArrayList<ArrayList<Object>>(accountList.values());
-        switch ((int)fields.get(i).get(0)) {
+        switch ((int)((double)fields.get(i).get(0))) {
           case 0 : {
             al.add(new Nobody());
           }
           case 1 : {
-            al.add(new Employee((String)names[i], (byte[])fields.get(i).get(1),(byte[])fields.get(i).get(2)));
+            al.add(new Employee((String)names[i], (byte[])fields.get(i).get(1), (byte[])fields.get(i).get(2)));
           }
           case 2 : {
-            al.add(new WarehouseManager((String)names[i], (byte[])fields.get(i).get(1),(byte[])fields.get(i).get(2)));
+            al.add(new WarehouseManager((String)names[i], (byte[])fields.get(i).get(1), (byte[])fields.get(i).get(2)));
           }
           case 3 : {
-            al.add(new OfficeManager((String)names[i], (byte[])fields.get(i).get(1),(byte[])fields.get(i).get(2)));
+            al.add(new OfficeManager((String)names[i], (byte[])fields.get(i).get(1), (byte[])fields.get(i).get(2)));
           }
           case 4 : {
-            al.add(new Admin((String)names[i], (byte[])fields.get(i).get(1),(byte[])fields.get(i).get(2)));
+            al.add(new Admin((String)names[i], (byte[])fields.get(i).get(1), (byte[])fields.get(i).get(2)));
           }
         }
+        LoginHandler.getInstance().populate(al);
       }
       OutputBuffer.getInstance().add("Accounts populated.");
       OutputBuffer.getInstance().add("Database fully loaded.");
     } catch (Exception e) {
+      e.printStackTrace();
       OutputBuffer.getInstance().add("Failed to load database.");
     }
   }
@@ -86,6 +88,7 @@ public class DatabaseHandler {
       writer.close();
       OutputBuffer.getInstance().add("Saved database.");
     } catch (Exception e) {
+      e.printStackTrace();
       OutputBuffer.getInstance().add("Failed to save database.");
     }
   }
