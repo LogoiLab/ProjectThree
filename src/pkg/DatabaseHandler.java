@@ -69,7 +69,7 @@ public class DatabaseHandler {
     HashMap<String,ArrayList<Object>> accounts = new HashMap<>();
     for(Account a : LoginHandler.getInstance().getAccounts().values()) {
       ArrayList<Object> al = new ArrayList<>();
-      al.add(a.getPermLevel());
+      al.add(a.PERM_LEVEL);
       al.add(a.passHash);
       al.add(a.passSalt);
       accounts.put(a.getUserName(), al);
