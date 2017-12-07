@@ -1,6 +1,7 @@
 package pkg;
 
 import com.google.gson.*;
+import com.sun.media.jfxmedia.track.Track;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -28,28 +29,28 @@ public class DatabaseHandler {
       JsonObject jsonWarehouseList = jsonList.getAsJsonObject().get("WarehouseList").getAsJsonObject();
       JsonObject jsonAccountList = jsonList.getAsJsonObject().get("AccountList").getAsJsonObject();
       WarehouseList warehouseList = gson.fromJson(jsonWarehouseList, WarehouseList.class);
-      HashMap<String, ArrayList<Object>> accountList = gson.fromJson(jsonAccountList, HashMap.class);
+      HashMap<String, ArrayList<String>> accountList = gson.fromJson(jsonAccountList, HashMap.class);
       WarehouseFactory.getInstance().populate(warehouseList);
       OutputBuffer.getInstance().add("Warehouses populated.");
       ArrayList<Account> al = new ArrayList<>();
       for(int i = 0; i < accountList.size(); i++) {
         Object[] names = accountList.keySet().toArray();
-        ArrayList<ArrayList<Object>> fields = new ArrayList<ArrayList<Object>>(accountList.values());
-        switch ((int)((double)fields.get(i).get(0))) {
+        ArrayList<ArrayList<String>> fields = new ArrayList<ArrayList<String>>(accountList.values());
+        switch (Integer.parseInt(fields.get(i).get(0))) {
           case 0 : {
             al.add(new Nobody());
           }
           case 1 : {
-            al.add(new Employee((String)names[i], (byte[])fields.get(i).get(1), (byte[])fields.get(i).get(2)));
+            al.add(new Employee((String)names[i], fields.get(i).get(1).getBytes(), fields.get(i).get(2).getBytes()));
           }
           case 2 : {
-            al.add(new WarehouseManager((String)names[i], (byte[])fields.get(i).get(1), (byte[])fields.get(i).get(2)));
+            al.add(new WarehouseManager((String)names[i], fields.get(i).get(1).getBytes(), fields.get(i).get(2).getBytes()));
           }
           case 3 : {
-            al.add(new OfficeManager((String)names[i], (byte[])fields.get(i).get(1), (byte[])fields.get(i).get(2)));
+            al.add(new OfficeManager((String)names[i], fields.get(i).get(1).getBytes(), fields.get(i).get(2).getBytes()));
           }
           case 4 : {
-            al.add(new Admin((String)names[i], (byte[])fields.get(i).get(1), (byte[])fields.get(i).get(2)));
+            al.add(new Admin((String)names[i], fields.get(i).get(1).getBytes(), fields.get(i).get(2).getBytes()));
           }
         }
         LoginHandler.getInstance().populate(al);
@@ -68,12 +69,12 @@ public class DatabaseHandler {
   public static void saveDatabase() {
     GsonBuilder builder = new GsonBuilder();
     Gson gson = builder.create();
-    HashMap<String,ArrayList<Object>> accounts = new HashMap<>();
+    HashMap<String,ArrayList<String>> accounts = new HashMap<>();
     for(Account a : LoginHandler.getInstance().getAccounts().values()) {
-      ArrayList<Object> al = new ArrayList<>();
-      al.add(a.PERM_LEVEL);
-      al.add(a.passHash);
-      al.add(a.passSalt);
+      ArrayList<String> al = new ArrayList<>();
+      al.add(new Integer(a.PERM_LEVEL).toString());
+      al.add(new String(a.passHash));
+      al.add(new String(a.passSalt));
       accounts.put(a.getUserName(), al);
     }
     JsonElement jsonWarehouseList = gson.toJsonTree(WarehouseFactory.getInstance().getWarehouseList());
