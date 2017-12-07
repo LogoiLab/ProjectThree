@@ -22,8 +22,11 @@ public class Main extends Application {
    */
   public static void main(String[] args) {
     DatabaseHandler.loadDatabase();
-    launch(args);
+    LoginHandler.getInstance().addAccount(new OfficeManager("om", "password"));
+    LoginHandler.getInstance().addAccount(new WarehouseManager("wm", "password"));
+    LoginHandler.getInstance().addAccount(new Employee("em", "password"));
     LoginHandler.getInstance().addAccount(new Admin("admin", "password"));
+    launch(args);
   }
 
   /* (non-Javadoc)

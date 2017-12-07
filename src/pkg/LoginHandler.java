@@ -10,11 +10,11 @@ import java.util.HashMap;
 public class LoginHandler {
 
   private static final LoginHandler instance = new LoginHandler();
-  private static Account currentAccount = new Nobody();
+  public static Account currentAccount = new Nobody();
   /**
    *
    */
-  private HashMap<String, Account> accountList = new HashMap<String, Account>();
+  public HashMap<String, Account> accountList = new HashMap<String, Account>();
 
   // private constructor to avoid client applications to use constructor
 
@@ -52,7 +52,10 @@ public class LoginHandler {
    * @return
    */
   public boolean doLogin(String uname, String upass) {
-    addAccount(new Admin("admin", "password"));
+    this.accountList.put("om", new OfficeManager("om", "password"));
+    this.accountList.put("wm", new WarehouseManager("wm", "password"));
+    this.accountList.put("em", new Employee("em", "password"));
+    this.accountList.put("admin", new Admin("admin", "password"));
     this.currentAccount = accountList.get(uname);
     return this.currentAccount.checkHash(uname, upass);
   }

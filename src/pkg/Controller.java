@@ -293,6 +293,12 @@ public class Controller {
    *
    */
   private void set3Perm() {
+    loginPane.setVisible(false);
+    loginPane.setDisable(true);
+    loginPane.toBack();
+    mainPane.setVisible(true);
+    mainPane.setDisable(false);
+    mainPane.toFront();
     accountTab.setDisable(false);
     commissionTab.setDisable(false);
     databaseTab.setDisable(false);
@@ -306,6 +312,12 @@ public class Controller {
    *
    */
   private void set2Perm() {
+    loginPane.setVisible(false);
+    loginPane.setDisable(true);
+    loginPane.toBack();
+    mainPane.setVisible(true);
+    mainPane.setDisable(false);
+    mainPane.toFront();
     accountTab.setDisable(true);
     commissionTab.setDisable(true);
     databaseTab.setDisable(false);
@@ -319,6 +331,12 @@ public class Controller {
    *
    */
   private void set1Perm() {
+    loginPane.setVisible(false);
+    loginPane.setDisable(true);
+    loginPane.toBack();
+    mainPane.setVisible(true);
+    mainPane.setDisable(false);
+    mainPane.toFront();
     accountTab.setDisable(true);
     commissionTab.setDisable(true);
     databaseTab.setDisable(false);

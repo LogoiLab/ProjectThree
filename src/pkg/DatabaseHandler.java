@@ -36,20 +36,20 @@ public class DatabaseHandler {
       for(int i = 0; i < accountList.size(); i++) {
         Object[] names = accountList.keySet().toArray();
         ArrayList<ArrayList<String>> fields = new ArrayList<ArrayList<String>>(accountList.values());
-        switch (Integer.parseInt(fields.get(i).get(0))) {
-          case 0 : {
+        switch (fields.get(i).get(0)) {
+          case "0" : {
             al.add(new Nobody());
           }
-          case 1 : {
+          case "1" : {
             al.add(new Employee((String)names[i], fields.get(i).get(1).getBytes(), fields.get(i).get(2).getBytes()));
           }
-          case 2 : {
+          case "2" : {
             al.add(new WarehouseManager((String)names[i], fields.get(i).get(1).getBytes(), fields.get(i).get(2).getBytes()));
           }
-          case 3 : {
+          case "3" : {
             al.add(new OfficeManager((String)names[i], fields.get(i).get(1).getBytes(), fields.get(i).get(2).getBytes()));
           }
-          case 4 : {
+          case "4" : {
             al.add(new Admin((String)names[i], fields.get(i).get(1).getBytes(), fields.get(i).get(2).getBytes()));
           }
         }
@@ -69,9 +69,9 @@ public class DatabaseHandler {
   public static void saveDatabase() {
     GsonBuilder builder = new GsonBuilder();
     Gson gson = builder.create();
-    HashMap<String,ArrayList<String>> accounts = new HashMap<>();
+    HashMap<String,ArrayList<String>> accounts = new HashMap<String,ArrayList<String>>();
     for(Account a : LoginHandler.getInstance().getAccounts().values()) {
-      ArrayList<String> al = new ArrayList<>();
+      ArrayList<String> al = new ArrayList<String>();
       al.add(new Integer(a.PERM_LEVEL).toString());
       al.add(new String(a.passHash));
       al.add(new String(a.passSalt));
